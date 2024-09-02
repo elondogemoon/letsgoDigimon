@@ -15,7 +15,7 @@ public class Digimon : MonoBehaviour,IHIt
     public int MaxMP { get; set; }
     public int CurrentMP { get; set; }  
     public int CoolDown { get; set; }
-    public float EvolutionGauge { get; set; }
+    [SerializeField] public float EvolutionGauge;
     [SerializeField] UpgradeState _upgradeState;
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class Digimon : MonoBehaviour,IHIt
 
 
 
-    public void Hit()
+    public void Hit(int damage)
     {
 
     }
