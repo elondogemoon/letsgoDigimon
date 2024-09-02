@@ -8,7 +8,7 @@ enum UpgradeState
     middle,
     high,
 }
-public class Digimon : MonoBehaviour
+public class Digimon : MonoBehaviour,IHIt
 {
     public int MaxHP { get; set; }
     public int CurrentHp { get; set; }
@@ -46,9 +46,9 @@ public class Digimon : MonoBehaviour
     }
 
 
-    public void StartAtk()
-    {
-           
-    }
 
+    public void Hit()
+    {
+
+    }
 }
