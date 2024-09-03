@@ -20,6 +20,8 @@ public class Digimon : MonoBehaviour, IHIt
     public int CoolDown { get; set; }
     public float Damage { get; set; }
 
+    public float SkillDamage { get; set; }
+
     public int _evolutionNum;
 
     private int _currentEvolutionNum;
@@ -29,11 +31,12 @@ public class Digimon : MonoBehaviour, IHIt
     [SerializeField] private UpgradeState _upgradeState;
 
     Animator animator;
-
+    Collider atkCollider;
     protected virtual void Awake()
     {
         ApplyUpgradeState();
         animator = GetComponentInChildren<Animator>();
+        atkCollider = GetComponentInChildren<Collider>();
         _evolutionNum = 1;
         _currentEvolutionNum = 0;
     }
@@ -45,14 +48,20 @@ public class Digimon : MonoBehaviour, IHIt
             case UpgradeState.low:
                 MaxHP = 100;
                 MaxMP = 100;
+                Damage = 10;
+                SkillDamage = 20;
                 break;
             case UpgradeState.middle:
                 MaxHP = 200;
                 MaxMP = 200;
+                Damage = 20;
+                SkillDamage = 40;
                 break;
             case UpgradeState.high:
                 MaxHP = 300;
                 MaxMP = 250;
+                Damage = 40;
+                SkillDamage = 80;
                 break;
         }
 
@@ -70,7 +79,6 @@ public class Digimon : MonoBehaviour, IHIt
 
     public void OnTriggerEnter(Collider other)
     {
-        
         if (other.CompareTag("Enemy"))
         {
             IHIt hit = GetComponent<IHIt>();
@@ -78,6 +86,7 @@ public class Digimon : MonoBehaviour, IHIt
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.LookAt(target);
             animator.SetTrigger("Atk");
+            StartCoroutine(AtkColliderOn());
         }
     }
 
@@ -128,8 +137,13 @@ public class Digimon : MonoBehaviour, IHIt
             _upgradeState = UpgradeState.high;
         }
     }
-
-
+    IEnumerator AtkColliderOn()
+    {
+        atkCollider.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        atkCollider.enabled = false;
+    }
+    //TODO : 전투 방식, Json 저장, 뽑기, UI 
 
 
 }
