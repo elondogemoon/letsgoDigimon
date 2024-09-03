@@ -4,16 +4,16 @@ using UnityEngine;
 
 public interface IState
 {
-    void OnStart();
-    void OnExit();
-    void OnExecuteUpdate();
+    void EnterState();
+    void ExitState();
+    void ExecuteOnUpdate();
 }
 
 public class MonsterState : IState
 {
-    public virtual void OnStart() { }
-    public virtual void OnExit() { }
-    public virtual void OnExecuteUpdate() { }
+    public virtual void EnterState() { }
+    public virtual void ExitState() { }
+    public virtual void ExecuteOnUpdate() { }
 }
 
 public class MonsterEnter : MonsterState
@@ -23,15 +23,15 @@ public class MonsterEnter : MonsterState
     {
         _monsterState = monsterState;
     }
-    public override void OnStart()
+    public override void EnterState()
     {
-        _monsterState.OnStart();
+        _monsterState.EnterState();
     }
-    public override void OnExecuteUpdate()
+    public override void ExecuteOnUpdate()
     {
         //Update동안 행동할 코드
     }
-    public override void OnExit()
+    public override void ExitState()
     {
         //상태를 나갈때
     }
