@@ -14,10 +14,6 @@ public class Subcribe : MonoBehaviour
         EventManager.Instance.RequestSubscribe(true, OnEventMakerInvoked);
     }
 
-    private void OnDisable()
-    {
-        EventManager.Instance.RequestSubscribe(false, OnEventMakerInvoked);
-    }
 
     public void OnEventMakerInvoked()
     {

@@ -37,7 +37,7 @@ public class EventMaker : MonoBehaviour,IEventMake
 
     public void InvokeEvent()
     {
-        if(_eventInvokeHandler !=null)
+        if(_eventInvokeHandler !=null) 
             _eventInvokeHandler.Invoke();
     }
 }
