@@ -18,21 +18,25 @@ public class MonsterState : IState
 
 public class MonsterEnter : MonsterState
 {
-    private readonly MonsterState _monsterState;
-    public MonsterEnter(MonsterState monsterState)
+    private readonly Enemy enemy;
+    public MonsterEnter(Enemy enemyState)
     {
-        _monsterState = monsterState;
+        enemy = enemyState;
     }
     public override void EnterState()
     {
-        _monsterState.EnterState();
+        enemy._nav.SetDestination(enemy.target.position);
     }
     public override void ExecuteOnUpdate()
     {
-        //Update동안 행동할 코드
+        if(Vector3.Distance(enemy.transform.position, enemy.target.transform.position) > 3)
+        {
+            enemy._nav.isStopped= true;
+            enemy._nav.velocity= Vector3.zero;
+        }
     }
     public override void ExitState()
     {
-        //상태를 나갈때
+        
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using JetBrains.Annotations;
 
 enum UpgradeState
 {
@@ -30,6 +31,7 @@ public class Digimon : MonoBehaviour, IHIt
 
     [SerializeField] private UpgradeState _upgradeState;
 
+    private IState _playerState;
     Animator animator;
     Collider atkCollider;
     protected virtual void Awake()
@@ -41,6 +43,22 @@ public class Digimon : MonoBehaviour, IHIt
         _currentEvolutionNum = 0;
     }
 
+    private void Start()
+    {
+        ChangeState(new PlayerEnter(this));
+    }
+
+    private void Update()
+    {
+        _playerState.ExecuteOnUpdate();
+    }
+    public virtual void ChangeState(IState newState)
+    {
+        _playerState?.ExitState();
+        _playerState = newState;
+        _playerState.EnterState();
+
+    }
     private void ApplyUpgradeState()
     {
         switch (_upgradeState)

@@ -5,16 +5,16 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour,IHIt
 {
+    public Transform target;
     public int Hp { get; set; }
     
     public float CurrentHp { get; set; }
 
     public int Damage { get; set; }
+    public NavMeshAgent _nav;
 
     private float AtkRange;
-    [SerializeField] Transform target;
-    private NavMeshAgent _nav;
-
+    private IState _enemyState;
     private void Awake()
     {
         Hp = 100;
@@ -24,7 +24,17 @@ public class Enemy : MonoBehaviour,IHIt
     private void OnEnable()
     {
         _nav = GetComponent<NavMeshAgent>();
-        _nav.SetDestination(target.transform.position);
+    }
+    private void Start()
+    {
+        ChangeState(new MonsterEnter(this));
+    }
+
+    public void ChangeState(IState newState)
+    {
+        _enemyState?.ExitState();
+        _enemyState = newState;
+        _enemyState.EnterState();
     }
     public void Hit(float damage)
     {
