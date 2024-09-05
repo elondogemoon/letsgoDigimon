@@ -25,15 +25,49 @@ public class MonsterEnter : MonsterState
     }
     public override void EnterState()
     {
-        enemy._nav.SetDestination(enemy.target.position);
+        if (enemy.target != null)
+        {
+            enemy._nav.SetDestination(enemy.target.position);
+            enemy.animator.SetBool("IsTrack", true);
+        }
     }
     public override void ExecuteOnUpdate()
     {
-        if(Vector3.Distance(enemy.transform.position, enemy.target.transform.position) > 3)
+        float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
+
+        if (distanceToTarget < enemy.AtkRange)
         {
-            enemy._nav.isStopped= true;
-            enemy._nav.velocity= Vector3.zero;
+            enemy.animator.SetBool("IsTrack", false);
+            enemy._nav.isStopped = true;
+            enemy._nav.velocity = Vector3.zero;
+
+            enemy.ChangeState(new MonsterAtk(enemy));
         }
+    }
+
+    public override void ExitState()
+    {
+        
+    }
+}
+
+public class MonsterAtk : MonsterState
+{
+    private readonly Enemy enemy;
+
+    public MonsterAtk(Enemy enemyState)
+    {
+       enemy = enemyState;
+    }
+    public override void EnterState()
+    {
+        enemy.animator.SetTrigger("Atk");
+        enemy.CoolTime = Time.time;
+    }
+
+    public override void ExecuteOnUpdate()
+    {
+        
     }
     public override void ExitState()
     {

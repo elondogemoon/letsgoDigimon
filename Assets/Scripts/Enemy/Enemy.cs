@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,31 +6,42 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour,IHIt
 {
-    public Transform target;
+    public Transform target { get;  set; }
+    public Animator animator;
     public int Hp { get; set; }
     
     public float CurrentHp { get; set; }
 
     public int Damage { get; set; }
+
+    public float AtkRange { get; set; }
+    public float CoolTime { get; set; }
+
     public NavMeshAgent _nav;
 
-    private float AtkRange;
     private IState _enemyState;
+    private Collider collider;
     private void Awake()
     {
         Hp = 100;
         CurrentHp = Hp;
         Damage = 5;
+        AtkRange = 2;
+        CoolTime = 3;
+        GameManager.Instance.InitTarget(this);
     }
     private void OnEnable()
     {
         _nav = GetComponent<NavMeshAgent>();
-    }
-    private void Start()
-    {
+        animator = GetComponentInChildren<Animator>();
+        collider = GetComponentInChildren<Collider>();
         ChangeState(new MonsterEnter(this));
     }
 
+    private void Update()
+    {
+        _enemyState.ExecuteOnUpdate();
+    }
     public void ChangeState(IState newState)
     {
         _enemyState?.ExitState();
@@ -38,10 +50,11 @@ public class Enemy : MonoBehaviour,IHIt
     }
     public void Hit(float damage)
     {
+        animator.SetTrigger("Damaged");
         CurrentHp -= damage;
         if (CurrentHp <= 0)
         {
-            gameObject.SetActive(false);
+            ObjectPoolManager.Instance.EnqueueObject(gameObject);
         }
         Debug.Log($"Hp :  {CurrentHp}");
     }
@@ -55,6 +68,13 @@ public class Enemy : MonoBehaviour,IHIt
             _nav.SetDestination(this.transform.position);
             _nav.velocity = Vector3.zero;
         }
+    }
+
+    public IEnumerator Atk()
+    {
+        collider.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        collider.enabled = false;
     }
 
 }

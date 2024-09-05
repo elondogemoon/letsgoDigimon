@@ -41,6 +41,7 @@ public class Digimon : MonoBehaviour, IHIt
         atkCollider = GetComponentInChildren<Collider>();
         _evolutionNum = 1;
         _currentEvolutionNum = 0;
+        _upgradeState = UpgradeState.low;
     }
 
     private void Start()
@@ -57,7 +58,6 @@ public class Digimon : MonoBehaviour, IHIt
         _playerState?.ExitState();
         _playerState = newState;
         _playerState.EnterState();
-
     }
     private void ApplyUpgradeState()
     {
@@ -92,19 +92,17 @@ public class Digimon : MonoBehaviour, IHIt
     {
         CurrentHp -= damage;
         animator.SetTrigger("Damaged");
-        Debug.Log("hithit");
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            IHIt hit = GetComponent<IHIt>();
+            IHIt hit = other.GetComponent<IHIt>();
             hit.Hit(Damage);
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.LookAt(target);
             animator.SetTrigger("Atk");
-            StartCoroutine(AtkColliderOn());
         }
     }
 
@@ -132,20 +130,15 @@ public class Digimon : MonoBehaviour, IHIt
 
         while (elapsedTime < duration)
         {
-           
             float currentSpeed = initialSpeed + (speedIncrease * (elapsedTime / duration));
-
             float rotationAngle = currentSpeed * Time.deltaTime;
-
             transform.Rotate(0, rotationAngle, 0);
-
             elapsedTime += Time.deltaTime;
-
             yield return null;
         }
 
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
-
+        
         if (_upgradeState == UpgradeState.low)
         {
             _upgradeState = UpgradeState.middle;
@@ -161,6 +154,12 @@ public class Digimon : MonoBehaviour, IHIt
         yield return new WaitForSeconds(0.5f);
         atkCollider.enabled = false;
     }
+
+    public void OnAtk()
+    {
+        atkCollider.enabled = true;
+    }
+    
     //TODO : 전투 방식, Json 저장, 뽑기, UI 
 
 

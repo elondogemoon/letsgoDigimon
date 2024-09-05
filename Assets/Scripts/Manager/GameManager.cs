@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Digimon Player;
+    [SerializeField] Enemy Enemy;
 
-    // Update is called once per frame
-    void Update()
+    public void InitTarget(Enemy enemy)
     {
-        
+        enemy.target = Player.transform;
     }
 }
