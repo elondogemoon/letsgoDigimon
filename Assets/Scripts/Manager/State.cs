@@ -25,6 +25,7 @@ public class MonsterEnter : MonsterState
     }
     public override void EnterState()
     {
+        Debug.Log("현재 상태 : enter");
         if (enemy.target != null)
         {
             enemy._nav.SetDestination(enemy.target.position);
@@ -44,7 +45,6 @@ public class MonsterEnter : MonsterState
             enemy.ChangeState(new MonsterAtk(enemy));
         }
     }
-
     public override void ExitState()
     {
         
@@ -61,15 +61,44 @@ public class MonsterAtk : MonsterState
     }
     public override void EnterState()
     {
-        enemy.animator.SetTrigger("Atk");
-        enemy.CoolTime = Time.time;
+        
     }
 
     public override void ExecuteOnUpdate()
     {
-        
+        enemy.animator.SetTrigger("Atk");
+        var animInfo = enemy.animator.GetCurrentAnimatorStateInfo(0);
+        Debug.Log(animInfo.normalizedTime);
+        if (animInfo.IsName("Atk"))
+        {
+            if (animInfo.normalizedTime < 0.32f)
+            {
+
+            }
+            else if (animInfo.normalizedTime < 0.55f)
+            {
+                enemy.collider.enabled = true;
+            }
+            else if (animInfo.normalizedTime < 0.80f)
+            {
+                enemy.collider.enabled = false;
+            }
+            else
+            {
+                enemy.collider.enabled = false;
+                enemy.ChangeState(new MonsterEnter(enemy)); 
+                return;
+            }
+        }
+
+        if (Time.time - enemy.LastAttackTime >= enemy.CoolTime)
+        {
+            enemy.ChangeState(new MonsterAtk(enemy));
+        }
     }
-    public override void ExitState()
+
+
+public override void ExitState()
     {
         
     }
