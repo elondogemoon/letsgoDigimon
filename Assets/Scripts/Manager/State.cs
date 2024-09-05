@@ -1,5 +1,7 @@
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public interface IState
@@ -25,7 +27,6 @@ public class MonsterEnter : MonsterState
     }
     public override void EnterState()
     {
-        Debug.Log("현재 상태 : enter");
         if (enemy.target != null)
         {
             enemy._nav.SetDestination(enemy.target.position);
@@ -45,6 +46,7 @@ public class MonsterEnter : MonsterState
             enemy.ChangeState(new MonsterAtk(enemy));
         }
     }
+
     public override void ExitState()
     {
         
@@ -61,14 +63,18 @@ public class MonsterAtk : MonsterState
     }
     public override void EnterState()
     {
-        
+        enemy.animator.SetTrigger("Atk");
     }
 
     public override void ExecuteOnUpdate()
     {
-        enemy.animator.SetTrigger("Atk");
+        float currentTime = Time.time;
+        if (currentTime - enemy.LastAttackTime >= enemy.CoolTime)
+        {
+            enemy.LastAttackTime = Time.time + 1000f;
+        }
         var animInfo = enemy.animator.GetCurrentAnimatorStateInfo(0);
-        Debug.Log(animInfo.normalizedTime);
+
         if (animInfo.IsName("Atk"))
         {
             if (animInfo.normalizedTime < 0.32f)
@@ -98,7 +104,7 @@ public class MonsterAtk : MonsterState
     }
 
 
-public override void ExitState()
+    public override void ExitState()
     {
         
     }

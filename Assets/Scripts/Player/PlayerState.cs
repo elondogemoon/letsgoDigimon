@@ -7,20 +7,19 @@ public class PlayerState : IState
     public virtual void EnterState() { }
     public virtual void ExitState() { }
     public virtual void ExecuteOnUpdate() { }
-
 }
 
 public class PlayerEnter : PlayerState
 {
-    private readonly Digimon _playerState;
+    private readonly Digimon player;
     public PlayerEnter(Digimon playerState)
     {
-        _playerState = playerState;
+        player = playerState;
     }
 
     public override void EnterState()
     {
-        
+       
     }
 
     public override void ExecuteOnUpdate()

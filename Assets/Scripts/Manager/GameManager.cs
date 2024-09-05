@@ -11,4 +11,12 @@ public class GameManager : Singleton<GameManager>
     {
         enemy.target = Player.transform;
     }
+
+    public void WaitEvolutioning(Digimon player)
+    {
+        if(player.isEvolutioning)
+        {
+            Enemy.enabled = false;
+        }
+    }
 }

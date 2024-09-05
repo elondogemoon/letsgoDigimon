@@ -1,9 +1,6 @@
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using JetBrains.Annotations;
 
 enum UpgradeState
 {
@@ -33,12 +30,14 @@ public class Digimon : MonoBehaviour, IHIt
 
     private IState _playerState;
     Animator animator;
-    Collider atkCollider;
+    BoxCollider atkCollider;
+    public bool isEvolutioning { get;  set; }
+
     protected virtual void Awake()
     {
         ApplyUpgradeState();
         animator = GetComponentInChildren<Animator>();
-        atkCollider = GetComponentInChildren<Collider>();
+        atkCollider = GetComponentInChildren<BoxCollider>();
         _evolutionNum = 1;
         _currentEvolutionNum = 0;
         _upgradeState = UpgradeState.low;
@@ -92,6 +91,7 @@ public class Digimon : MonoBehaviour, IHIt
     {
         CurrentHp -= damage;
         animator.SetTrigger("Damaged");
+        EvolutionGauge += 15;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -102,7 +102,6 @@ public class Digimon : MonoBehaviour, IHIt
             hit.Hit(Damage);
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.LookAt(target);
-            animator.SetTrigger("Atk");
         }
     }
 
@@ -122,6 +121,8 @@ public class Digimon : MonoBehaviour, IHIt
 
     public IEnumerator EvolutionStart()
     {
+        isEvolutioning = true;
+        GameManager.Instance.WaitEvolutioning(this);
         Vector3 finalRotation = new Vector3(0, 180, 0); // 진화가 끝날 때의 목표 회전값
         float duration = 10f; // 총 지속 시간
         float initialSpeed = 10f; // 초기 회전 속도
@@ -138,7 +139,7 @@ public class Digimon : MonoBehaviour, IHIt
         }
 
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
-        
+
         if (_upgradeState == UpgradeState.low)
         {
             _upgradeState = UpgradeState.middle;
@@ -155,10 +156,6 @@ public class Digimon : MonoBehaviour, IHIt
         atkCollider.enabled = false;
     }
 
-    public void OnAtk()
-    {
-        atkCollider.enabled = true;
-    }
     
     //TODO : 전투 방식, Json 저장, 뽑기, UI 
 

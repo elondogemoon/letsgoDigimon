@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ActiveSkill : MonoBehaviour
 {
     public Digimon digimon;  // Digimon 객체를 참조
-    public Button skillButton;  // UI 버튼 참조
+    public Button EvolutionButton;  // UI 버튼 참조
     private Action action;
     [SerializeField] GameObject vir2;
 
@@ -23,13 +23,13 @@ public class ActiveSkill : MonoBehaviour
         // EvolutionGauge가 100인지 확인하고 버튼 활성화/비활성화
         if (digimon.EvolutionGauge >= 100&& digimon._evolutionNum < 3)
         {
-            skillButton.interactable = true;
+            EvolutionButton.interactable = true;
             //EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
         }
         
         else
         {
-            skillButton.interactable = false;
+            EvolutionButton.interactable = false;
         }
     }
 
