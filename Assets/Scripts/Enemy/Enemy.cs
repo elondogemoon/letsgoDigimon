@@ -79,8 +79,7 @@ public class Enemy : MonoBehaviour, IHIt
     {
         isStop = false;
         animator.speed = 1;
-       // ChangeState(new MonsterEnter(this));
-        // NavMeshAgent가 NavMesh 위에 있을 때만 다시 동작하도록 설정
+       
         if (_nav.isOnNavMesh)
         {
             _nav.isStopped = false;

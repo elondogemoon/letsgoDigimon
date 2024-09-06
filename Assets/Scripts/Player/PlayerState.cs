@@ -14,6 +14,7 @@ public class PlayerEnter : PlayerState
     private readonly Digimon _digimon;
     public PlayerEnter(Digimon playerState)
     {
+        Debug.Log("현재상태 enter");
         _digimon = playerState;
     }
 
@@ -24,7 +25,7 @@ public class PlayerEnter : PlayerState
 
     public override void ExecuteOnUpdate()
     {
-        
+        _digimon.ChangeState(new PlayerAttack(_digimon));
     }
 
     public override void ExitState() { }
@@ -41,8 +42,10 @@ public class PlayerAttack : PlayerState
 
     public override void EnterState()
     {
+        Debug.Log("현재상태 attack");
         _digimon.animator.SetTrigger("Atk");
     }
+
     public override void ExecuteOnUpdate()
     {
         float currentTime = Time.time;
@@ -81,27 +84,4 @@ public class PlayerAttack : PlayerState
     }
 }
 
-public class PlayerEvolution : PlayerState
-{
-    private readonly Digimon _player;
 
-    public PlayerEvolution(Digimon player)
-    {
-        _player = player;
-    }
-    public override void EnterState()
-    {
-
-    }
-    public override void ExecuteOnUpdate()
-    {
-        if (_player.isEvolutioning == false)
-        {
-            _player.ChangeState(new PlayerEnter(_player));
-        }
-    }
-    public override void ExitState()
-    {
-
-    }
-}

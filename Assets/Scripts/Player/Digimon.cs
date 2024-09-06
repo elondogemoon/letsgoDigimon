@@ -18,7 +18,7 @@ public class Digimon : MonoBehaviour, IHIt
     public int CoolTime { get; set; }
     public float Damage { get; set; }
     public float SkillDamage { get; set; }
-    public Animator animator { get; set; }
+    public Animator animator;
 
     public float LastAttackTime { get; set; }
     public bool isEvolutioning { get; set; }
@@ -126,7 +126,7 @@ public class Digimon : MonoBehaviour, IHIt
         float initialSpeed = 10f;
         float speedIncrease = 400f;
         float elapsedTime = 0f;
-        bool halfwayReached = false; 
+        bool halfwayReached = false;
 
         while (elapsedTime < duration)
         {
@@ -140,7 +140,10 @@ public class Digimon : MonoBehaviour, IHIt
                 halfwayReached = true;
 
                 transform.GetChild(_currentEvolutionNum).gameObject.SetActive(false);
+
                 transform.GetChild(_evolutionNum).gameObject.SetActive(true);
+
+                animator = transform.GetChild(_evolutionNum).GetComponentInChildren<Animator>();
 
                 _currentEvolutionNum++;
                 _evolutionNum++;
@@ -163,4 +166,5 @@ public class Digimon : MonoBehaviour, IHIt
             _upgradeState = UpgradeState.high;
         }
     }
+
 }
