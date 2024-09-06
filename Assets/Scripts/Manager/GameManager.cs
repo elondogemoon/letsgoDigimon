@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     public void InitTarget(Enemy enemy)
     {
         enemy.target = Player.transform;
-        AddEnemyToList(enemy);  // 적을 리스트에 추가
+        AddEnemyToList(enemy);  
     }
 
     private void AddEnemyToList(Enemy enemy)

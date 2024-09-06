@@ -6,7 +6,7 @@ public class PlayerOnAtk : MonoBehaviour
 {
     private Digimon _digimon;
 
-    private void Awake()
+   private void Awake()
     {
         _digimon = GetComponentInParent<Digimon>();
     }
@@ -16,6 +16,7 @@ public class PlayerOnAtk : MonoBehaviour
         {
             IHIt hit = other.GetComponent<IHIt>();
             hit.Hit(_digimon.Damage);
+            _digimon.CurrentMP += 5;
         }
     }
 }

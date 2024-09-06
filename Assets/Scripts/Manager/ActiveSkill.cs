@@ -19,13 +19,12 @@ public class ActiveSkill : MonoBehaviour
 
     private void Update()
     {
-        // EvolutionGauge가 100인지 확인하고 버튼 활성화/비활성화
         if (digimon.EvolutionGauge >= 100&& digimon._evolutionNum < 3)
         {
             EvolutionButton.interactable = true;
         }
         
-        else
+        else 
         {
             EvolutionButton.interactable = false;
         }

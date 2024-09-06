@@ -54,6 +54,7 @@ MonoBehaviour:
   _evolutionNum: 0
   EvolutionGauge: 0
   _upgradeState: 0
+  atkCollider: {fileID: 0}
 --- !u!136 &4550533887292497318
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -62,7 +63,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6321088122416638477}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.86
   m_Height: 1.7
@@ -138,7 +139,7 @@ BoxCollider:
   m_GameObject: {fileID: 9160276315872578429}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0}

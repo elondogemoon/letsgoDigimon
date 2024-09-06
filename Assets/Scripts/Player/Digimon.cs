@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 
-enum UpgradeState
+public enum UpgradeState
 {
     low,
     middle,
@@ -21,16 +21,18 @@ public class Digimon : MonoBehaviour, IHIt
     public Animator animator { get; set; }
 
     public float LastAttackTime { get; set; }
+    public bool isEvolutioning { get; set; }
 
+    public float TargetDistance { get; set; }
     public int _evolutionNum;
     private int _currentEvolutionNum;
 
     [SerializeField] public float EvolutionGauge;
-    [SerializeField] private UpgradeState _upgradeState;
+    public UpgradeState _upgradeState;
 
     private IState _playerState;
     public BoxCollider atkCollider;
-    public bool isEvolutioning { get; set; }
+
 
     protected virtual void Awake()
     {
@@ -82,7 +84,6 @@ public class Digimon : MonoBehaviour, IHIt
                 SkillDamage = 80;
                 break;
         }
-
         CurrentHp = MaxHP;
         CurrentMP = 0;
         CoolTime = 0;
@@ -102,6 +103,11 @@ public class Digimon : MonoBehaviour, IHIt
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.LookAt(target);
         }
+    }
+
+    public void FindTarget()
+    {
+
     }
 
     public void OnEvolution()

@@ -61,13 +61,11 @@ public class Enemy : MonoBehaviour, IHIt
         Debug.Log($"Hp :  {CurrentHp}");
     }
 
-    // 적의 움직임을 멈추는 메서드
     public void StopWhenEvolution()
     {
         isStop = true;
         animator.speed = 0;
 
-        // NavMeshAgent가 NavMesh 위에 있을 때만 멈추도록 설정
         if (_nav.isOnNavMesh)
         {
             _nav.SetDestination(gameObject.transform.position);

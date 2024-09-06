@@ -34,7 +34,6 @@ public class EnemySpawn : MonoBehaviour
             spawnedEnemy.transform.position = spawnPoint.position;
             spawnedEnemy.SetActive(true);
 
-            // 스폰된 적을 GameManager에서 관리하도록 설정
             Enemy enemyComponent = spawnedEnemy.GetComponent<Enemy>();
             if (enemyComponent != null)
             {
