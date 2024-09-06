@@ -1,25 +1,22 @@
-using BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine;
 
-public class Enemy : MonoBehaviour,IHIt
+public class Enemy : MonoBehaviour, IHIt
 {
-    public Transform target { get;  set; }
+    public Transform target { get; set; }
     public Animator animator;
     public int Hp { get; set; }
-
     public float CurrentHp;
-
     public int Damage { get; set; }
     public float AtkRange { get; set; }
     public float CoolTime { get; set; }
     public float LastAttackTime { get; set; }
 
     public NavMeshAgent _nav;
-    private IState _enemyState;
     public BoxCollider collider;
+    private IState _enemyState;
+    private bool isStop;
+
     private void Awake()
     {
         Hp = 100;
@@ -29,6 +26,7 @@ public class Enemy : MonoBehaviour,IHIt
         CoolTime = 3;
         GameManager.Instance.InitTarget(this);
     }
+
     private void OnEnable()
     {
         _nav = GetComponent<NavMeshAgent>();
@@ -39,8 +37,12 @@ public class Enemy : MonoBehaviour,IHIt
 
     private void Update()
     {
-        _enemyState.ExecuteOnUpdate();
+        if (!isStop)
+        {
+            _enemyState.ExecuteOnUpdate();
+        }
     }
+
     public void ChangeState(IState newState)
     {
         _enemyState?.ExitState();
@@ -59,5 +61,29 @@ public class Enemy : MonoBehaviour,IHIt
         Debug.Log($"Hp :  {CurrentHp}");
     }
 
-}
+    // 적의 움직임을 멈추는 메서드
+    public void StopWhenEvolution()
+    {
+        isStop = true;
+        animator.speed = 0;
 
+        // NavMeshAgent가 NavMesh 위에 있을 때만 멈추도록 설정
+        if (_nav.isOnNavMesh)
+        {
+            _nav.isStopped = true;
+        }
+    }
+
+    // 적의 움직임을 재개하는 메서드
+    public void ResumeEnemy()
+    {
+        isStop = false;
+        animator.speed = 1;
+
+        // NavMeshAgent가 NavMesh 위에 있을 때만 다시 동작하도록 설정
+        if (_nav.isOnNavMesh)
+        {
+            _nav.isStopped = false;
+        }
+    }
+}

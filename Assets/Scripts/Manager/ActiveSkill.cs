@@ -15,7 +15,6 @@ public class ActiveSkill : MonoBehaviour
     private void Awake()
     {
         action = RegistEvent;
-        //skillButton.onClick.AddListener(OnClick);  // 버튼 클릭 이벤트 연결
     }
 
     private void Update()
@@ -24,7 +23,6 @@ public class ActiveSkill : MonoBehaviour
         if (digimon.EvolutionGauge >= 100&& digimon._evolutionNum < 3)
         {
             EvolutionButton.interactable = true;
-            //EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
         }
         
         else

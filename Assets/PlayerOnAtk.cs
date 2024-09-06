@@ -6,6 +6,10 @@ public class PlayerOnAtk : MonoBehaviour
 {
     private Digimon _digimon;
 
+    private void Awake()
+    {
+        _digimon = GetComponentInParent<Digimon>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

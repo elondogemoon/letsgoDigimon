@@ -17,21 +17,18 @@ public class Digimon : MonoBehaviour, IHIt
     public int CurrentMP { get; set; }
     public int CoolDown { get; set; }
     public float Damage { get; set; }
-
     public float SkillDamage { get; set; }
 
     public int _evolutionNum;
-
     private int _currentEvolutionNum;
 
     [SerializeField] public float EvolutionGauge;
-
     [SerializeField] private UpgradeState _upgradeState;
 
     private IState _playerState;
     Animator animator;
     BoxCollider atkCollider;
-    public bool isEvolutioning { get;  set; }
+    public bool isEvolutioning { get; set; }
 
     protected virtual void Awake()
     {
@@ -52,12 +49,14 @@ public class Digimon : MonoBehaviour, IHIt
     {
         _playerState.ExecuteOnUpdate();
     }
+
     public virtual void ChangeState(IState newState)
     {
         _playerState?.ExitState();
         _playerState = newState;
         _playerState.EnterState();
     }
+
     private void ApplyUpgradeState()
     {
         switch (_upgradeState)
@@ -105,29 +104,23 @@ public class Digimon : MonoBehaviour, IHIt
         }
     }
 
-
     public void OnEvolution()
     {
         StartCoroutine(EvolutionStart());
-
         ApplyUpgradeState();
-
-        transform.GetChild(_currentEvolutionNum).gameObject.SetActive(false);
-        transform.GetChild(_evolutionNum).gameObject.SetActive(true);
-        
-        _currentEvolutionNum++; 
-        _evolutionNum++;
     }
 
     public IEnumerator EvolutionStart()
     {
         isEvolutioning = true;
-        GameManager.Instance.WaitEvolutioning(this);
-        Vector3 finalRotation = new Vector3(0, 180, 0); // 진화가 끝날 때의 목표 회전값
-        float duration = 10f; // 총 지속 시간
-        float initialSpeed = 10f; // 초기 회전 속도
-        float speedIncrease = 400f; // 회전 속도 증가율
+        GameManager.Instance.WaitEvolutioning();
+
+        Vector3 finalRotation = new Vector3(0, 180, 0);
+        float duration = 10f;
+        float initialSpeed = 10f;
+        float speedIncrease = 400f;
         float elapsedTime = 0f;
+        bool halfwayReached = false; // 절반 회전 체크
 
         while (elapsedTime < duration)
         {
@@ -135,11 +128,29 @@ public class Digimon : MonoBehaviour, IHIt
             float rotationAngle = currentSpeed * Time.deltaTime;
             transform.Rotate(0, rotationAngle, 0);
             elapsedTime += Time.deltaTime;
+
+            // 회전 절반에서 진화 상태 변경
+            if (!halfwayReached && elapsedTime >= duration / 2)
+            {
+                halfwayReached = true;
+
+                // 진화 단계 변경
+                transform.GetChild(_currentEvolutionNum).gameObject.SetActive(false);
+                transform.GetChild(_evolutionNum).gameObject.SetActive(true);
+
+                _currentEvolutionNum++;
+                _evolutionNum++;
+            }
+
             yield return null;
         }
 
+        // 최종 회전 완료
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
+        isEvolutioning = false;
+        GameManager.Instance.OnEndEvolutioning();
 
+        // 진화 상태 업데이트
         if (_upgradeState == UpgradeState.low)
         {
             _upgradeState = UpgradeState.middle;
@@ -149,15 +160,4 @@ public class Digimon : MonoBehaviour, IHIt
             _upgradeState = UpgradeState.high;
         }
     }
-    IEnumerator AtkColliderOn()
-    {
-        atkCollider.enabled = true;
-        yield return new WaitForSeconds(0.5f);
-        atkCollider.enabled = false;
-    }
-
-    
-    //TODO : 전투 방식, Json 저장, 뽑기, UI 
-
-
 }
