@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
-  Enemy: {fileID: 0}
+  Enemies: []
+  vcam: {fileID: 0}

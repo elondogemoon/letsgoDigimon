@@ -15,9 +15,12 @@ public class Digimon : MonoBehaviour, IHIt
     public float CurrentHp { get; set; }
     public int MaxMP { get; set; }
     public int CurrentMP { get; set; }
-    public int CoolDown { get; set; }
+    public int CoolTime { get; set; }
     public float Damage { get; set; }
     public float SkillDamage { get; set; }
+    public Animator animator { get; set; }
+
+    public float LastAttackTime { get; set; }
 
     public int _evolutionNum;
     private int _currentEvolutionNum;
@@ -26,8 +29,7 @@ public class Digimon : MonoBehaviour, IHIt
     [SerializeField] private UpgradeState _upgradeState;
 
     private IState _playerState;
-    Animator animator;
-    BoxCollider atkCollider;
+    public BoxCollider atkCollider;
     public bool isEvolutioning { get; set; }
 
     protected virtual void Awake()
@@ -83,7 +85,7 @@ public class Digimon : MonoBehaviour, IHIt
 
         CurrentHp = MaxHP;
         CurrentMP = 0;
-        CoolDown = 0;
+        CoolTime = 0;
     }
 
     public void Hit(float damage)
@@ -97,8 +99,6 @@ public class Digimon : MonoBehaviour, IHIt
     {
         if (other.CompareTag("Enemy"))
         {
-            IHIt hit = other.GetComponent<IHIt>();
-            hit.Hit(Damage);
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
             transform.LookAt(target);
         }
@@ -120,7 +120,7 @@ public class Digimon : MonoBehaviour, IHIt
         float initialSpeed = 10f;
         float speedIncrease = 400f;
         float elapsedTime = 0f;
-        bool halfwayReached = false; // 절반 회전 체크
+        bool halfwayReached = false; 
 
         while (elapsedTime < duration)
         {
@@ -129,12 +129,10 @@ public class Digimon : MonoBehaviour, IHIt
             transform.Rotate(0, rotationAngle, 0);
             elapsedTime += Time.deltaTime;
 
-            // 회전 절반에서 진화 상태 변경
             if (!halfwayReached && elapsedTime >= duration / 2)
             {
                 halfwayReached = true;
 
-                // 진화 단계 변경
                 transform.GetChild(_currentEvolutionNum).gameObject.SetActive(false);
                 transform.GetChild(_evolutionNum).gameObject.SetActive(true);
 
@@ -150,7 +148,6 @@ public class Digimon : MonoBehaviour, IHIt
         isEvolutioning = false;
         GameManager.Instance.OnEndEvolutioning();
 
-        // 진화 상태 업데이트
         if (_upgradeState == UpgradeState.low)
         {
             _upgradeState = UpgradeState.middle;

@@ -11,15 +11,15 @@ public class PlayerState : IState
 
 public class PlayerEnter : PlayerState
 {
-    private readonly Digimon player;
+    private readonly Digimon _digimon;
     public PlayerEnter(Digimon playerState)
     {
-        player = playerState;
+        _digimon = playerState;
     }
 
     public override void EnterState()
     {
-       
+        _digimon.ChangeState(new PlayerAttack(_digimon));
     }
 
     public override void ExecuteOnUpdate()
@@ -32,22 +32,74 @@ public class PlayerEnter : PlayerState
 
 public class PlayerAttack : PlayerState
 {
-    private readonly PlayerState _playerState;
+    private readonly Digimon _digimon;
 
-    public PlayerAttack(PlayerState playerState)
+    public PlayerAttack(Digimon playerState)
     {
-        _playerState = playerState;
+        _digimon = playerState;
     }
 
+    public override void EnterState()
+    {
+        _digimon.animator.SetTrigger("Atk");
+    }
+    public override void ExecuteOnUpdate()
+    {
+        float currentTime = Time.time;
+        if (currentTime - _digimon.LastAttackTime >= _digimon.CoolTime)
+        {
+            _digimon.LastAttackTime = Time.time + 1000f;
+        }
+        var animInfo = _digimon.animator.GetCurrentAnimatorStateInfo(0);
+
+        if (animInfo.IsName("Atk"))
+        {
+            if (animInfo.normalizedTime < 0.32f)
+            {
+
+            }
+            else if (animInfo.normalizedTime < 0.55f)
+            {
+                _digimon.atkCollider.enabled = true;
+            }
+            else if (animInfo.normalizedTime < 0.80f)
+            {
+                _digimon.atkCollider.enabled = false;
+            }
+            else
+            {
+                _digimon.atkCollider.enabled = false;
+                _digimon.ChangeState(new PlayerEnter(_digimon));
+                return;
+            }
+        }
+    }
+
+    public override void ExitState()
+    {
+
+    }
+}
+
+public class PlayerEvolution : PlayerState
+{
+    private readonly Digimon _player;
+
+    public PlayerEvolution(Digimon player)
+    {
+        _player = player;
+    }
     public override void EnterState()
     {
 
     }
     public override void ExecuteOnUpdate()
     {
-        
+        if (_player.isEvolutioning == false)
+        {
+            _player.ChangeState(new PlayerEnter(_player));
+        }
     }
-
     public override void ExitState()
     {
 
