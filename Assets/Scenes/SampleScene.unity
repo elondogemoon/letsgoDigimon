@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14018894}
-  - component: {fileID: 14018893}
+  - component: {fileID: 14018895}
   m_Layer: 0
   m_Name: Gatcha
   m_TagString: Untagged
@@ -140,23 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &14018893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14018892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd41151c0f09ba4b8e9359e5b70b219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight:
-  - 40
-  - 30
-  - 20
-  - 10
 --- !u!4 &14018894
 Transform:
   m_ObjectHideFlags: 0
@@ -172,6 +155,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14018895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14018892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd41151c0f09ba4b8e9359e5b70b219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gachaItems:
+  - name: veemon
+    rarity: commono
+    itemObject: {fileID: 919132149155446097, guid: 7c0d3b3a59c89694ab0ede6c23df9599, type: 3}
+    weight: 6
+  - name: st
+    rarity: commono
+    itemObject: {fileID: 919132149155446097, guid: 0d9ba412f79ffe64085515d0765832c9, type: 3}
+    weight: 3
+  - name: v
+    rarity: rare
+    itemObject: {fileID: 919132149155446097, guid: 9a7c8eef63c272a47b778a2332feeb2a, type: 3}
+    weight: 1
 --- !u!1 &176227609
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +587,7 @@ MonoBehaviour:
   digimon: {fileID: 1976085287}
   EvolutionButton: {fileID: 502715805}
   vir2: {fileID: 899255942}
+  GatchaButton: {fileID: 2101240411}
 --- !u!1 &482354070
 GameObject:
   m_ObjectHideFlags: 3
@@ -1884,13 +1893,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 457370610}
+        m_TargetAssemblyTypeName: ActiveSkill, Assembly-CSharp
+        m_MethodName: OnGatcha
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2198,6 +2207,10 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1976085287}
+    - target: {fileID: 7516518552051140968, guid: ab9ea25ea1285a84fabc9d77fe62adb9, type: 3}
+      propertyPath: gatcha
+      value: 
+      objectReference: {fileID: 14018895}
     - target: {fileID: 8425448425172089853, guid: ab9ea25ea1285a84fabc9d77fe62adb9, type: 3}
       propertyPath: m_Name
       value: GameManager

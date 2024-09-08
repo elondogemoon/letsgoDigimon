@@ -4,35 +4,37 @@ using UnityEngine;
 
 public class Gatcha : MonoBehaviour
 {
-    [SerializeField] List<float> weight = new List<float>();
+    [SerializeField] private List<GachaItem> gachaItems = new List<GachaItem>(); // 가차 아이템 리스트
 
-
-
-    private void Start()
+    public void PerformGatcha()
     {
-        GetRandomByWeight(weight);
+        GachaItem selectedItem = GetRandomByWeight(gachaItems);
+
+        if (selectedItem != null)
+        {
+            Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
+        }
     }
-    private int GetRandomByWeight(List<float> weight)
+
+    private GachaItem GetRandomByWeight(List<GachaItem> items)
     {
         float totalWeight = 0;
-
-        foreach(var i in weight)
+        foreach (var item in items)
         {
-            totalWeight += i;
+            totalWeight += item.weight;
         }
 
-        float randomValue = Random.Range(0,totalWeight);
+        float randomValue = Random.Range(0, totalWeight);
         float accumulatedWeight = 0;
-        
-        for(int i =0;i<weight.Count;i++)
+
+        foreach (var item in items)
         {
-            accumulatedWeight += weight[i];
+            accumulatedWeight += item.weight;
             if (randomValue < accumulatedWeight)
             {
-                Debug.Log(i);
-                return i;
+                return item;
             }
         }
-        return 0;
+        return null;
     }
 }

@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] Digimon Player;
-    [SerializeField] List<Enemy> Enemies = new List<Enemy>();  // 모든 적을 관리할 리스트
-    [SerializeField] CinemachineVirtualCamera vcam;
-
+    [SerializeField] private Digimon Player;
+    [SerializeField] private List<Enemy> Enemies = new List<Enemy>();  // 모든 적을 관리할 리스트
+    [SerializeField] private CinemachineVirtualCamera vcam;
+    [SerializeField] private Gatcha gatcha; // Gatcha 스크립트 참조
     private float _zoomInFOV = 30f;  // 줌인 시 FOV 값
     private float _zoomOutFOV = 90f;  // 줌아웃 시 FOV 값
     private float _zoomSpeed = 2f;    // 줌 속도
@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     public void InitTarget(Enemy enemy)
     {
         enemy.target = Player.transform;
-        AddEnemyToList(enemy);  
+        AddEnemyToList(enemy);
     }
 
     private void AddEnemyToList(Enemy enemy)
@@ -27,12 +27,20 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void StartGatcha()
+    {
+        if (gatcha != null)
+        {
+            gatcha.PerformGatcha(); // PerformGatcha 메서드 호출
+        }
+    }
+
     public void WaitEvolutioning()
     {
         if (Player.isEvolutioning)
         {
             StopAllEnemies();
-            StartCoroutine(EvolutionCameraRoutine(10f));  
+            StartCoroutine(EvolutionCameraRoutine(10f));
         }
     }
 
@@ -75,7 +83,6 @@ public class GameManager : Singleton<GameManager>
         float startFOV = vcam.m_Lens.FieldOfView;
         float elapsedTime = 0f;
 
-        // 서서히 줌아웃 (FOV가 _zoomOutFOV까지 서서히 증가)
         while (vcam.m_Lens.FieldOfView < _zoomOutFOV)
         {
             elapsedTime += Time.deltaTime * _zoomSpeed;
@@ -84,7 +91,6 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    // 진화 중 카메라가 줌인 및 줌아웃하는 코루틴
     public IEnumerator EvolutionCameraRoutine(float duration)
     {
         yield return StartCoroutine(ZoomIn());

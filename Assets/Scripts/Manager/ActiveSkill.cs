@@ -11,6 +11,7 @@ public class ActiveSkill : MonoBehaviour
     public Button EvolutionButton;  // UI 버튼 참조
     private Action action;
     [SerializeField] GameObject vir2;
+    [SerializeField] Button GatchaButton;
 
     private void Awake()
     {
@@ -50,5 +51,9 @@ public class ActiveSkill : MonoBehaviour
     {
         digimon.EvolutionGauge = 0;
         digimon.OnEvolution();
+    }
+    public void OnGatcha()
+    {
+        GameManager.Instance.StartGatcha();
     }
 }
