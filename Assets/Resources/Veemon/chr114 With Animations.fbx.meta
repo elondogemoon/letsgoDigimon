@@ -19,7 +19,103 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'idle' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'J_center' has translation animation that will be discarded.\n\t'J_center'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_shoulder_l' has translation
+      animation that will be discarded.\n\t'J_shoulder_r' has translation animation
+      that will be discarded.\n\nClip 'damage' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'J_center' has translation animation that
+      will be discarded.\n\t'J_center' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'J_center_U' has translation animation
+      that will be discarded.\n\t'J_shoulder_l' has translation animation that will
+      be discarded.\n\t'J_yubi11_R' has translation animation that will be discarded.\n\t'J_yubi21_R'
+      has translation animation that will be discarded.\n\t'J_yubi41_R' has translation
+      animation that will be discarded.\n\t'J_yubi51_R' has translation animation
+      that will be discarded.\n\t'J_shoulder_r' has translation animation that will
+      be discarded.\n\t'J_yubi11_L' has translation animation that will be discarded.\n\t'J_yubi21_L'
+      has translation animation that will be discarded.\n\t'J_yubi31_L' has translation
+      animation that will be discarded.\n\nClip 'guard' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'J_center' has translation animation that
+      will be discarded.\n\t'J_center' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'J_center_U' has translation animation
+      that will be discarded.\n\t'J_shoulder_l' has translation animation that will
+      be discarded.\n\t'J_shoulder_r' has translation animation that will be discarded.\n\nClip
+      'glad' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'J_center'
+      has translation animation that will be discarded.\n\t'J_center' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_shoulder_l' has translation
+      animation that will be discarded.\n\t'J_shoulder_r' has translation animation
+      that will be discarded.\n\nClip 'win' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'J_center' has translation animation that will be discarded.\n\t'J_center'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\nClip 'eat' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'J_center' has translation
+      animation that will be discarded.\n\t'J_center' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'J_center_U' has translation
+      animation that will be discarded.\n\t'J_shoulder_l' has translation animation
+      that will be discarded.\n\t'J_shoulder_r' has translation animation that will
+      be discarded.\n\nClip 'move' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'J_center' has translation animation that will be discarded.\n\t'J_center'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_shoulder_l' has translation
+      animation that will be discarded.\n\t'J_shoulder_r' has translation animation
+      that will be discarded.\n\nClip 'down' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'J_center' has translation animation that will be discarded.\n\t'J_center'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_yubi11_R' has translation
+      animation that will be discarded.\n\t'J_yubi21_R' has translation animation
+      that will be discarded.\n\t'J_yubi41_R' has translation animation that will
+      be discarded.\n\t'J_yubi51_R' has translation animation that will be discarded.\n\t'J_shoulder_r'
+      has translation animation that will be discarded.\n\t'J_yubi11_L' has translation
+      animation that will be discarded.\n\t'J_yubi21_L' has translation animation
+      that will be discarded.\n\t'J_yubi31_L' has translation animation that will
+      be discarded.\n\t'J_yubi41_L' has translation animation that will be discarded.\n\nClip
+      'getup' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'J_center'
+      has translation animation that will be discarded.\n\t'J_center' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_shoulder_l' has translation
+      animation that will be discarded.\n\t'J_yubi11_R' has translation animation
+      that will be discarded.\n\t'J_yubi21_R' has translation animation that will
+      be discarded.\n\t'J_yubi41_R' has translation animation that will be discarded.\n\t'J_yubi51_R'
+      has translation animation that will be discarded.\n\t'J_shoulder_r' has translation
+      animation that will be discarded.\n\t'J_yubi11_L' has translation animation
+      that will be discarded.\n\t'J_yubi21_L' has translation animation that will
+      be discarded.\n\t'J_yubi31_L' has translation animation that will be discarded.\n\nClip
+      'attack01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'J_center'
+      has translation animation that will be discarded.\n\t'J_center' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\t'J_shoulder_l' has translation
+      animation that will be discarded.\n\t'J_shoulder_r' has translation animation
+      that will be discarded.\n\nClip 'attack02' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'J_center' has translation animation that
+      will be discarded.\n\t'J_center' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'J_center_U' has translation animation
+      that will be discarded.\n\t'J_shoulder_l' has translation animation that will
+      be discarded.\n\t'J_shoulder_r' has translation animation that will be discarded.\n\nClip
+      'special01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'J_center'
+      has translation animation that will be discarded.\n\t'J_center' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'J_center_U'
+      has translation animation that will be discarded.\n\nClip 'special02' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'J_center' has translation
+      animation that will be discarded.\n\t'J_center' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'J_center_U' has translation
+      animation that will be discarded.\n\t'J_shoulder_l' has translation animation
+      that will be discarded.\n\t'J_shoulder_r' has translation animation that will
+      be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -31,7 +127,384 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: idle
+      internalID: -5252816984213320552
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: damage
+      takeName: damage
+      internalID: -3551865654841311323
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: guard
+      takeName: guard
+      internalID: 3299788110970749302
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: glad
+      takeName: glad
+      internalID: 6449168784601765025
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: win
+      takeName: win
+      internalID: -6683392220820474592
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: eat
+      takeName: eat
+      internalID: -3824078280368627652
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: move
+      takeName: move
+      internalID: -139364887524879693
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: down
+      takeName: down
+      internalID: 5826557733320977955
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: getup
+      takeName: getup
+      internalID: 4809529283753704848
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack01
+      takeName: attack01
+      internalID: -4304836385353429653
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack02
+      takeName: attack02
+      internalID: 4189676145174806922
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: special01
+      takeName: special01
+      internalID: -1518165454022731188
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: special02
+      takeName: special02
+      internalID: -2587487333558878155
+      firstFrame: 0
+      lastFrame: 73
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -80,8 +553,664 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: J_root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_leg_l
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_leg_r
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_knee_l
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_knee_r
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_foot_l
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_foot_r
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_center_U
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_neck
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_shoulder_l
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_shoulder_r
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_arm_l
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_arm_r
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_ancon_l
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_ancon_r
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_wrist_l
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_wrist_r
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_toe_l
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_toe_r
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_tsuno1_L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_tsuno1_R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi51_R
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi52_R
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi41_R
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi42_R
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi31_R
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi32_R
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi21_R
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi22_R
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi11_R
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi12_R
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi51_L
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi52_L
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi41_L
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi42_L
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi31_L
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi32_L
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi21_L
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi22_L
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi11_L
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: J_yubi12_L
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: chr114 With Animations(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: prefab
+      parentName: chr114 With Animations(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chr114
+      parentName: prefab
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GRP_joint
+      parentName: chr114
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 3.937008, y: 3.937008, z: 3.937008}
+    - name: CP01
+      parentName: GRP_joint
+      position: {x: -0, y: 0.0012889233, z: 0.00019862803}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: FP01
+      parentName: GRP_joint
+      position: {x: -0, y: 0.00147028, z: 0.0015328905}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GP01
+      parentName: GRP_joint
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_root
+      parentName: GRP_joint
+      position: {x: 0, y: 0.00012096397, z: 0}
+      rotation: {x: -0, y: -0.99999905, z: -0, w: 0.0013721681}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_center_U
+      parentName: J_root
+      position: {x: 0.0000057825428, y: 0.00066024595, z: -0.00004963137}
+      rotation: {x: 0.0000000014551913, y: -0.000000034924597, z: -7.275957e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharacterCenterTarget
+      parentName: J_center_U
+      position: {x: -0, y: 0.00020199998, z: 0}
+      rotation: {x: -0.000000021855696, y: 0, z: -0, w: 1}
+      scale: {x: 0.2539999, y: 0.2539999, z: 0.2539999}
+    - name: J_chest
+      parentName: J_center_U
+      position: {x: -0, y: 0.00018891253, z: -0.0000039602146}
+      rotation: {x: 0.00000001018634, y: 0.000000034924597, z: 0.0000000036379781, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_neck
+      parentName: J_chest
+      position: {x: -2.2471605e-20, y: 0.000319532, z: 5.1645975e-12}
+      rotation: {x: -0.00000001018634, y: -4.547475e-11, z: -8.562038e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: HUDTarget
+      parentName: J_neck
+      position: {x: -0, y: 0.00084, z: 0}
+      rotation: {x: -0.000000021855696, y: 0, z: -0, w: 1}
+      scale: {x: 0.2539999, y: 0.2539999, z: 0.2539999}
+    - name: CharacterFaceCenterTarget
+      parentName: J_neck
+      position: {x: -0, y: -0.0004074171, z: 0.0000039601746}
+      rotation: {x: -0.000000021855696, y: 0, z: -0, w: 1}
+      scale: {x: 0.2539999, y: 0.2539999, z: 0.2539999}
+    - name: J_ago
+      parentName: J_neck
+      position: {x: 1.4981071e-20, y: 0.00009151874, z: 0.0001495672}
+      rotation: {x: -0.000000013096721, y: -4.5474714e-11, z: -0.000000001951861, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_mabutaT_L
+      parentName: J_neck
+      position: {x: -0.00009614715, y: 0.00040373343, z: 0.00008798741}
+      rotation: {x: -0, y: 1.3877788e-17, z: 1.1055908e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: J_mabutaT_R
+      parentName: J_neck
+      position: {x: 0.00009614718, y: 0.00040373343, z: 0.00008798741}
+      rotation: {x: -0, y: 1.3877788e-17, z: 1.1055908e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: J_tsuno1_L
+      parentName: J_neck
+      position: {x: -0.00027134657, y: 0.0007027888, z: -0.00017211084}
+      rotation: {x: -0.0000000014551915, y: 6.821211e-10, z: -0.0000000056694205, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: J_tsuno2_L
+      parentName: J_tsuno1_L
+      position: {x: -0.00020264808, y: 0.00009862215, z: -0.00031625014}
+      rotation: {x: -0.00000004656613, y: 0.000000004183675, z: 7.9580875e-10, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
+    - name: J_tsuno1_R
+      parentName: J_neck
+      position: {x: 0.0002713474, y: 0.000702788, z: -0.00017211077}
+      rotation: {x: 0.000000010186339, y: 7.7307055e-10, z: -0.000000006158274, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: J_tsuno2_R
+      parentName: J_tsuno1_R
+      position: {x: 0.00020264805, y: 0.00009862312, z: -0.00031625014}
+      rotation: {x: 8.881784e-16, y: 7.275957e-10, z: 0.0000000033764989, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_shoulder_r
+      parentName: J_chest
+      position: {x: -0.00007917762, y: 0.00025169904, z: -0.000024859743}
+      rotation: {x: -0, y: -0, z: 8.83354e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_arm_r
+      parentName: J_shoulder_r
+      position: {x: -0.00007496667, y: 0.0000011265903, z: 0.0000102244185}
+      rotation: {x: 0.0000018027544, y: 0.0029083597, z: -0.00066967146, w: 0.9999956}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_ancon_r
+      parentName: J_arm_r
+      position: {x: -0.00025288475, y: -0.0000050529884, z: -0.000022640052}
+      rotation: {x: 0.000000011641534, y: -0.00000002910383, z: 0.000000026193444, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: J_wrist_r
+      parentName: J_ancon_r
+      position: {x: -0.0003031711, y: -0.000009752213, z: 0.000011105375}
+      rotation: {x: 0.000000017462296, y: -0, z: -0.0000000029103826, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+    - name: J_yubi11_L
+      parentName: J_wrist_r
+      position: {x: -0.00015229432, y: -0.000046465244, z: 0.00015438211}
+      rotation: {x: -0.028188718, y: -0.30768818, z: -0.023627618, w: 0.9507761}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: J_yubi12_L
+      parentName: J_yubi11_L
+      position: {x: -0.00006811822, y: 0, z: 0.00008126636}
+      rotation: {x: 2.6147973e-10, y: 0.0000000035271337, z: -0.0000000014551914, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: J_yubi51_L
+      parentName: J_wrist_r
+      position: {x: -0.00030588498, y: 0.0000166353, z: -0.0001239074}
+      rotation: {x: 0.0000002468277, y: -0.26482108, z: -0.026098792, w: 0.9639443}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000001}
+    - name: J_yubi52_L
+      parentName: J_yubi51_L
+      position: {x: -0.00010279424, y: 1.1984857e-19, z: -1.1984857e-19}
+      rotation: {x: 0.000000032014206, y: 0.000000005820767, z: 0.000000005820763, w: 1}
+      scale: {x: 1, y: 1.0000005, z: 1.0000002}
+    - name: J_yubi41_L
+      parentName: J_wrist_r
+      position: {x: -0.0003061134, y: 0.000016121767, z: -0.000046817244}
+      rotation: {x: -0.000000017462298, y: 9.0949476e-10, z: 0.0000000076397555, w: 1}
+      scale: {x: 1.0000011, y: 1.0000004, z: 1.0000005}
+    - name: J_yubi42_L
+      parentName: J_yubi41_L
+      position: {x: -0.00010940175, y: 0, z: -2.3969714e-19}
+      rotation: {x: 0.000000011641534, y: -0.000000024192559, z: -0.000000004729372, w: 1}
+      scale: {x: 0.9999994, y: 1.0000007, z: 1.0000002}
+    - name: J_yubi31_L
+      parentName: J_wrist_r
+      position: {x: -0.00030102397, y: 0.000025016205, z: 0.00003336419}
+      rotation: {x: -0.000000052386888, y: 0.000000017462298, z: 0.000000014551915, w: 1}
+      scale: {x: 1.0000006, y: 1, z: 1.0000004}
+    - name: J_yubi32_L
+      parentName: J_yubi31_L
+      position: {x: -0.00012658126, y: -4.793943e-19, z: 0}
+      rotation: {x: 0.000000056752462, y: 0.000000029103823, z: -0.0000000058207648, w: 1}
+      scale: {x: 0.99999976, y: 1.000001, z: 1.0000005}
+    - name: J_yubi21_L
+      parentName: J_wrist_r
+      position: {x: -0.0003021758, y: 0.000016882559, z: 0.00010948384}
+      rotation: {x: -0.000000005820766, y: 2.371692e-16, z: 0.000000014551915, w: 1}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000004}
+    - name: J_yubi22_L
+      parentName: J_yubi21_L
+      position: {x: -0.00010940175, y: -2.3969714e-19, z: -3.5954581e-19}
+      rotation: {x: 0.0000000058207656, y: -0.000000023283064, z: -0.000000023283064, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000005}
+    - name: J_shoulder_l
+      parentName: J_chest
+      position: {x: 0.00008122045, y: 0.00025102048, z: -0.000023156417}
+      rotation: {x: -0, y: -0, z: 8.83354e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_arm_l
+      parentName: J_shoulder_l
+      position: {x: 0.00007496653, y: 0.000001126998, z: 0.0000102244185}
+      rotation: {x: -0.0000033834237, y: -0.0056648655, z: 0.0012270189, w: 0.9999832}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: J_ancon_l
+      parentName: J_arm_l
+      position: {x: 0.00025288583, y: -0.000005054219, z: -0.000022639944}
+      rotation: {x: 0.000000001455192, y: -0.00000004656612, z: -0.000000020372681, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: J_wrist_l
+      parentName: J_ancon_l
+      position: {x: 0.0003031711, y: -0.000009752203, z: 0.000011105291}
+      rotation: {x: -0.00000003028617, y: 0.000000052386888, z: 0.000000003637981, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: J_yubi11_R
+      parentName: J_wrist_l
+      position: {x: 0.00017286073, y: -0.00003843657, z: 0.00014876384}
+      rotation: {x: -0.0183029, y: 0.30161935, z: 0.015342107, w: 0.9531293}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: J_yubi12_R
+      parentName: J_yubi11_R
+      position: {x: 0.00006811861, y: -1.7977287e-19, z: 0.00008126562}
+      rotation: {x: 0.000000034924586, y: 0.00000007421476, z: -0.00000002328306, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: J_yubi51_R
+      parentName: J_wrist_l
+      position: {x: 0.0002897568, y: 0.000019505718, z: -0.000108403496}
+      rotation: {x: 0.0000002620325, y: 0.25792998, z: 0.016991207, w: 0.9660142}
+      scale: {x: 1.0000007, y: 1.0000002, z: 1.0000001}
+    - name: J_yubi52_R
+      parentName: J_yubi51_R
+      position: {x: 0.00010279431, y: -2.6965933e-19, z: 0}
+      rotation: {x: -0.000000010913935, y: 0.0000000043655746, z: -0.000000002910383, w: 1}
+      scale: {x: 0.99999976, y: 1.0000005, z: 1.0000001}
+    - name: J_yubi41_R
+      parentName: J_wrist_l
+      position: {x: 0.0003061838, y: 0.000016787939, z: -0.000039564216}
+      rotation: {x: 0.000000033196553, y: 0.0000000050931703, z: 0.0000000065483614, w: 1}
+      scale: {x: 1.0000004, y: 1, z: 1}
+    - name: J_yubi42_R
+      parentName: J_yubi41_R
+      position: {x: 0.00010940301, y: 1.1984857e-19, z: 4.793943e-19}
+      rotation: {x: -0.0000000012732926, y: -0.0000000138243195, z: 0.0000000014551914, w: 1}
+      scale: {x: 1.0000001, y: 1.0000008, z: 1.0000004}
+    - name: J_yubi31_R
+      parentName: J_wrist_l
+      position: {x: 0.0003059331, y: 0.000016640442, z: 0.00003782963}
+      rotation: {x: 0.000000033196553, y: 0.00000004656612, z: 0.000000028376233, w: 1}
+      scale: {x: 1.0000005, y: 1, z: 1}
+    - name: J_yubi32_R
+      parentName: J_yubi31_R
+      position: {x: 0.00012658216, y: -2.3969714e-19, z: 5.3931866e-19}
+      rotation: {x: -0.000000021100279, y: -0.00000004656612, z: -0.000000030559022, w: 1}
+      scale: {x: 0.99999994, y: 1.0000007, z: 1.0000002}
+    - name: J_yubi21_R
+      parentName: J_wrist_l
+      position: {x: 0.0003069869, y: 0.000016676962, z: 0.00011263238}
+      rotation: {x: 0.00000004483808, y: 0.000000008731149, z: 0.0000000167347, w: 1}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000001}
+    - name: J_yubi22_R
+      parentName: J_yubi21_R
+      position: {x: 0.00010940301, y: 3.5954581e-19, z: 1.1984857e-19}
+      rotation: {x: 0.000000021827873, y: -0.000000026193447, z: -0.0000000058207634, w: 1}
+      scale: {x: 1.0000001, y: 1.000001, z: 1.0000005}
+    - name: J_center
+      parentName: J_root
+      position: {x: 0.0000057825428, y: 0.00066024595, z: -0.00004963137}
+      rotation: {x: -1.6940656e-16, y: -0.000000011641531, z: 0.000000014551914, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: J_tail_a
+      parentName: J_center
+      position: {x: -7.490536e-21, y: -0.000090582915, z: -0.00018429829}
+      rotation: {x: 7.2759554e-10, y: -0, z: -0.000000013460521, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
+    - name: J_tail_b
+      parentName: J_tail_a
+      position: {x: -2.996215e-20, y: -0.000013246406, z: -0.00047172615}
+      rotation: {x: 0.0000000109139355, y: 0.000000011641531, z: 0.0000000047293724, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_leg_r
+      parentName: J_center
+      position: {x: -0.00021163726, y: -0.00007304636, z: 0.000059732014}
+      rotation: {x: 0.11664486, y: -0.0058306255, z: -0.011455764, w: 0.9930905}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: J_knee_r
+      parentName: J_leg_r
+      position: {x: 1.1984857e-19, y: -0.00026017893, z: 0.00013242375}
+      rotation: {x: -0.3694828, y: 0.006512147, z: -0.008208803, w: 0.9291785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_foot_r
+      parentName: J_knee_r
+      position: {x: -1.7977287e-19, y: -0.00020319244, z: -0.0001611936}
+      rotation: {x: 0.051180832, y: -0.9595164, z: -0.25410804, w: 0.1101723}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: J_toe_r
+      parentName: J_foot_r
+      position: {x: 5.99243e-20, y: -0.00014753599, z: 0.0002642454}
+      rotation: {x: -3.6378722e-10, y: 0.000000023283063, z: 3.924805e-15, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: J_leg_l
+      parentName: J_center
+      position: {x: 0.000211582, y: -0.00007304636, z: 0.000059732014}
+      rotation: {x: 0.11650232, y: 0.0058267014, z: 0.011447886, w: 0.9931074}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: J_knee_l
+      parentName: J_leg_l
+      position: {x: -0, y: -0.00026017893, z: 0.00013242375}
+      rotation: {x: -0.3694755, y: -0.006301276, z: 0.007943037, w: 0.92918515}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: J_foot_l
+      parentName: J_knee_l
+      position: {x: -0, y: -0.00020319244, z: -0.0001611936}
+      rotation: {x: 0.051684346, y: 0.9591361, z: 0.25412363, w: 0.113172114}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: J_toe_l
+      parentName: J_foot_l
+      position: {x: 1.1984857e-19, y: -0.00014753599, z: 0.0002642454}
+      rotation: {x: 3.6379788e-10, y: -0, z: -3.638145e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: TP01
+      parentName: GRP_joint
+      position: {x: -0, y: 0.002221611, z: 3.0681234e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GRP_mesh
+      parentName: chr114
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.39370078, y: 0.39370078, z: 0.39370078}
+    - name: chr114
+      parentName: GRP_mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chr114_0
+      parentName: chr114
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

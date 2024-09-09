@@ -24,12 +24,12 @@ public class Digimon : MonoBehaviour, IHIt
     public bool isEvolutioning { get; set; }
 
     public float TargetDistance { get; set; }
+    public float Rarity { get; set; }
     public int _evolutionNum;
-    private int _currentEvolutionNum;
+    protected int _currentEvolutionNum;
 
     [SerializeField] public float EvolutionGauge;
     public UpgradeState _upgradeState;
-
     private IState _playerState;
     public BoxCollider atkCollider;
 
@@ -112,7 +112,7 @@ public class Digimon : MonoBehaviour, IHIt
         ApplyUpgradeState();
     }
 
-    public IEnumerator EvolutionStart()
+    protected virtual IEnumerator EvolutionStart()
     {
         isEvolutioning = true;
         GameManager.Instance.WaitEvolutioning();

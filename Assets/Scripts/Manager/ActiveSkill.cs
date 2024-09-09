@@ -13,7 +13,7 @@ public class ActiveSkill : MonoBehaviour
     private Action action;
     [SerializeField] GameObject vir2;
     [SerializeField] Button GatchaButton;
-    [SerializeField] TextMeshProUGUI GatchaText;
+    [SerializeField] Button SkillButton;
     private void Awake()
     {
         action = RegistEvent;
@@ -29,6 +29,14 @@ public class ActiveSkill : MonoBehaviour
         else 
         {
             EvolutionButton.interactable = false;
+        }
+        if (digimon.CurrentMP >= 100)
+        {
+            SkillButton.interactable = true;
+        }
+        else
+        {
+            SkillButton.interactable = false;
         }
     }
 

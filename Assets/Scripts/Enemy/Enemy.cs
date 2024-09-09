@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, IHIt
     public BoxCollider collider;
     private IState _enemyState;
     private bool isStop;
-
+    private bool isPool = true;
     private void Awake()
     {
         Hp = 100;
@@ -34,7 +34,17 @@ public class Enemy : MonoBehaviour, IHIt
         collider = GetComponentInChildren<BoxCollider>();
         ChangeState(new MonsterEnter(this));
     }
-
+    private void OnDisable()
+    {
+        if (!isPool)
+        {
+            GameManager.Instance.CountEnemy();
+        }
+        else
+        {
+            isPool = false;
+        }
+    }
     private void Update()
     {
         if (!isStop)

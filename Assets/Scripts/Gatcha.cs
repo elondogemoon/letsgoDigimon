@@ -5,29 +5,38 @@ using Newtonsoft.Json;
 using System.IO;
 using UnityEngine.UI;
 using TMPro;
+
 public class Gatcha : MonoBehaviour
 {
     [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); // 가차 아이템 리스트
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
 
-    [SerializeField] Image gachaImage;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] private Image gachaImage; // UI 이미지 컴포넌트
+    [SerializeField] private TextMeshProUGUI text; // UI 텍스트 컴포넌트
+
     private string filePath;
 
     private void Start()
     {
         filePath = Application.persistentDataPath + "/gachaResults.json"; // 파일 저장 경로 설정
-        LoadResult(); 
+        LoadResult();
     }
 
     public void PerformGatcha()
     {
-        GachaItem selectedItem = GetRandomByWeight(gachaItems);
+        GachaItem selectedItem = GetRandomByWeight(gachaItems); // 가중치 기반으로 랜덤 아이템 선택
 
         if (selectedItem != null)
         {
             Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
+
+            // 아이템을 스폰 (가정: 아이템을 스폰하는 로직 필요)
+            GameObject spawnedObject = SpawnItem(selectedItem);
+
+            // 가챠 결과를 저장
             AddGachaResult(selectedItem);
+
+            // UI 업데이트
             UpdateUI(selectedItem);
         }
     }
@@ -56,11 +65,15 @@ public class Gatcha : MonoBehaviour
 
     private void AddGachaResult(GachaItem item)
     {
-        gachaResult[item.name] = new GachaResult { name = item.name, rarity = item.rarity };
-        Debug.Log($"저장된 아이템: {item.name}, 등급: {item.rarity}");
-        StoreResult(); // 결과 저장
+        gachaResult[item.name] = new GachaResult
+        {
+            name = item.name,
+            rarity = item.rarity,
+        };
+        StoreResult(); 
     }
 
+    // JSON 파일로 저장
     private void StoreResult()
     {
         string json = JsonConvert.SerializeObject(gachaResult, Formatting.Indented); // JSON으로 변환
@@ -68,6 +81,7 @@ public class Gatcha : MonoBehaviour
         Debug.Log("결과가 JSON으로 저장되었습니다.");
     }
 
+    // 기존 JSON 파일에서 결과를 불러옴
     private void LoadResult()
     {
         if (File.Exists(filePath)) // 파일이 존재하면
@@ -81,10 +95,18 @@ public class Gatcha : MonoBehaviour
             Debug.Log("저장된 가챠 결과가 없습니다.");
         }
     }
+
     public void UpdateUI(GachaItem item)
     {
-        gachaImage.sprite = item.Image;
+        gachaImage.sprite = item.Image; 
         gachaImage.enabled = true;
-        text.text = $"{item.name} {item.rarity}등급을 획득했다 !";
+        text.text = $"{item.name} {item.rarity}등급을 획득했다!"; 
+    }
+
+    private GameObject SpawnItem(GachaItem item)
+    {
+        GameObject spawnedObject = Instantiate(item.itemObject);
+        spawnedObject.transform.position = new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)); // 랜덤 위치에 생성
+        return spawnedObject;
     }
 }

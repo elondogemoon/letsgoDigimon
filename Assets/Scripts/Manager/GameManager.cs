@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     private float _zoomOutFOV = 90f;  // ÁÜ¾Æ¿ô ½Ã FOV °ª
     private float _zoomSpeed = 2f;    // ÁÜ ¼Óµµ
 
+    private int _enemyKillCount;
     public void InitTarget(Enemy enemy)
     {
         enemy.target = Player.transform;
@@ -64,7 +65,12 @@ public class GameManager : Singleton<GameManager>
             enemy.ResumeEnemy();
         }
     }
-
+    
+    public void CountEnemy()
+    {
+        _enemyKillCount++;
+        Debug.Log(_enemyKillCount);
+    }
     
 
     private IEnumerator ZoomIn()
