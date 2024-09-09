@@ -7,4 +7,5 @@ public class GachaItem
     public string rarity;         // 아이템 등급
     public GameObject itemObject; // 아이템에 해당하는 게임 오브젝트
     public float weight;          // 가중치
+    public Sprite Image;
 }

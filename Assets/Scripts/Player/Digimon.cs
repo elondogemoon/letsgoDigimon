@@ -92,7 +92,6 @@ public class Digimon : MonoBehaviour, IHIt
     public void Hit(float damage)
     {
         CurrentHp -= damage;
-        animator.SetTrigger("Damaged");
         EvolutionGauge += 15;
     }
 
@@ -105,13 +104,10 @@ public class Digimon : MonoBehaviour, IHIt
         }
     }
 
-    public void FindTarget()
-    {
-
-    }
-
+    
     public void OnEvolution()
     {
+        animator.enabled = false;
         StartCoroutine(EvolutionStart());
         ApplyUpgradeState();
     }

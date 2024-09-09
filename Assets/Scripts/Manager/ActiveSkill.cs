@@ -12,7 +12,6 @@ public class ActiveSkill : MonoBehaviour
     private Action action;
     [SerializeField] GameObject vir2;
     [SerializeField] Button GatchaButton;
-
     private void Awake()
     {
         action = RegistEvent;
@@ -56,4 +55,6 @@ public class ActiveSkill : MonoBehaviour
     {
         GameManager.Instance.StartGatcha();
     }
+
+    
 }

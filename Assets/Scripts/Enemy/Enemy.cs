@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour, IHIt
         {
             ObjectPoolManager.Instance.EnqueueObject(gameObject);
         }
-        Debug.Log($"Hp :  {CurrentHp}");
     }
 
     public void StopWhenEvolution()

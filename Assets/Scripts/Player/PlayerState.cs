@@ -14,7 +14,6 @@ public class PlayerEnter : PlayerState
     private readonly Digimon _digimon;
     public PlayerEnter(Digimon playerState)
     {
-        Debug.Log("현재상태 enter");
         _digimon = playerState;
     }
 
@@ -42,7 +41,6 @@ public class PlayerAttack : PlayerState
 
     public override void EnterState()
     {
-        Debug.Log("현재상태 attack");
         _digimon.animator.SetTrigger("Atk");
     }
 
