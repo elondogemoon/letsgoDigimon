@@ -4,12 +4,14 @@ using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
 using UnityEngine.UI;
+using TMPro;
 public class Gatcha : MonoBehaviour
 {
     [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); // 가차 아이템 리스트
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
 
     [SerializeField] Image gachaImage;
+    [SerializeField] TextMeshProUGUI text;
     private string filePath;
 
     private void Start()
@@ -83,5 +85,6 @@ public class Gatcha : MonoBehaviour
     {
         gachaImage.sprite = item.Image;
         gachaImage.enabled = true;
+        text.text = $"{item.name} {item.rarity}등급을 획득했다 !";
     }
 }
