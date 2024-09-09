@@ -295,7 +295,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388668594}
-  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.16617449, w: 0.8325758}
+  m_LocalRotation: {x: 0.39778656, y: 0.34780678, z: -0.16617449, w: 0.8325758}
   m_LocalPosition: {x: -2.9559667, y: 5.1452355, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
   EvolutionButton: {fileID: 502715805}
   vir2: {fileID: 899255942}
   GatchaButton: {fileID: 2101240411}
-  GatchaText: {fileID: 0}
+  SkillButton: {fileID: 769800423}
 --- !u!1 &482354070
 GameObject:
   m_ObjectHideFlags: 3
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 502715806}
   - component: {fileID: 502715805}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: EvolutionBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,7 +974,7 @@ GameObject:
   - component: {fileID: 769800424}
   - component: {fileID: 769800423}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: SkillBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,7 +1320,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.16617449, w: 0.8325758}
+  m_LocalRotation: {x: 0.39778656, y: 0.34780678, z: -0.16617449, w: 0.8325758}
   m_LocalPosition: {x: -2.9559667, y: 5.1452355, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1582,11 +1582,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1228802394 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-  m_PrefabInstance: {fileID: 7773632903039290102}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1351835827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,23 +1729,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2300883152269549053, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
   m_PrefabInstance: {fileID: 7773632903039290102}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1573964141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573964136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c79610a6dd25e64690899b38171f850, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  _evolutionNum: 0
-  EvolutionGauge: 0
-  _upgradeState: 0
-  atkCollider: {fileID: 1228802394}
 --- !u!1 &1657315188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +1945,7 @@ GameObject:
   - component: {fileID: 2101240411}
   - component: {fileID: 2101240414}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: GachaBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2466,6 +2444,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 774854037}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].name
       value: "\uBE0C\uC774\uBAAC"
       objectReference: {fileID: 0}
@@ -2475,24 +2457,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[2].name
-      value: "\uD30C\uC77C\uB4DC\uB77C\uBAAC"
+      value: "\uC2A4\uD305\uBAAC"
       objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[3].name
+      value: "\uC2A4\uD305\uBAAC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[3].Image
+      value: 
+      objectReference: {fileID: 21300000, guid: 2014cbc419452e94eb564909c8641bc7, type: 3}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].rarity
       value: Common
       objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[1].rarity
-      value: Common
+      value: Rare
       objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[2].rarity
-      value: Rare
+      value: Unique
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[2].weight
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[3].rarity
+      value: Unique
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[3].weight
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].itemObject
       value: 
-      objectReference: {fileID: 8230026001736932457, guid: e42e58f46545c8f408dc2dab4cf9cb43, type: 3}
+      objectReference: {fileID: 1573964136}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[1].itemObject
       value: 
@@ -2500,7 +2502,11 @@ PrefabInstance:
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[2].itemObject
       value: 
-      objectReference: {fileID: 622301583622921501, guid: 49c4efafadcba8b49b15271a0608ebad, type: 3}
+      objectReference: {fileID: 1694766380694823539, guid: 14f250fe368928d4a89aeba9167cd452, type: 3}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[3].itemObject
+      value: 
+      objectReference: {fileID: 1694766380694823539, guid: 14f250fe368928d4a89aeba9167cd452, type: 3}
     - target: {fileID: 7460289532801183554, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: m_Name
       value: Gatcha
@@ -2514,25 +2520,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_Size.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_Size.y
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_Size.z
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_Enabled
+    - target: {fileID: 333090407958837203, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1095696910779302963, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300883152269549053, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_Name
@@ -2542,25 +2532,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4843611659683403285, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.045
-      objectReference: {fileID: 0}
-    - target: {fileID: 4843611659683403285, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.331
-      objectReference: {fileID: 0}
-    - target: {fileID: 4843611659683403285, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.508
-      objectReference: {fileID: 0}
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_RootOrder
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.013
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2568,7 +2546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.108
+      value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2597,10 +2575,6 @@ PrefabInstance:
     - target: {fileID: 5676571857499135590, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7508784782260937976, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c62a8cc3dbf930438477a7eaa3b0493, type: 3}

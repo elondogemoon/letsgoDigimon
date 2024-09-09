@@ -49,7 +49,7 @@ public class Digimon : MonoBehaviour, IHIt
         ChangeState(new PlayerEnter(this));
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         _playerState.ExecuteOnUpdate();
     }

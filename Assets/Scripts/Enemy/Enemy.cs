@@ -83,7 +83,6 @@ public class Enemy : MonoBehaviour, IHIt
         }
     }
 
-    // 적의 움직임을 재개하는 메서드
     public void ResumeEnemy()
     {
         isStop = false;

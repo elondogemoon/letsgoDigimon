@@ -1,16 +1,19 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class GachaDigimon : Digimon
 {
+
     
     protected override IEnumerator EvolutionStart()
     {
         isEvolutioning = true;
 
-        Vector3 finalRotation = new Vector3(0, 180, 0);
+        Vector3 finalRotation = new Vector3(0, -180, 0);
         float duration = 10f;
         float initialSpeed = 10f;
         float speedIncrease = 400f;
