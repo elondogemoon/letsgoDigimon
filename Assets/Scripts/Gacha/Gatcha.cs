@@ -11,24 +11,25 @@ public class Gatcha : MonoBehaviour
     [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); 
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
 
+    private string _count;
     private string filePath;
 
     private void Start()
     {
-        filePath = Application.persistentDataPath + "/gachaResults.json"; // 파일 저장 경로 설정
+        filePath = Application.persistentDataPath + "/gachaResults.json"; 
         LoadResult();
     }
 
     public void PerformGatcha()
     {
-        GachaItem selectedItem = GetRandomByWeight(gachaItems); // 가중치 기반으로 랜덤 아이템 선택
+        GachaItem selectedItem = GetRandomByWeight(gachaItems); 
 
         if (selectedItem != null)
         {
             Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
 
             // 아이템을 스폰 (가정: 아이템을 스폰하는 로직 필요)
-            GameObject spawnedObject = SpawnItem(selectedItem);
+            SpawnItem(selectedItem);
 
             // 가챠 결과를 저장
             AddGachaResult(selectedItem);
@@ -78,10 +79,9 @@ public class Gatcha : MonoBehaviour
         Debug.Log("결과가 JSON으로 저장되었습니다.");
     }
 
-    // 기존 JSON 파일에서 결과를 불러옴
     private void LoadResult()
     {
-        if (File.Exists(filePath)) // 파일이 존재하면
+        if (File.Exists(filePath)) 
         {
             string json = File.ReadAllText(filePath); // JSON 파일 읽기
             gachaResult = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json); // 딕셔너리로 변환

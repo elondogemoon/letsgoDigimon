@@ -24,18 +24,20 @@ public class Digimon : MonoBehaviour, IHIt
     public bool isEvolutioning { get; set; }
 
     public float TargetDistance { get; set; }
+    public float EvolutionGauge { get; set; }
     public float Rarity { get; set; }
     public int _evolutionNum;
     protected int _currentEvolutionNum;
 
-    [SerializeField] public float EvolutionGauge;
     public UpgradeState _upgradeState;
     private IState _playerState;
     public BoxCollider atkCollider;
 
+    GameData data = new GameData();
 
     protected virtual void Awake()
     {
+        MaxHP = data.hp;
         ApplyUpgradeState();
         animator = GetComponentInChildren<Animator>();
         atkCollider = GetComponentInChildren<BoxCollider>();
@@ -49,7 +51,7 @@ public class Digimon : MonoBehaviour, IHIt
         ChangeState(new PlayerEnter(this));
     }
 
-    protected virtual void Update()
+    public virtual void Update()
     {
         _playerState.ExecuteOnUpdate();
     }
@@ -86,7 +88,6 @@ public class Digimon : MonoBehaviour, IHIt
         }
         CurrentHp = MaxHP;
         CurrentMP = 0;
-        CoolTime = 0;
     }
 
     public void Hit(float damage)
@@ -104,7 +105,6 @@ public class Digimon : MonoBehaviour, IHIt
         }
     }
 
-    
     public void OnEvolution()
     {
         animator.enabled = false;

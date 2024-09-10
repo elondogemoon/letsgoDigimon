@@ -5,10 +5,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
-public class GachaDigimon : Digimon
+public class GachaDigimon : Digimon,IHIt
 {
 
-    
     protected override IEnumerator EvolutionStart()
     {
         isEvolutioning = true;
@@ -58,8 +57,9 @@ public class GachaDigimon : Digimon
             _upgradeState = UpgradeState.high;
         }
     }
-    private void Update()
+    public override void Update()
     {
+        base.Update();
         if (EvolutionGauge >= 100)
         {
             StartCoroutine(EvolutionStart());

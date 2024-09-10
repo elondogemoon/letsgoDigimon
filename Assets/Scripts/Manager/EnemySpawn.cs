@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    [SerializeField] GameObject egg;
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] float spawnInterval = 2f;
     private bool spawning = true;
@@ -11,6 +12,7 @@ public class EnemySpawn : MonoBehaviour
     private void Start()
     {
         ObjectPoolManager.Instance.CreatePool(enemy, 10);
+        ObjectPoolManager.Instance.CreatePool(egg, 10);
         StartCoroutine(SpawnRoutine());
     }
 

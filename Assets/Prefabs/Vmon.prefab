@@ -82,7 +82,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   _evolutionNum: 0
-  EvolutionGauge: 0
   _upgradeState: 0
   atkCollider: {fileID: 1095696910779302963}
 --- !u!1 &4222031872439887328
@@ -96,7 +95,7 @@ GameObject:
   - component: {fileID: 4843611659683403285}
   - component: {fileID: 1095696910779302963}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AtkCollider
   m_TagString: PlayerAtk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,10 +139,6 @@ PrefabInstance:
     - target: {fileID: 183580969831048090, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
       propertyPath: m_Name
       value: ExVeemon
-      objectReference: {fileID: 0}
-    - target: {fileID: 183580969831048090, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 704783963117156640, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
       propertyPath: m_RootOrder
@@ -191,32 +186,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
---- !u!1 &180156569265479029 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 183580969831048090, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
-  m_PrefabInstance: {fileID: 3446533639421679}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2079178318
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180156569265479029}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 50fab3f4467db434cb58f9ce80c739ef, type: 3}
-  m_Controller: {fileID: 9100000, guid: 687d48643d1b746488a338a2b7b47036, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &705899510487173071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 704783963117156640, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
@@ -277,10 +246,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PailDramon
       objectReference: {fileID: 0}
-    - target: {fileID: 622301583622921501, guid: 49c4efafadcba8b49b15271a0608ebad, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c4efafadcba8b49b15271a0608ebad, type: 3}
 --- !u!4 &1511519035170087402 stripped
@@ -288,32 +253,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 281768902154880935, guid: 49c4efafadcba8b49b15271a0608ebad, type: 3}
   m_PrefabInstance: {fileID: 1662098600680515149}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2283938681376848720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 622301583622921501, guid: 49c4efafadcba8b49b15271a0608ebad, type: 3}
-  m_PrefabInstance: {fileID: 1662098600680515149}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1185717279
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283938681376848720}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d233181df53685743a7f2843e3114934, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3ffcd7d37fb5bb948b745ea23b356bf3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6442110858816667361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,7 +262,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 23180177752214002, guid: 13eb4f382a303d243ac30016e90fa8c4, type: 3}
       propertyPath: m_Name
-      value: FixedVeemon
+      value: Veemon
       objectReference: {fileID: 0}
     - target: {fileID: 799822773578896200, guid: 13eb4f382a303d243ac30016e90fa8c4, type: 3}
       propertyPath: m_RootOrder
@@ -367,6 +306,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799822773578896200, guid: 13eb4f382a303d243ac30016e90fa8c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771626341470947634, guid: 13eb4f382a303d243ac30016e90fa8c4, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

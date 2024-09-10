@@ -39,6 +39,8 @@ public class Enemy : MonoBehaviour, IHIt
         if (!isPool)
         {
             GameManager.Instance.CountEnemy();
+            GameManager.Instance.RandomSpawnEgg(transform);
+            CurrentHp = 100;
         }
         else
         {

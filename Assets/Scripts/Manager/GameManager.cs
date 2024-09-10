@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private List<Enemy> Enemies = new List<Enemy>();  // 모든 적을 관리할 리스트
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private Gatcha gatcha; // Gatcha 스크립트 참조
+    [SerializeField] private GameObject egg;
     private float _zoomInFOV = 30f;  // 줌인 시 FOV 값
     private float _zoomOutFOV = 90f;  // 줌아웃 시 FOV 값
     private float _zoomSpeed = 2f;    // 줌 속도
@@ -71,7 +72,16 @@ public class GameManager : Singleton<GameManager>
         _enemyKillCount++;
         Debug.Log(_enemyKillCount);
     }
-    
+
+    public void RandomSpawnEgg(Transform spawnPoint)
+    {
+        var rand = Random.Range(0, 10);
+        if (rand == 0)
+        {
+            ObjectPoolManager.Instance.DequeueObject(egg,spawnPoint.position);
+            Debug.Log("알이 스폰되었습니다.");
+        }
+    }
 
     private IEnumerator ZoomIn()
     {

@@ -8,7 +8,7 @@ public class UiManager : Singleton<UiManager>
 {
     [SerializeField] private Image gachaImage; // UI 이미지 컴포넌트
     [SerializeField] private TextMeshProUGUI text; // UI 텍스트 컴포넌트
-
+    [SerializeField] private Button gachaBtn;
 
     public void UpdateUI(GachaItem item)
     {
@@ -24,5 +24,10 @@ public class UiManager : Singleton<UiManager>
         yield return new WaitForSeconds(1);
         gachaImage.enabled = false;
         text.enabled = false;
+    }
+
+    public void ActiveGachaBtn()
+    {
+        gachaBtn.interactable = true;
     }
 }

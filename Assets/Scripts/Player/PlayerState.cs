@@ -46,6 +46,10 @@ public class PlayerAttack : PlayerState
 
     public override void ExecuteOnUpdate()
     {
+        if (_digimon.CurrentHp <= 0)
+        {
+            _digimon.ChangeState(new PlayerStun(_digimon));
+        }
         float currentTime = Time.time;
         if (currentTime - _digimon.LastAttackTime >= _digimon.CoolTime)
         {
@@ -80,6 +84,28 @@ public class PlayerAttack : PlayerState
     {
 
     }
+}
+
+public class PlayerStun : PlayerState
+{
+    private readonly Digimon _digimon;
+    public PlayerStun(Digimon playerState)
+    {
+        _digimon = playerState;
+    }
+
+    public override void EnterState()
+    {
+        _digimon.animator.SetTrigger("Down");
+        _digimon.CurrentHp = 100;
+    }
+
+    public override void ExecuteOnUpdate()
+    {
+        _digimon.ChangeState(new PlayerAttack(_digimon));
+    }
+
+    public override void ExitState() { }
 }
 
 
