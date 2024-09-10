@@ -8,11 +8,8 @@ using TMPro;
 
 public class Gatcha : MonoBehaviour
 {
-    [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); // 가차 아이템 리스트
+    [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); 
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
-
-    [SerializeField] private Image gachaImage; // UI 이미지 컴포넌트
-    [SerializeField] private TextMeshProUGUI text; // UI 텍스트 컴포넌트
 
     private string filePath;
 
@@ -37,7 +34,7 @@ public class Gatcha : MonoBehaviour
             AddGachaResult(selectedItem);
 
             // UI 업데이트
-            UpdateUI(selectedItem);
+            UiManager.Instance.UpdateUI(selectedItem);
         }
     }
 
@@ -94,13 +91,6 @@ public class Gatcha : MonoBehaviour
         {
             Debug.Log("저장된 가챠 결과가 없습니다.");
         }
-    }
-
-    public void UpdateUI(GachaItem item)
-    {
-        gachaImage.sprite = item.Image; 
-        gachaImage.enabled = true;
-        text.text = $"{item.name} {item.rarity}등급을 획득했다!"; 
     }
 
     private GameObject SpawnItem(GachaItem item)
