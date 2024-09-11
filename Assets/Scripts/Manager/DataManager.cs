@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Xml.Linq;
+using Newtonsoft.Json;
+using System.IO;
 public class GachaedDigimonData
 {
     public float id;
@@ -40,12 +42,18 @@ public class GameData
 
 public class DataManager : Singleton<DataManager> 
 {
+    private string filePath;
 
     public Dictionary<string, Digimon> LoadedDigimonList { get; private set; }
+
+    public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
+
 
     private void Awake()
     {
         LoadDigimonData();
+        filePath = Application.persistentDataPath + "/gachaResults.json";
+
     }
 
     private void LoadDigimonData()
@@ -86,6 +94,19 @@ public class DataManager : Singleton<DataManager>
         }
 
         Debug.Log("Digimon data loaded successfully!");
+    }
+    public void LoadResult(Dictionary<string,GachaResult> dic)
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath); // JSON 파일 읽기
+            dic = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json); // 딕셔너리로 변환
+            Debug.Log("기존 가챠 결과를.");
+        }
+        else
+        {
+            Debug.Log("저장된 가챠 결과가 없습니다.");
+        }
     }
 }
 

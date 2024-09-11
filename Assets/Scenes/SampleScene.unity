@@ -3282,25 +3282,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1550564747}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
-      propertyPath: gachaItems.Array.data[2].weight
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].itemObject
       value: 
       objectReference: {fileID: 1573964136}
-    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
-      propertyPath: gachaItems.Array.data[0].requiredRank
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
-      propertyPath: gachaItems.Array.data[1].requiredRank
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
-      propertyPath: gachaItems.Array.data[2].requiredRank
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183554, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: m_Name
       value: Gatcha
@@ -3421,3 +3405,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c671d9c816ecd9643af1509d4ef1a7f6, type: 3}
+--- !u!1001 &8568295326418563407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197300, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197303, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_Radius
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197303, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197304, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_Name
+      value: AgumonSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197304, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197304, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_TagString
+      value: PlayerAtk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}

@@ -104,6 +104,10 @@ public class Digimon : MonoBehaviour, IHIt
         }
     }
 
+    public void ActiveSkill()
+    {
+
+    }
     public void OnEvolution()
     {
         animator.enabled = false;

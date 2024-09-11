@@ -8,7 +8,6 @@ public class GachaInventory : MonoBehaviour
     [SerializeField] private GameObject inventorySlotPrefab; // 슬롯 프리팹
     [SerializeField] private List<Sprite> gachaItemImages = new List<Sprite>(); // 뽑힌 가챠 아이템들의 이미지 목록
 
-    // 가챠를 통해 아이템을 획득할 때 호출되는 메서드
     public void AddItemToInventory(GachaItem gachaItem)
     {
         if (gachaItem.Image != null)
@@ -16,6 +15,10 @@ public class GachaInventory : MonoBehaviour
             gachaItemImages.Add(gachaItem.Image); // 아이템 이미지 추가
             UpdateInventoryUI();
         }
+    }
+    private void OnEnable()
+    {
+        UpdateInventoryUI();
     }
 
     // UI 업데이트 (새로운 아이템이 추가되면 인벤토리에 반영)

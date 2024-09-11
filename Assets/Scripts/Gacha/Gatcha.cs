@@ -16,11 +16,17 @@ public class Gatcha : MonoBehaviour
 
     private void Start()
     {
+        //filePath = Application.persistentDataPath + "/gachaResults.json";
+        //LoadResult();
+        //UpdateInventoryUI();  // 시작할 때 기존 저장된 결과를 UI에 반영
+    }
+
+    private void OnEnable()
+    {
         filePath = Application.persistentDataPath + "/gachaResults.json";
         LoadResult();
         UpdateInventoryUI();  // 시작할 때 기존 저장된 결과를 UI에 반영
     }
-
     public void PerformGatcha()
     {
         GachaItem selectedItem = GetRandomByWeight(gachaItems);
