@@ -27,6 +27,7 @@ public class Gatcha : MonoBehaviour
         LoadResult();
         UpdateInventoryUI();  // 시작할 때 기존 저장된 결과를 UI에 반영
     }
+
     public void PerformGatcha()
     {
         GachaItem selectedItem = GetRandomByWeight(gachaItems);

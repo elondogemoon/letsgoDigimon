@@ -51,9 +51,8 @@ public class DataManager : Singleton<DataManager>
 
     private void Awake()
     {
-        LoadDigimonData();
         filePath = Application.persistentDataPath + "/gachaResults.json";
-
+        LoadDigimonData();
     }
 
     private void LoadDigimonData()
