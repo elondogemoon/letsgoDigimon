@@ -10,14 +10,41 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private CinemachineVirtualCamera vcam;
     [SerializeField] private Gatcha gatcha; // Gatcha 스크립트 참조
     [SerializeField] private GameObject egg;
+
     private float _zoomInFOV = 30f;  // 줌인 시 FOV 값
     private float _zoomOutFOV = 90f;  // 줌아웃 시 FOV 값
     private float _zoomSpeed = 2f;    // 줌 속도
 
-    private int _enemyKillCount;
+    private int _waveCount = 0; // 현재 웨이브 카운트
+    private int _enemyKillCount = 0;  // 현재 웨이브에서 처치한 적의 수
+
+    private void Start()
+    {
+        StartWave();  // 첫 웨이브 시작
+    }
+
+    public void StartWave()
+    {
+        Debug.Log($"웨이브 {_waveCount + 1} 시작");
+        _waveCount++;
+        SpawnManager.Instance.SpawnEx(); 
+    }
+
+    public void WaveCount()
+    {
+        StartCoroutine(WaitNextStage()); 
+    }
+
+    private IEnumerator WaitNextStage()
+    {
+        SpawnManager.Instance.StopSpawn();  // 스폰 중지
+        yield return new WaitForSeconds(5);  // 5초 대기
+        StartWave();  // 다음 웨이브 시작
+    }
+
     public void InitTarget(Enemy enemy)
     {
-        enemy.target = Player.transform;
+        enemy.target = Player.transform;  // 플레이어를 타겟으로 설정
         AddEnemyToList(enemy);
     }
 
@@ -25,7 +52,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (!Enemies.Contains(enemy))
         {
-            Enemies.Add(enemy);
+            Enemies.Add(enemy);  // 적을 리스트에 추가
         }
     }
 
@@ -33,7 +60,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (gatcha != null)
         {
-            gatcha.PerformGatcha(); // PerformGatcha 메서드 호출
+            gatcha.PerformGatcha();  // Gatcha 실행
         }
     }
 
@@ -41,21 +68,21 @@ public class GameManager : Singleton<GameManager>
     {
         if (Player.isEvolutioning)
         {
-            StopAllEnemies();
+            StopAllEnemies();  // 진화 시 적 중지
             StartCoroutine(EvolutionCameraRoutine(10f));
         }
     }
 
     public void OnEndEvolutioning()
     {
-        ResumeAllEnemies();
+        ResumeAllEnemies();  // 진화 완료 시 적 재개
     }
 
     private void StopAllEnemies()
     {
         foreach (Enemy enemy in Enemies)
         {
-            enemy.StopWhenEvolution();
+            enemy.StopWhenEvolution();  // 적 중지
         }
     }
 
@@ -63,14 +90,21 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (Enemy enemy in Enemies)
         {
-            enemy.ResumeEnemy();
+            enemy.ResumeEnemy();  // 적 재개
         }
     }
-    
+
     public void CountEnemy()
     {
         _enemyKillCount++;
-        Debug.Log(_enemyKillCount);
+        Debug.Log($"처치된 적 수: {_enemyKillCount}");
+
+        // 적이 5마리 죽으면 다음 웨이브로 넘어감
+        if (_enemyKillCount == 5)
+        {
+            _enemyKillCount = 0; // 킬 카운트 초기화
+            WaveCount();
+        }
     }
 
     public void RandomSpawnEgg(Transform spawnPoint)
@@ -78,12 +112,12 @@ public class GameManager : Singleton<GameManager>
         var rand = Random.Range(0, 10);
         if (rand == 0)
         {
-            ObjectPoolManager.Instance.DequeueObject(egg,spawnPoint.position);
+            ObjectPoolManager.Instance.DequeueObject(egg, spawnPoint.position);
             Debug.Log("알이 스폰되었습니다.");
         }
     }
 
-    private IEnumerator ZoomIn()
+    private IEnumerator ZoomIn()//진화 카메라 줌인
     {
         float startFOV = vcam.m_Lens.FieldOfView;
         float elapsedTime = 0f;
@@ -96,7 +130,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private IEnumerator ZoomOut()
+    private IEnumerator ZoomOut()//진화 카메라 줌 아웃
     {
         float startFOV = vcam.m_Lens.FieldOfView;
         float elapsedTime = 0f;

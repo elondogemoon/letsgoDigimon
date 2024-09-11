@@ -8,21 +8,23 @@ using TMPro;
 
 public class Gatcha : MonoBehaviour
 {
-    [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>(); 
+    [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>();
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
+    [SerializeField] public List<Image> inventorySlots;  // 인벤토리 슬롯들 (이미지를 보여줄 UI)
 
     private string _count;
     private string filePath;
 
     private void Start()
     {
-        filePath = Application.persistentDataPath + "/gachaResults.json"; 
+        filePath = Application.persistentDataPath + "/gachaResults.json";
         LoadResult();
+        UpdateInventoryUI();  // 시작할 때 기존 저장된 결과를 UI에 반영
     }
 
     public void PerformGatcha()
     {
-        GachaItem selectedItem = GetRandomByWeight(gachaItems); 
+        GachaItem selectedItem = GetRandomByWeight(gachaItems);
 
         if (selectedItem != null)
         {
@@ -35,6 +37,7 @@ public class Gatcha : MonoBehaviour
             AddGachaResult(selectedItem);
 
             // UI 업데이트
+            AddItemToInventory(selectedItem);
             UiManager.Instance.UpdateUI(selectedItem);
         }
     }
@@ -68,7 +71,7 @@ public class Gatcha : MonoBehaviour
             name = item.name,
             rarity = item.rarity,
         };
-        StoreResult(); 
+        StoreResult();
     }
 
     // JSON 파일로 저장
@@ -81,7 +84,7 @@ public class Gatcha : MonoBehaviour
 
     private void LoadResult()
     {
-        if (File.Exists(filePath)) 
+        if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath); // JSON 파일 읽기
             gachaResult = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json); // 딕셔너리로 변환
@@ -90,6 +93,34 @@ public class Gatcha : MonoBehaviour
         else
         {
             Debug.Log("저장된 가챠 결과가 없습니다.");
+        }
+    }
+
+    // 가챠 아이템을 인벤토리 UI에 추가
+    private void AddItemToInventory(GachaItem item)
+    {
+        foreach (Image slot in inventorySlots)
+        {
+            // 빈 슬롯을 찾음
+            if (slot.sprite == null)
+            {
+                slot.sprite = item.Image;  // 가챠 아이템의 이미지를 슬롯에 넣음
+                break;
+            }
+        }
+    }
+
+    // 기존 저장된 결과로 UI를 갱신
+    private void UpdateInventoryUI()
+    {
+        foreach (var result in gachaResult.Values)
+        {
+            // 가챠 아이템이 리스트에 있을 경우만 반영
+            GachaItem gachaItem = gachaItems.Find(item => item.name == result.name);
+            if (gachaItem != null)
+            {
+                AddItemToInventory(gachaItem);
+            }
         }
     }
 

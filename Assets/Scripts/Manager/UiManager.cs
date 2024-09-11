@@ -9,6 +9,7 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private Image gachaImage; // UI 이미지 컴포넌트
     [SerializeField] private TextMeshProUGUI text; // UI 텍스트 컴포넌트
     [SerializeField] private Button gachaBtn;
+    [SerializeField] private TextMeshProUGUI waveText;
 
     public void UpdateUI(GachaItem item)
     {
@@ -26,6 +27,10 @@ public class UiManager : Singleton<UiManager>
         text.enabled = false;
     }
 
+    public void UpdateWaveUI()
+    {
+        
+    }
     public void ActiveGachaBtn()
     {
         gachaBtn.interactable = true;

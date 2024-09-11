@@ -60,3 +60,6 @@ MonoBehaviour:
     itemObject: {fileID: 1694766380694823539, guid: 14f250fe368928d4a89aeba9167cd452, type: 3}
     weight: 0.1
     Image: {fileID: 21300000, guid: b02f7f0d5270ef542a3f16b15fc5b812, type: 3}
+  inventorySlots:
+  - {fileID: 0}
+  - {fileID: 0}

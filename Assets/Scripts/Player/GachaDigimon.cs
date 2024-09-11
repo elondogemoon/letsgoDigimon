@@ -7,7 +7,7 @@ using UnityEngine.PlayerLoop;
 
 public class GachaDigimon : Digimon,IHIt
 {
-
+    
     protected override IEnumerator EvolutionStart()
     {
         isEvolutioning = true;
