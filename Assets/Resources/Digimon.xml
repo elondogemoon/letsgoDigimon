@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Digimon>
+  <dataCategory>
+    <data className="digi_Agumon" name="아구몬" description="아구몬이다" prefabName="Agumon" requireRank="1" />
+    <data className="digi_Graymon" name="그레이몬" description="그레이몬이다" prefabName="Graymon" requireRank="2" />
+    <data className="digi_WarGraymon" name="워그레이몬" description="워그레이몬이다" prefabName="WarGraymon" requireRank="3" />
+    <data className="digi_Veemon" name="브이몬" description="브이몬이다" prefabName="Veemon" requireRank="1" />
+    <data className="digi_ExVeemon" name="엑스브이몬" description="엑스브이몬이다" prefabName="ExVeemon" requireRank="2" />
+    <data className="digi_PailDramon" name="파일드라몬" description="파일드라몬이다" prefabName="PailDramon" requireRank="3" />
+  </dataCategory>
+</Digimon>

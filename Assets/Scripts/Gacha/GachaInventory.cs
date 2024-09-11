@@ -23,7 +23,7 @@ public class GachaInventory : MonoBehaviour
     {
         foreach (Transform child in inventoryPanel)
         {
-            Destroy(child.gameObject); // 기존 UI 슬롯 삭제
+            //Destroy(child.gameObject); // 기존 UI 슬롯 삭제
         }
 
         foreach (var itemImage in gachaItemImages)
@@ -32,4 +32,6 @@ public class GachaInventory : MonoBehaviour
             slot.GetComponent<Image>().sprite = itemImage; // 슬롯에 이미지 설정
         }
     }
+
+    
 }

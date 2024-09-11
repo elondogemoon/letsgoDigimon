@@ -24,7 +24,7 @@ public class Digimon : MonoBehaviour, IHIt
     public bool isEvolutioning { get; set; }
 
     public float TargetDistance { get; set; }
-    public float EvolutionGauge { get; set; }
+    public float EvolutionGauge;
     public float Rarity { get; set; }
     public int _evolutionNum;
     protected int _currentEvolutionNum;
@@ -32,12 +32,11 @@ public class Digimon : MonoBehaviour, IHIt
     public UpgradeState _upgradeState;
     private IState _playerState;
     public BoxCollider atkCollider;
-
-    GameData data = new GameData();
+    
+    
 
     protected virtual void Awake()
     {
-        MaxHP = data.hp;
         ApplyUpgradeState();
         animator = GetComponentInChildren<Animator>();
         atkCollider = GetComponentInChildren<BoxCollider>();

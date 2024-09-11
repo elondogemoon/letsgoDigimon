@@ -27,12 +27,17 @@ public class UiManager : Singleton<UiManager>
         text.enabled = false;
     }
 
-    public void UpdateWaveUI()
+    public void UpdateWaveUI(int count)
     {
-        
+        waveText.text = $"Wave : {count} ";
     }
     public void ActiveGachaBtn()
     {
         gachaBtn.interactable = true;
+    }
+
+    public void DeAciveGachaBtn()
+    {
+        gachaBtn.interactable = false;
     }
 }

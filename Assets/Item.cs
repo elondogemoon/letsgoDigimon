@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     private int count;
+    
 
     private void OnDisable()
     {
@@ -15,7 +16,7 @@ public class Item : MonoBehaviour
     {
         if (count >= 1)
         {
-
+            UiManager.Instance.DeAciveGachaBtn();
         }
     }
 }

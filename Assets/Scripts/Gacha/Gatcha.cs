@@ -12,7 +12,6 @@ public class Gatcha : MonoBehaviour
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
     [SerializeField] public List<Image> inventorySlots;  // 인벤토리 슬롯들 (이미지를 보여줄 UI)
 
-    private string _count;
     private string filePath;
 
     private void Start()
@@ -36,12 +35,49 @@ public class Gatcha : MonoBehaviour
             // 가챠 결과를 저장
             AddGachaResult(selectedItem);
 
-            // UI 업데이트
+            // 인벤토리에 아이템 추가
             AddItemToInventory(selectedItem);
+
+            // UI 업데이트
             UiManager.Instance.UpdateUI(selectedItem);
+
+            // rare와 unique 아이템이 모두 포함되어 있는지 확인
+            CheckForSpecialRarities();
         }
     }
 
+    private void CheckForSpecialRarities()
+    {
+        bool hasRare = false;
+        bool hasUnique = false;
+
+        foreach (var result in gachaResult.Values)
+        {
+            if (result.rarity == "Rare")
+                hasRare = true;
+            if (result.rarity == "Unique")
+                hasUnique = true;
+        }
+
+        if (hasRare && hasUnique)
+        {
+            Debug.Log("rare와 unique 아이템이 모두 포함되어 있습니다. 특별 작업을 실행합니다.");
+            // 특별 작업을 여기에 추가합니다.
+            ExecuteSpecialTask();
+        }
+    }
+
+    private void ExecuteSpecialTask()
+    {
+        StartCoroutine(PlaySpecialEvolution());
+        // rare와 unique 아이템이 모두 있을 때 실행할 특별 작업을 여기에 추가합니다.
+        Debug.Log("특별 작업이 실행되었습니다.");
+    }
+
+    private IEnumerator PlaySpecialEvolution()
+    {
+        yield return new WaitForSeconds(5);
+    }
     private GachaItem GetRandomByWeight(List<GachaItem> items)
     {
         float totalWeight = 0;
@@ -115,7 +151,6 @@ public class Gatcha : MonoBehaviour
     {
         foreach (var result in gachaResult.Values)
         {
-            // 가챠 아이템이 리스트에 있을 경우만 반영
             GachaItem gachaItem = gachaItems.Find(item => item.name == result.name);
             if (gachaItem != null)
             {

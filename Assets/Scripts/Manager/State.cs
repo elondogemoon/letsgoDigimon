@@ -34,7 +34,7 @@ public class MonsterEnter : MonsterState
     {
         float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
 
-        if (distanceToTarget < enemy.AtkRange)
+        if (distanceToTarget <= enemy.AtkRange)
         {
             enemy.animator.SetBool("IsTrack", false);
             enemy._nav.isStopped = true;
@@ -87,10 +87,6 @@ public class MonsterAtk : MonsterState
             }
         }
 
-        if (Time.time - enemy.LastAttackTime >= enemy.CoolTime)
-        {
-            enemy.ChangeState(new MonsterAtk(enemy));
-        }
     }
 
 
