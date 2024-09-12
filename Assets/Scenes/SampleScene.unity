@@ -407,7 +407,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388668594}
-  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.16617449, w: 0.8325758}
+  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.1661745, w: 0.8325758}
   m_LocalPosition: {x: -2.9559667, y: 5.1452355, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1723,7 +1723,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.16617449, w: 0.8325758}
+  m_LocalRotation: {x: 0.39778653, y: 0.34780678, z: -0.1661745, w: 0.8325758}
   m_LocalPosition: {x: -2.9559667, y: 5.1452355, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3024,26 +3024,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3613901635546690021, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105080730314313651, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: m_Radius
-      value: 1.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4105080730314313660, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4550533887292497318, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5340299871789780712, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: EvolutionGauge
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6321088122416638477, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3324,6 +3304,10 @@ PrefabInstance:
       propertyPath: gachaItems.Array.data[0].itemObject
       value: 
       objectReference: {fileID: 1573964136}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[2].requiredRank
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183554, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: m_Name
       value: Gatcha

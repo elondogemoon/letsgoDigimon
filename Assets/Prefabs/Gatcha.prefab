@@ -51,24 +51,21 @@ MonoBehaviour:
     prefabName: Vmon
     itemObject: {fileID: 0}
     weight: 6
-    Image: {fileID: 21300000, guid: 1dc0661b049e1ac47aa75a5eb9e53fe5, type: 3}
     requiredRank: 1
+    imagePath: Sprites/digimon_sprite1
   - className: digi_ExVeemon
     name: "\uC5D1\uC2A4\uBE0C\uC774\uBAAC"
     rarity: Rare
     prefabName: 
     itemObject: {fileID: 183580969831048090, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
     weight: 3
-    Image: {fileID: 21300000, guid: 24808a3bafc814f4c87364db6c9d290d, type: 3}
     requiredRank: 2
+    imagePath: Sprites/digimon_sprite2
   - className: digi_Stingmon
     name: "\uC2A4\uD305\uBAAC"
     rarity: Unique
     prefabName: StingMon
     itemObject: {fileID: 1694766380694823539, guid: 14f250fe368928d4a89aeba9167cd452, type: 3}
     weight: 2
-    Image: {fileID: 21300000, guid: b02f7f0d5270ef542a3f16b15fc5b812, type: 3}
-    requiredRank: 3
-  inventorySlots:
-  - {fileID: 0}
-  - {fileID: 0}
+    requiredRank: 2
+    imagePath: Sprites/digimon_sprite3

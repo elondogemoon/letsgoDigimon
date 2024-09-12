@@ -10,7 +10,15 @@ public class DigimonPopUpUI : MonoBehaviour
 
     private void OnEnable()
     {
+        Gatcha.Instance.gachaResultUpdated += SetDigimonUi;
     }
+
+    private void OnDisable()
+    {
+        Gatcha.Instance.gachaResultUpdated -= SetDigimonUi;
+    }
+
+    
 
     private void Start()
     {
@@ -27,7 +35,7 @@ public class DigimonPopUpUI : MonoBehaviour
         {
             if (index >= DigimonImg.Count)
             {
-                break; // 슬롯보다 더 많은 데이터를 받으면 루프 중지
+                break; 
             }
 
             Sprite digimonSprite = Resources.Load<Sprite>($"{data.path}");
