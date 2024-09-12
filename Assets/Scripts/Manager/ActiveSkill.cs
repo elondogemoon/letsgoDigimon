@@ -66,5 +66,9 @@ public class ActiveSkill : MonoBehaviour
     {
         GameManager.Instance.StartGatcha();
     }
+    public void OnSkill()
+    {
+        digimon.ActiveSkill();
+    }
 
 }

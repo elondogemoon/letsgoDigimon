@@ -8,6 +8,7 @@ TagManager:
   - EnemyAtk
   - PlayerAtk
   - Item
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -18,8 +18,6 @@ public class DigimonPopUpUI : MonoBehaviour
         Gatcha.Instance.gachaResultUpdated -= SetDigimonUi;
     }
 
-    
-
     private void Start()
     {
         DataManager.Instance.LoadResult(digimonData);

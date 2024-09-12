@@ -48,7 +48,7 @@ public class PlayerAttack : PlayerState
     {
         if (_digimon.isEvolutioning == true)
         {
-            _digimon.ChangeState(new PlayerEnter(_digimon));
+            _digimon.ChangeState(new PlayerEvolution(_digimon));
         }
         if (_digimon.CurrentHp <= 0)
         {
@@ -110,6 +110,34 @@ public class PlayerStun : PlayerState
     }
 
     public override void ExitState() { }
+}
+
+public class PlayerEvolution : PlayerState
+{
+    private readonly Digimon _digimon;
+
+    public PlayerEvolution(Digimon digimon)
+    {
+        _digimon = digimon;
+    }
+
+    public override void EnterState()
+    {
+        
+    }
+
+    public override void ExecuteOnUpdate()
+    {
+        _digimon.atkCollider.enabled = false;
+        if (_digimon.isEvolutioning == false)
+        {
+            _digimon.ChangeState(new PlayerEnter(_digimon));
+        }
+    }
+    public override void ExitState()
+    {
+        _digimon.animator.enabled= true;
+    }
 }
 
 

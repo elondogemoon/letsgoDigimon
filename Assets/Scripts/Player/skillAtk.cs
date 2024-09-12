@@ -10,7 +10,6 @@ public class skillAtk : MonoBehaviour
     private void Awake()
     {
         digimon = GetComponentInParent<Digimon>();   
-        
     }
     private void OnTriggerEnter(Collider other)
     {

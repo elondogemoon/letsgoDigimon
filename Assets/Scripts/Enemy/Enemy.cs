@@ -94,5 +94,6 @@ public class Enemy : MonoBehaviour, IHIt
         {
             _nav.isStopped = false;
         }
+        ChangeState(new MonsterEnter(this));
     }
 }

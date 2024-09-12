@@ -12,6 +12,10 @@ public enum UpgradeState
 public class Digimon : MonoBehaviour, IHIt
 {
     [SerializeField] GameObject EvolutionEffect;
+
+    [SerializeField] GameObject LowSkillPrefab;
+    [SerializeField] GameObject MiddleSkillPrefab;
+    [SerializeField] GameObject HighSkillPrefab;
     public float MaxHP { get; set; }
     public float CurrentHp { get; set; }
     public int MaxMP { get; set; }
@@ -33,9 +37,10 @@ public class Digimon : MonoBehaviour, IHIt
     public UpgradeState _upgradeState;
     private IState _playerState;
     public BoxCollider atkCollider;
-    
-    
 
+    private Skill _currentSkill;
+
+    
     protected virtual void Awake()
     {
         ApplyUpgradeState();
@@ -90,6 +95,21 @@ public class Digimon : MonoBehaviour, IHIt
         CurrentMP = 0;
     }
 
+    private void SetSkillByUpgradeState()
+    {
+        switch (_upgradeState)
+        {
+            case UpgradeState.low:
+                _currentSkill = new Skill(LowSkillPrefab);
+                break;
+            case UpgradeState.middle:
+                _currentSkill = new Skill(MiddleSkillPrefab);
+                break;
+            case UpgradeState.high:
+                _currentSkill = new Skill(HighSkillPrefab);
+                break;
+        }
+    }
     public void Hit(float damage)
     {
         CurrentHp -= damage;
@@ -107,20 +127,19 @@ public class Digimon : MonoBehaviour, IHIt
 
     public void ActiveSkill()
     {
+        _currentSkill.Execute(transform.position);
         animator.SetTrigger("Skill");
     }
+
     public void OnEvolution()
     {
-        animator.enabled = false;
+        isEvolutioning = true;
         StartCoroutine(EvolutionStart());
-        ApplyUpgradeState();
     }
 
     protected virtual IEnumerator EvolutionStart()
     {
-        isEvolutioning = true;
         GameManager.Instance.WaitEvolutioning();
-
         Vector3 finalRotation = new Vector3(0, 180, 0);
         float duration = 10f;
         float initialSpeed = 10f;
@@ -167,6 +186,27 @@ public class Digimon : MonoBehaviour, IHIt
         {
             _upgradeState = UpgradeState.high;
         }
+        ApplyUpgradeState();
     }
 
+}
+
+public class Skill
+{
+    public GameObject skillEffect; // Ω∫≈≥ ¿Ã∆Â∆Æ «¡∏Æ∆’
+
+    public Skill(GameObject effect)
+    {
+        skillEffect = effect;
+    }
+
+    public void Execute(Vector3 position)
+    {
+        if (skillEffect != null)
+        {
+            GameObject effect = GameObject.Instantiate(skillEffect, position, Quaternion.identity);
+
+            GameObject.Destroy(effect, 2f); // ¿Ã∆Â∆Æ 2√  »ƒ ªË¡¶
+        }
+    }
 }
