@@ -94,18 +94,28 @@ public class DataManager : Singleton<DataManager>
 
         Debug.Log("Digimon data loaded successfully!");
     }
-    public void LoadResult(Dictionary<string,GachaResult> dic)
+    public void LoadResult(Dictionary<string, GachaResult> dic)
     {
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath); // JSON 파일 읽기
-            dic = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json); // 딕셔너리로 변환
-            Debug.Log("기존 가챠 결과를.");
+            var loadedData = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json); // 임시로 데이터 로드
+
+            if (loadedData != null)
+            {
+                dic.Clear(); // 기존 데이터를 지우고
+                foreach (var entry in loadedData)
+                {
+                    dic.Add(entry.Key, entry.Value); // 새 데이터를 dic에 추가
+                }
+                Debug.Log("기존 가챠 결과를 불러왔습니다.");
+            }
         }
         else
         {
             Debug.Log("저장된 가챠 결과가 없습니다.");
         }
     }
+
 }
 

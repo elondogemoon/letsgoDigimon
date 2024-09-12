@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log($"웨이브 {_waveCount + 1} 시작");
         _waveCount++;
+        UiManager.Instance.UpdateWaveUI(_waveCount);
         SpawnManager.Instance.SpawnEx(); 
     }
 

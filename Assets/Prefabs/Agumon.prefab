@@ -64,7 +64,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6321088122416638477}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.86
   m_Height: 1.7
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8190402746984158131, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
@@ -433,11 +433,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8568295326892197303, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
       propertyPath: m_Radius
-      value: 1.85
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 8568295326892197304, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
       propertyPath: m_Name
       value: AgumonSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568295326892197304, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e790859ed93c3a24caf6ca3f0b49d096, type: 3}

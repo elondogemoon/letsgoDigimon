@@ -61,10 +61,10 @@ public class ActiveSkill : MonoBehaviour
         digimon.EvolutionGauge = 0;
         digimon.OnEvolution();
     }
+
     public void OnGatcha()
     {
         GameManager.Instance.StartGatcha();
     }
 
-    
 }

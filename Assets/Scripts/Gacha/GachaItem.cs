@@ -9,6 +9,6 @@ public class GachaItem
     public string prefabName;
     public GameObject itemObject; 
     public float weight;          
-    public Sprite Image;
     public int requiredRank;
+    public string imagePath;
 }

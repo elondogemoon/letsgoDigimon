@@ -10,38 +10,37 @@ public class DigimonPopUpUI : MonoBehaviour
 
     private void OnEnable()
     {
-
     }
 
     private void Start()
     {
         DataManager.Instance.LoadResult(digimonData);
-        SetDigimonUi();
-
+        SetDigimonUi(digimonData);
     }
 
-    private void SetDigimonUi()
+    private void SetDigimonUi(Dictionary<string,GachaResult> dataDic)
     {
         int index = 0;
 
         // 딕셔너리에서 데이터를 순회
-        foreach (var data in digimonData.Values)
+        foreach (var data in dataDic.Values)
         {
             if (index >= DigimonImg.Count)
             {
                 break; // 슬롯보다 더 많은 데이터를 받으면 루프 중지
             }
 
-            // Digimon 이미지를 설정 (가정: GachaResult에 이미지 데이터가 있다고 가정)
-            Sprite digimonSprite = Resources.Load<Sprite>($"Images/{data.name}"); // 경로는 필요에 따라 변경
+            Sprite digimonSprite = Resources.Load<Sprite>($"{data.path}");
+            Debug.Log($"Loaded sprite for {data.path}: {(digimonSprite != null ? "Success" : "Failed")}");
+
             if (digimonSprite != null)
             {
-                DigimonImg[index].sprite = digimonSprite; // 슬롯에 이미지 설정
-                DigimonImg[index].gameObject.SetActive(true); // 슬롯 활성화
+                DigimonImg[index].sprite = digimonSprite; 
+                DigimonImg[index].gameObject.SetActive(true); 
             }
             else
             {
-                DigimonImg[index].gameObject.SetActive(false); // 이미지가 없으면 비활성화
+                DigimonImg[index].gameObject.SetActive(false); 
             }
 
             index++;
