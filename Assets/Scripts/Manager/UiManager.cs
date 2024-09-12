@@ -12,6 +12,7 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private Button gachaBtn;
     [SerializeField] private TextMeshProUGUI waveText;
 
+    private Coroutine disableUICoroutine;
     public void UpdateUI(GachaItem item)
     {
         Sprite itemSprite = LoadSpriteFromPath(item.imagePath);
@@ -19,12 +20,18 @@ public class UiManager : Singleton<UiManager>
         gachaImage.enabled = true;
         text.enabled = true;
         text.text = $"{item.name} {item.rarity}등급을 획득했다!";
-        StartCoroutine(DisableUI());
+        if (disableUICoroutine != null)
+        {
+            StopCoroutine(DisableUI());
+        }
+        disableUICoroutine = StartCoroutine(DisableUI());
     }
+
     private Sprite LoadSpriteFromPath(string path)
     {
-        return Resources.Load<Sprite>(path); // Resources 폴더에서 스프라이트 불러오기
+        return Resources.Load<Sprite>(path); 
     }
+
     IEnumerator DisableUI()
     {
         yield return new WaitForSeconds(1);

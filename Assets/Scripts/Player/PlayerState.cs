@@ -46,6 +46,10 @@ public class PlayerAttack : PlayerState
 
     public override void ExecuteOnUpdate()
     {
+        if (_digimon.isEvolutioning == true)
+        {
+            _digimon.ChangeState(new PlayerEnter(_digimon));
+        }
         if (_digimon.CurrentHp <= 0)
         {
             _digimon.ChangeState(new PlayerStun(_digimon));

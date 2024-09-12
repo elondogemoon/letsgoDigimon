@@ -11,6 +11,7 @@ public enum UpgradeState
 
 public class Digimon : MonoBehaviour, IHIt
 {
+    [SerializeField] GameObject EvolutionEffect;
     public float MaxHP { get; set; }
     public float CurrentHp { get; set; }
     public int MaxMP { get; set; }
@@ -106,7 +107,7 @@ public class Digimon : MonoBehaviour, IHIt
 
     public void ActiveSkill()
     {
-
+        animator.SetTrigger("Skill");
     }
     public void OnEvolution()
     {
@@ -126,9 +127,9 @@ public class Digimon : MonoBehaviour, IHIt
         float speedIncrease = 400f;
         float elapsedTime = 0f;
         bool halfwayReached = false;
-
         while (elapsedTime < duration)
         {
+            
             float currentSpeed = initialSpeed + (speedIncrease * (elapsedTime / duration));
             float rotationAngle = currentSpeed * Time.deltaTime;
             transform.Rotate(0, rotationAngle, 0);
@@ -136,6 +137,8 @@ public class Digimon : MonoBehaviour, IHIt
 
             if (!halfwayReached && elapsedTime >= duration / 2)
             {
+                EvolutionEffect.SetActive(true);
+
                 halfwayReached = true;
 
                 transform.GetChild(_currentEvolutionNum).gameObject.SetActive(false);
@@ -147,13 +150,13 @@ public class Digimon : MonoBehaviour, IHIt
                 _currentEvolutionNum++;
                 _evolutionNum++;
             }
-
             yield return null;
         }
 
         // 최종 회전 완료
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
         isEvolutioning = false;
+        EvolutionEffect.SetActive(false);
         GameManager.Instance.OnEndEvolutioning();
 
         if (_upgradeState == UpgradeState.low)

@@ -29,6 +29,7 @@ public class Gatcha : Singleton<Gatcha>
         {
             Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
 
+            UiManager.Instance.UpdateUI(selectedItem);
             // 아이템을 스폰
             SpawnItem(selectedItem);
 

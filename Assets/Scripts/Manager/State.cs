@@ -86,6 +86,7 @@ public class MonsterAtk : MonsterState
                 return;
             }
         }
+        enemy.ChangeState(new MonsterEnter(enemy));
 
     }
 
