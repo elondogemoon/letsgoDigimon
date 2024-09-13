@@ -17,13 +17,14 @@ public class skillAtk : MonoBehaviour
         {
             IHIt hit = other.GetComponent<IHIt>();
             hit.Hit(digimon.SkillDamage);
-            this.gameObject.SetActive(false);
-            Debug.Log("²¿¸¶ºÒ²É");
+            Debug.Log(other.gameObject.tag);
+            Invoke("Off", 2);
         }
     }
 
-    public void Skill()
+    public void Off()
     {
-        
+        gameObject.SetActive(false);
     }
+
 }

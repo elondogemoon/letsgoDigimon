@@ -23,22 +23,21 @@ public class Digimon : MonoBehaviour, IHIt
     public int CoolTime { get; set; }
     public float Damage { get; set; }
     public float SkillDamage { get; set; }
-    public Animator animator;
-
     public float LastAttackTime { get; set; }
     public bool isEvolutioning { get; set; }
-
     public float TargetDistance { get; set; }
-    public float EvolutionGauge;
     public float Rarity { get; set; }
+
+    public float EvolutionGauge;
     public int _evolutionNum;
     protected int _currentEvolutionNum;
 
     public UpgradeState _upgradeState;
-    private IState _playerState;
+    public Animator animator;
     public BoxCollider atkCollider;
 
-    private Skill _currentSkill;
+    public Skill _currentSkill;
+    private IState _playerState;
 
     
     protected virtual void Awake()
@@ -77,39 +76,28 @@ public class Digimon : MonoBehaviour, IHIt
                 MaxMP = 100;
                 Damage = 10;
                 SkillDamage = 20;
+                _currentSkill = new Skill(LowSkillPrefab);
                 break;
             case UpgradeState.middle:
                 MaxHP = 200;
                 MaxMP = 200;
                 Damage = 20;
                 SkillDamage = 40;
+                _currentSkill = new Skill(MiddleSkillPrefab);
                 break;
             case UpgradeState.high:
                 MaxHP = 300;
                 MaxMP = 250;
                 Damage = 40;
                 SkillDamage = 80;
-                break;
-        }
-        CurrentHp = MaxHP;
-        CurrentMP = 0;
-    }
-
-    private void SetSkillByUpgradeState()
-    {
-        switch (_upgradeState)
-        {
-            case UpgradeState.low:
-                _currentSkill = new Skill(LowSkillPrefab);
-                break;
-            case UpgradeState.middle:
-                _currentSkill = new Skill(MiddleSkillPrefab);
-                break;
-            case UpgradeState.high:
                 _currentSkill = new Skill(HighSkillPrefab);
                 break;
         }
+        CurrentHp = MaxHP;
+        CurrentMP = 100;
     }
+
+
     public void Hit(float damage)
     {
         CurrentHp -= damage;
@@ -127,8 +115,7 @@ public class Digimon : MonoBehaviour, IHIt
 
     public void ActiveSkill()
     {
-        _currentSkill.Execute(transform.position);
-        animator.SetTrigger("Skill");
+        ChangeState(new PlayerSkill(this));
     }
 
     public void OnEvolution()
@@ -204,9 +191,15 @@ public class Skill
     {
         if (skillEffect != null)
         {
-            GameObject effect = GameObject.Instantiate(skillEffect, position, Quaternion.identity);
-
-            GameObject.Destroy(effect, 2f); // 이펙트 2초 후 삭제
+            skillEffect.gameObject.SetActive(true);
+            
+        }
+    }
+    public void OffSkillEffect()
+    {
+        if(skillEffect != null)
+        {
+            skillEffect.gameObject.SetActive(false);
         }
     }
 }

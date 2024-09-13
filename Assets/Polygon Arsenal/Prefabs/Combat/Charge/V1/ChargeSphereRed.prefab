@@ -4922,6 +4922,7 @@ GameObject:
   - component: {fileID: 199346763003438702}
   - component: {fileID: 308324345204345412}
   - component: {fileID: 927816825758399119}
+  - component: {fileID: 620621755}
   m_Layer: 0
   m_Name: ChargeSphereRed
   m_TagString: Untagged
@@ -4936,15 +4937,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857852141784182}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.11, y: 3.73, z: 0.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 8.36, y: 8.36, z: 8.36}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4886146737274208}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &198301445058566142
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9828,3 +9829,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8200b46a599c9b148a0d2d18e89f01fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+--- !u!54 &620621755
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857852141784182}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -65,11 +65,11 @@ public class MonsterAtk : MonsterState
 
     public override void ExecuteOnUpdate()
     {
-        float currentTime = Time.time;
-        if (currentTime - enemy.LastAttackTime >= enemy.CoolTime)
-        {
-            enemy.LastAttackTime = Time.time + 1000f;
-        }
+        //float currentTime = Time.time;
+        //if (currentTime - enemy.LastAttackTime >= enemy.CoolTime)
+        //{
+        //    enemy.LastAttackTime = Time.time + 1000f;
+        //}
         var animInfo = enemy.animator.GetCurrentAnimatorStateInfo(0);
 
         if (animInfo.IsName("Atk"))

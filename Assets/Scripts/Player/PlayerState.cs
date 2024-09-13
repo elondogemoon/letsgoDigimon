@@ -140,4 +140,59 @@ public class PlayerEvolution : PlayerState
     }
 }
 
+public class PlayerSkill : PlayerState
+{
+    private readonly Digimon _digimon;
+
+    public PlayerSkill(Digimon digimon)
+    {
+        _digimon = digimon;
+    }
+
+    public override void EnterState()
+    {
+        _digimon.animator.SetTrigger("Skill");
+    }
+
+    public override void ExecuteOnUpdate()
+    {
+        if (_digimon.isEvolutioning == true)
+        {
+            _digimon.ChangeState(new PlayerEvolution(_digimon));
+        }
+
+        var animInfo = _digimon.animator.GetCurrentAnimatorStateInfo(0);
+
+        if (animInfo.IsName("Skill"))
+        {
+            if (animInfo.normalizedTime < 0.32f)
+            {
+
+            }
+            else if (animInfo.normalizedTime < 0.55f)
+            {
+                _digimon._currentSkill.Execute(_digimon.transform.position);
+                _digimon.atkCollider.enabled = true;
+            }
+            else if (animInfo.normalizedTime < 0.80f)
+            {
+                _digimon.atkCollider.enabled = true;
+            }
+            else
+            {
+               // _digimon._currentSkill.OffSkillEffect();
+
+                _digimon.atkCollider.enabled = false;
+                _digimon.ChangeState(new PlayerEnter(_digimon));
+                return;
+            }
+        }
+    }
+
+    public override void ExitState()
+    {
+        
+    }
+}
+
 

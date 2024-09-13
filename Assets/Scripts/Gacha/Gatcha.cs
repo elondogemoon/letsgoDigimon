@@ -69,6 +69,7 @@ public class Gatcha : Singleton<Gatcha>
 
     private IEnumerator PlaySpecialEvolution()
     {
+
         yield return new WaitForSeconds(5);
     }
 

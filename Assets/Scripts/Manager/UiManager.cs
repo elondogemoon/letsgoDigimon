@@ -52,4 +52,9 @@ public class UiManager : Singleton<UiManager>
     {
         gachaBtn.interactable = false;
     }
+
+    public void GachaEvent()
+    {
+        
+    }
 }
