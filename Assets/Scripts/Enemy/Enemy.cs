@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour, IHIt
         collider = GetComponentInChildren<BoxCollider>();
         ChangeState(new MonsterEnter(this));
     }
+
     private void OnDisable()
     {
         if (!isPool)
@@ -47,6 +48,7 @@ public class Enemy : MonoBehaviour, IHIt
             isPool = false;
         }
     }
+
     private void Update()
     {
         if (!isStop)

@@ -18,7 +18,7 @@ public class skillAtk : MonoBehaviour
             IHIt hit = other.GetComponent<IHIt>();
             hit.Hit(digimon.SkillDamage);
             Debug.Log(other.gameObject.tag);
-            Invoke("Off", 2);
+            Invoke("Off", 1);
         }
     }
 

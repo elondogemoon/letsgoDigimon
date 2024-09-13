@@ -152,6 +152,8 @@ public class PlayerSkill : PlayerState
     public override void EnterState()
     {
         _digimon.animator.SetTrigger("Skill");
+        _digimon.CurrentMP = 0;
+
     }
 
     public override void ExecuteOnUpdate()
@@ -180,8 +182,7 @@ public class PlayerSkill : PlayerState
             }
             else
             {
-               // _digimon._currentSkill.OffSkillEffect();
-
+                _digimon._currentSkill.OffSkillEffect();
                 _digimon.atkCollider.enabled = false;
                 _digimon.ChangeState(new PlayerEnter(_digimon));
                 return;
