@@ -32,6 +32,7 @@ public class MonsterEnter : MonsterState
     }
     public override void ExecuteOnUpdate()
     {
+
         float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
 
         if (distanceToTarget <= enemy.AtkRange)
@@ -56,25 +57,24 @@ public class MonsterAtk : MonsterState
 
     public MonsterAtk(Enemy enemyState)
     {
-       enemy = enemyState;
+        enemy = enemyState;
     }
+
     public override void EnterState()
     {
-        enemy.animator.SetTrigger("Atk");
+        
     }
 
     public override void ExecuteOnUpdate()
     {
-        //float currentTime = Time.time;
-        //if (currentTime - enemy.LastAttackTime >= enemy.CoolTime)
-        //{
-        //    enemy.LastAttackTime = Time.time + 1000f;
-        //}
+        enemy.animator.SetTrigger("Atk");
+
         var animInfo = enemy.animator.GetCurrentAnimatorStateInfo(0);
 
+        // 현재 애니메이션이 공격 애니메이션이면
         if (animInfo.IsName("Atk"))
         {
-            
+            // 애니메이션이 90% 이하일 때 공격 충돌 활성화
             if (animInfo.normalizedTime < 0.90f)
             {
                 enemy.collider.enabled = true;
@@ -82,17 +82,48 @@ public class MonsterAtk : MonsterState
             else
             {
                 enemy.collider.enabled = false;
-                enemy.ChangeState(new MonsterEnter(enemy)); 
-                return;
+
+                enemy.ChangeState(new MonsterAtk(enemy));
             }
         }
-        enemy.ChangeState(new MonsterEnter(enemy));
-
     }
-
 
     public override void ExitState()
     {
         
     }
 }
+
+public class MonsterDamaged : MonsterState
+{
+    private readonly Enemy _enemy;
+
+    public MonsterDamaged(Enemy enemy)
+    {
+        _enemy = enemy;
+    }
+
+    public override void EnterState()
+    {
+        _enemy.animator.SetTrigger("Damaged");
+    }
+
+    public override void ExecuteOnUpdate()
+    {
+        var animInfo = _enemy.animator.GetCurrentAnimatorStateInfo(0);
+
+        // "Damaged" 애니메이션이 끝난 후
+        if (animInfo.IsName("Damaged") && animInfo.normalizedTime >= 1)
+        {
+            // "Damaged" 애니메이션이 끝난 후 "MonsterEnter" 상태로 전환
+            _enemy.ChangeState(new MonsterAtk(_enemy));
+        }
+    }
+
+    public override void ExitState()
+    {
+        // 상태 종료 시 추가 작업이 필요하면 여기에 추가
+    }
+}
+
+

@@ -104,12 +104,23 @@ public class Digimon : MonoBehaviour, IHIt
         EvolutionGauge += 15;
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-            transform.LookAt(target);
+            // 적과의 거리 계산
+            float distanceToTarget = Vector3.Distance(transform.position, other.transform.position);
+
+            // 적이 가까운 경우에만 회전
+            if (distanceToTarget < 10f) // 예를 들어, 10f는 회전할 거리의 임계값
+            {
+                // 목표 방향을 계산
+                Vector3 direction = (other.transform.position - transform.position).normalized;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+
+                // 부드럽게 회전
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f); // 5f는 회전 속도
+            }
         }
     }
 

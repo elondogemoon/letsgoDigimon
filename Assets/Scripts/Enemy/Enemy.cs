@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour, IHIt
 
     public void Hit(float damage)
     {
-        animator.SetTrigger("Damaged");
+        ChangeState(new MonsterDamaged(this));
         CurrentHp -= damage;
         if (CurrentHp <= 0)
         {
