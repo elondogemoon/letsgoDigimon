@@ -17,6 +17,7 @@ public class ActiveSkill : MonoBehaviour
     private void Awake()
     {
         action = RegistEvent;
+        GatchaButton.interactable = false;
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class ActiveSkill : MonoBehaviour
     public void OnGatcha()
     {
         GameManager.Instance.StartGatcha();
+        UiManager.Instance.OnGachaBtnClick();
     }
     public void OnSkill()
     {

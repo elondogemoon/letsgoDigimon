@@ -12,8 +12,10 @@ public class Gatcha : Singleton<Gatcha>
     [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>();
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
     public event Action<Dictionary<string, GachaResult>> gachaResultUpdated;
+    public GameObject vcam;
 
     private string filePath;
+    private bool specialTaskExecuted = false;  // 특별 작업 실행 여부를 추적하는 변수
 
     private void OnEnable()
     {
@@ -43,6 +45,13 @@ public class Gatcha : Singleton<Gatcha>
 
     private void CheckForSpecialRarities()
     {
+        // 이미 특별 작업이 실행되었으면 더 이상 실행되지 않음
+        if (specialTaskExecuted)
+        {
+            Debug.Log("특별 작업이 이미 실행되었습니다.");
+            return;
+        }
+
         bool hasRare = false;
         bool hasUnique = false;
 
@@ -64,13 +73,15 @@ public class Gatcha : Singleton<Gatcha>
     private void ExecuteSpecialTask()
     {
         StartCoroutine(PlaySpecialEvolution());
+        specialTaskExecuted = true;  // 특별 작업이 실행되었음을 기록
         Debug.Log("특별 작업이 실행되었습니다.");
     }
 
     private IEnumerator PlaySpecialEvolution()
     {
-
-        yield return new WaitForSeconds(5);
+        UiManager.Instance.GachaEvent(true);
+        yield return new WaitForSeconds(20);
+        UiManager.Instance.GachaEvent(false);
     }
 
     private GachaItem GetRandomByWeight(List<GachaItem> items)

@@ -16,7 +16,6 @@ public class DetectClick : MonoBehaviour
                 if (hit.collider.CompareTag("Item"))
                 {
                     hit.transform.gameObject.SetActive(false);
-                    Debug.Log("아이템이 비활성화되었습니다.");
                 }
             }
         }

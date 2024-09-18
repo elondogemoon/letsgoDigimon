@@ -11,7 +11,8 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private TextMeshProUGUI text; // UI 텍스트 컴포넌트
     [SerializeField] private Button gachaBtn;
     [SerializeField] private TextMeshProUGUI waveText;
-
+    [SerializeField] private GameObject specialGacha;
+    [SerializeField] Item item;
     private Coroutine disableUICoroutine;
     public void UpdateUI(GachaItem item)
     {
@@ -43,18 +44,26 @@ public class UiManager : Singleton<UiManager>
     {
         waveText.text = $"Wave : {count} ";
     }
-    public void ActiveGachaBtn()
+    public void ActiveGachaBtn(bool isCanGacha)
     {
-        gachaBtn.interactable = true;
+        if (isCanGacha)
+        {
+            gachaBtn.interactable = true;
+        }
+        else
+        {
+            gachaBtn.interactable = false;
+        }
     }
 
-    public void DeAciveGachaBtn()
+    public void OnGachaBtnClick()
     {
-        gachaBtn.interactable = false;
+        item.OnGachaButtonClick();
     }
 
-    public void GachaEvent()
+    public void GachaEvent(bool isSpecialGacha)
     {
-        
+        specialGacha.SetActive(isSpecialGacha);
     }
+
 }

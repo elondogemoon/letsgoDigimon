@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gachaImage: {fileID: 0}
   text: {fileID: 0}
+  gachaBtn: {fileID: 0}
+  waveText: {fileID: 0}
+  specialGacha: {fileID: 0}
