@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Newtonsoft.Json;
-using System.IO;
-using UnityEngine.UI;
-using TMPro;
+using System.Collections.Generic;
 using System;
+using UnityEngine;
+using UnityEngine.Video;
+using System.IO;
 
 public class Gatcha : Singleton<Gatcha>
 {
@@ -13,14 +11,24 @@ public class Gatcha : Singleton<Gatcha>
     [SerializeField] public Dictionary<string, GachaResult> gachaResult = new Dictionary<string, GachaResult>();
     public event Action<Dictionary<string, GachaResult>> gachaResultUpdated;
     public GameObject vcam;
-
+    public VideoPlayer videoPlayer; // VideoPlayer 컴포넌트를 참조할 변수
+    public GameObject SpecialGacha;
     private string filePath;
-    private bool specialTaskExecuted = false;  // 특별 작업 실행 여부를 추적하는 변수
+    private bool specialTaskExecuted = false;
 
     private void OnEnable()
     {
         filePath = Application.persistentDataPath + "/gachaResults.json";
         LoadResult();
+    }
+
+    private void Start()
+    {
+        // VideoPlayer가 끝났을 때 이벤트 등록
+        if (videoPlayer != null)
+        {
+            videoPlayer.loopPointReached += OnVideoEnd; // 비디오가 끝났을 때 호출될 메서드 등록
+        }
     }
 
     public void PerformGatcha()
@@ -32,20 +40,14 @@ public class Gatcha : Singleton<Gatcha>
             Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
 
             UiManager.Instance.UpdateUI(selectedItem);
-            // 아이템을 스폰
             SpawnItem(selectedItem);
-
-            // 가챠 결과를 저장
             AddGachaResult(selectedItem);
-
-            // rare와 unique 아이템이 모두 포함되어 있는지 확인
             CheckForSpecialRarities();
         }
     }
 
     private void CheckForSpecialRarities()
     {
-        // 이미 특별 작업이 실행되었으면 더 이상 실행되지 않음
         if (specialTaskExecuted)
         {
             Debug.Log("특별 작업이 이미 실행되었습니다.");
@@ -65,23 +67,31 @@ public class Gatcha : Singleton<Gatcha>
 
         if (hasRare && hasUnique)
         {
-            Debug.Log("rare와 unique 아이템이 모두 포함되어 있습니다. 특별 작업을 실행합니다.");
             ExecuteSpecialTask();
         }
     }
 
     private void ExecuteSpecialTask()
     {
-        StartCoroutine(PlaySpecialEvolution());
-        specialTaskExecuted = true;  // 특별 작업이 실행되었음을 기록
+        UiManager.Instance.GachaEvent(true);
+        vcam.SetActive(true);
+
+        // 비디오를 재생하고 끝나는 시점을 loopPointReached 이벤트에서 처리
+        if (videoPlayer != null)
+        {
+            videoPlayer.Play();
+        }
+        specialTaskExecuted = true;
         Debug.Log("특별 작업이 실행되었습니다.");
     }
 
-    private IEnumerator PlaySpecialEvolution()
+    
+    private void OnVideoEnd(VideoPlayer vp)
     {
-        UiManager.Instance.GachaEvent(true);
-        yield return new WaitForSeconds(20);
+        SpecialGacha.SetActive(true);
+        //vcam.SetActive(false);
         UiManager.Instance.GachaEvent(false);
+        Debug.Log("비디오가 끝났습니다.");
     }
 
     private GachaItem GetRandomByWeight(List<GachaItem> items)
@@ -116,7 +126,6 @@ public class Gatcha : Singleton<Gatcha>
         };
 
         gachaResultUpdated?.Invoke(gachaResult);
-        // 저장
         StoreResult();
     }
 
@@ -134,8 +143,6 @@ public class Gatcha : Singleton<Gatcha>
             string json = File.ReadAllText(filePath);
             gachaResult = JsonConvert.DeserializeObject<Dictionary<string, GachaResult>>(json);
             Debug.Log("기존 가챠 결과를 불러왔습니다.");
-
-            // 로드된 결과로 UI 업데이트 이벤트 호출
             gachaResultUpdated?.Invoke(gachaResult);
         }
         else
