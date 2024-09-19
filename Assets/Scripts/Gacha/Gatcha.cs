@@ -40,7 +40,7 @@ public class Gatcha : Singleton<Gatcha>
             Debug.Log($"선택된 아이템: {selectedItem.name}, 등급: {selectedItem.rarity}");
 
             UiManager.Instance.UpdateUI(selectedItem);
-            SpawnItem(selectedItem);
+            //SpawnItem(selectedItem);
             AddGachaResult(selectedItem);
             CheckForSpecialRarities();
         }
@@ -73,10 +73,11 @@ public class Gatcha : Singleton<Gatcha>
 
     private void ExecuteSpecialTask()
     {
+        GachaItem lastItem = gachaItems[gachaItems.Count - 1]; 
+        AddGachaResult(lastItem); 
         UiManager.Instance.GachaEvent(true);
         vcam.SetActive(true);
 
-        // 비디오를 재생하고 끝나는 시점을 loopPointReached 이벤트에서 처리
         if (videoPlayer != null)
         {
             videoPlayer.Play();
@@ -151,10 +152,10 @@ public class Gatcha : Singleton<Gatcha>
         }
     }
 
-    private GameObject SpawnItem(GachaItem item)
-    {
-        GameObject spawnedObject = Instantiate(item.itemObject);
-        spawnedObject.transform.position = new Vector3(UnityEngine.Random.Range(-5f, 5f), 0, UnityEngine.Random.Range(-5f, 5f));
-        return spawnedObject;
-    }
+    //private GameObject SpawnItem(GachaItem item)
+    //{
+    //    GameObject spawnedObject = Instantiate(item.itemObject);
+    //    spawnedObject.transform.position = new Vector3(UnityEngine.Random.Range(-5f, 5f), 0, UnityEngine.Random.Range(-5f, 5f));
+    //    return spawnedObject;
+    //}
 }

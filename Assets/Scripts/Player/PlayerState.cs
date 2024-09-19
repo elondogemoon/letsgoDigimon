@@ -69,6 +69,7 @@ public class PlayerAttack : PlayerState
             }
             else if (animInfo.normalizedTime < 0.55f)
             {
+                
                 _digimon.atkCollider.enabled = true;
             }
             else if (animInfo.normalizedTime < 0.80f)

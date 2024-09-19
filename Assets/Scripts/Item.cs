@@ -21,6 +21,7 @@ public class Item : MonoBehaviour
     {
         if (count > 0)
         {
+            Debug.Log(count);
             count--; 
             GachaActive(); 
         }

@@ -56,7 +56,7 @@ MonoBehaviour:
   - className: digi_ExVeemon
     name: "\uC5D1\uC2A4\uBE0C\uC774\uBAAC"
     rarity: Rare
-    prefabName: 
+    prefabName: ExVeemon
     itemObject: {fileID: 183580969831048090, guid: b6379f657edded044b8897c2ddaa7a1d, type: 3}
     weight: 3
     requiredRank: 2
@@ -69,3 +69,14 @@ MonoBehaviour:
     weight: 2
     requiredRank: 2
     imagePath: Sprites/digimon_sprite3
+  - className: digi_Paildramon
+    name: "\uD30C\uC77C\uB4DC\uB77C\uBAAC"
+    rarity: Legend
+    prefabName: Paildramon
+    itemObject: {fileID: 622301583622921501, guid: a1626ef999bbf5b47bd28ad96eb8703e, type: 3}
+    weight: 0
+    requiredRank: 3
+    imagePath: Sprites/digimon_sprite4
+  vcam: {fileID: 0}
+  videoPlayer: {fileID: 0}
+  SpecialGacha: {fileID: 0}

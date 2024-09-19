@@ -37,10 +37,10 @@ public class Enemy : MonoBehaviour, IHIt
 
     private void OnDisable()
     {
-        GameManager.Instance.CountEnemy();
 
         if (!isPool)
         {
+            GameManager.Instance.CountEnemy();
             GameManager.Instance.RandomSpawnEgg(transform);
             CurrentHp = 100;
         }
@@ -99,4 +99,6 @@ public class Enemy : MonoBehaviour, IHIt
         }
         ChangeState(new MonsterEnter(this));
     }
+    
+    
 }

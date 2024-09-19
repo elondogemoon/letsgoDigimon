@@ -5,6 +5,7 @@ public class SpawnManager : Singleton<SpawnManager>
 {
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject egg;
+    [SerializeField] GameObject hitEffect;
     [SerializeField] Transform[] _spawnPoints;
     [SerializeField] float spawnInterval = 2f;
     private bool spawning = true;
@@ -15,6 +16,7 @@ public class SpawnManager : Singleton<SpawnManager>
     {
         ObjectPoolManager.Instance.CreatePool(enemy, 10);
         ObjectPoolManager.Instance.CreatePool(egg, 10);
+        ObjectPoolManager.Instance.CreatePool(hitEffect, 10);
         StartWave();
     }
 
@@ -23,6 +25,18 @@ public class SpawnManager : Singleton<SpawnManager>
         spawnedEnemiesCount = 0;
         StartCoroutine(SpawnRoutine());
     }
+
+    public void HitEffectOn(Transform target)
+    {
+        GameObject effect = ObjectPoolManager.Instance.DequeueObject(hitEffect, target.position);
+
+        if (effect != null)
+        {
+            effect.SetActive(true);
+            ObjectPoolManager.Instance.EnqueueObject(effect, 0.5f);
+        }
+    }
+
 
     public IEnumerator SpawnRoutine()
     {

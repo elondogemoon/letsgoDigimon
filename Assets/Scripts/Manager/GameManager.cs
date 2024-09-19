@@ -152,4 +152,6 @@ public class GameManager : Singleton<GameManager>
 
         yield return StartCoroutine(ZoomOut());
     }
+
+
 }

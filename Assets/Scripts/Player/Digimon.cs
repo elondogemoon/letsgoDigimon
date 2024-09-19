@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using DG.Tweening;
 
@@ -104,25 +104,15 @@ public class Digimon : MonoBehaviour, IHIt
         EvolutionGauge += 15;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            // Àû°úÀÇ °Å¸® °è»ê
-            float distanceToTarget = Vector3.Distance(transform.position, other.transform.position);
-
-            // ÀûÀÌ °¡±î¿î °æ¿ì¿¡¸¸ È¸Àü
-            if (distanceToTarget < 10f) // ¿¹¸¦ µé¾î, 10f´Â È¸ÀüÇÒ °Å¸®ÀÇ ÀÓ°è°ª
-            {
-                // ¸ñÇ¥ ¹æÇâÀ» °è»ê
-                Vector3 direction = (other.transform.position - transform.position).normalized;
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
-
-                // ºÎµå·´°Ô È¸Àü
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f); // 5f´Â È¸Àü ¼Óµµ
-            }
+            Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+            transform.LookAt(target);
         }
     }
+
 
     public void ActiveSkill()
     {
@@ -170,7 +160,7 @@ public class Digimon : MonoBehaviour, IHIt
             yield return null;
         }
 
-        // ÃÖÁ¾ È¸Àü ¿Ï·á
+        // ìµœì¢… íšŒì „ ì™„ë£Œ
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
         isEvolutioning = false;
         EvolutionEffect.SetActive(false);
@@ -191,7 +181,7 @@ public class Digimon : MonoBehaviour, IHIt
 
 public class Skill
 {
-    public GameObject skillEffect; // ½ºÅ³ ÀÌÆåÆ® ÇÁ¸®ÆÕ
+    public GameObject skillEffect; // ìŠ¤í‚¬ ì´íŽ™íŠ¸ í”„ë¦¬íŒ¹
 
     public Skill(GameObject effect)
     {
@@ -206,6 +196,7 @@ public class Skill
             
         }
     }
+
     public void OffSkillEffect()
     {
         if(skillEffect != null)

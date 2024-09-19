@@ -19,8 +19,6 @@ public class MonsterState : IState
 public class MonsterEnter : MonsterState
 {
     private readonly Enemy enemy;
-    private float bufferDistance = 1.0f;
-
     public MonsterEnter(Enemy enemyState)
     {
         enemy = enemyState;
@@ -32,6 +30,7 @@ public class MonsterEnter : MonsterState
         {
             enemy._nav.SetDestination(enemy.target.position);
             enemy.animator.SetBool("IsTrack", true);
+            enemy._nav.isStopped = false;
         }
     }
 
@@ -39,19 +38,21 @@ public class MonsterEnter : MonsterState
     {
         if (enemy.target == null)
             return;
+        enemy._nav.SetDestination(enemy.target.position);
 
         float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
 
-        if (distanceToTarget <= enemy.AtkRange + bufferDistance)
+        if (distanceToTarget <= enemy.AtkRange)
         {
             enemy.animator.SetBool("IsTrack", false);
             enemy._nav.isStopped = true;
             enemy._nav.velocity = Vector3.zero;
             enemy.ChangeState(new MonsterAtk(enemy));
         }
+
         else
         {
-            enemy._nav.SetDestination(enemy.target.position);
+            return;
         }
     }
 
@@ -60,6 +61,7 @@ public class MonsterEnter : MonsterState
         enemy.animator.SetBool("IsTrack", false);
         enemy._nav.isStopped = true;
     }
+
 }
 
 public class MonsterAtk : MonsterState
@@ -74,21 +76,13 @@ public class MonsterAtk : MonsterState
     public override void EnterState()
     {
         enemy._nav.isStopped = true;
-        AttackTarget(); // 즉시 공격
+        AttackTarget();
+        enemy.animator.SetTrigger("Atk");
     }
 
     public override void ExecuteOnUpdate()
     {
-        // 타겟이 공격 범위를 벗어나면 다시 추적
-        float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
-        if (distanceToTarget > enemy.AtkRange)
-        {
-            enemy.ChangeState(new MonsterEnter(enemy)); // 다시 타겟을 추적하도록 상태 전환
-        }
-        else
-        {
-            AttackTarget();
-        }
+        AttackTarget();
     }
 
     private void AttackTarget()
@@ -99,17 +93,17 @@ public class MonsterAtk : MonsterState
 
         if (animInfo.IsName("Atk") && animInfo.normalizedTime < 0.90f)
         {
-            enemy.collider.enabled = true; // 공격 범위 활성화
+            enemy.collider.enabled = true; 
         }
         else
         {
-            enemy.collider.enabled = false; // 공격 범위 비활성화
+            enemy.collider.enabled = false;
         }
     }
 
     public override void ExitState()
     {
-        // 공격 상태 종료 시 필요한 처리
+        
     }
 }
 
@@ -125,13 +119,14 @@ public class MonsterDamaged : MonsterState
     public override void EnterState()
     {
         _enemy.animator.SetTrigger("Damaged");
+        SpawnManager.Instance.HitEffectOn(_enemy.transform);
     }
 
     public override void ExecuteOnUpdate()
     {
         var animInfo = _enemy.animator.GetCurrentAnimatorStateInfo(0);
 
-        if (animInfo.IsName("Damaged") && animInfo.normalizedTime >= 1)
+        if (animInfo.IsName("Damaged") && animInfo.normalizedTime <= 0.9f)
         {
             _enemy.ChangeState(new MonsterEnter(_enemy));
         }
@@ -139,6 +134,6 @@ public class MonsterDamaged : MonsterState
 
     public override void ExitState()
     {
-        // 상태 종료 시 추가 작업이 필요하면 여기에 추가
+
     }
 }
