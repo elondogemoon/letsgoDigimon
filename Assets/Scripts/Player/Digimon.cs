@@ -113,7 +113,6 @@ public class Digimon : MonoBehaviour, IHIt
         }
     }
 
-
     public void ActiveSkill()
     {
         ChangeState(new PlayerSkill(this));
@@ -127,7 +126,7 @@ public class Digimon : MonoBehaviour, IHIt
 
     protected virtual IEnumerator EvolutionStart()
     {
-        GameManager.Instance.WaitEvolutioning();
+        GameManager.Instance.WaitEvolutioning(10f);
         Vector3 finalRotation = new Vector3(0, 180, 0);
         float duration = 10f;
         float initialSpeed = 10f;

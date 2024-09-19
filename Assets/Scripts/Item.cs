@@ -16,12 +16,12 @@ public class Item : MonoBehaviour
     {
         count++;
         GachaActive();
+
     }
     public void OnGachaButtonClick()
     {
         if (count > 0)
         {
-            Debug.Log(count);
             count--; 
             GachaActive(); 
         }

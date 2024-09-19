@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
 
     private int _waveCount = 0; // 현재 웨이브 카운트
     private int _enemyKillCount = 0;  // 현재 웨이브에서 처치한 적의 수
-
     private void Start()
     {
         StartWave();  // 첫 웨이브 시작
@@ -65,12 +64,12 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void WaitEvolutioning()
+    public void WaitEvolutioning(float time)
     {
         if (Player.isEvolutioning)
         {
             StopAllEnemies();  // 진화 시 적 중지
-            StartCoroutine(EvolutionCameraRoutine(10f));
+            StartCoroutine(EvolutionCameraRoutine(time));
         }
     }
 
@@ -110,12 +109,12 @@ public class GameManager : Singleton<GameManager>
 
     public void RandomSpawnEgg(Transform spawnPoint)
     {
-        var rand = Random.Range(0, 10);
-        if (rand == 0)
-        {
+        //var rand = Random.Range(0, 10);
+        //if (rand == 0)
+        //{
             ObjectPoolManager.Instance.DequeueObject(egg, spawnPoint.position);
             Debug.Log("알이 스폰되었습니다.");
-        }
+        //}
     }
 
     private IEnumerator ZoomIn()//진화 카메라 줌인

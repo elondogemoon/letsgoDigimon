@@ -13,7 +13,7 @@ public class DetectClick : MonoBehaviour
             // Raycast로 클릭한 위치 감지
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.CompareTag("Item"))
+                if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Item"))
                 {
                     hit.transform.gameObject.SetActive(false);
                 }

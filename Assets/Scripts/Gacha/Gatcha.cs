@@ -4,7 +4,9 @@ using System;
 using UnityEngine;
 using UnityEngine.Video;
 using System.IO;
-
+using UnityEngine.UI;
+using DG.Tweening;
+using System.Collections;
 public class Gatcha : Singleton<Gatcha>
 {
     [SerializeField] public List<GachaItem> gachaItems = new List<GachaItem>();
@@ -16,6 +18,7 @@ public class Gatcha : Singleton<Gatcha>
     private string filePath;
     private bool specialTaskExecuted = false;
 
+    public Image fadeImage;
     private void OnEnable()
     {
         filePath = Application.persistentDataPath + "/gachaResults.json";
@@ -27,6 +30,7 @@ public class Gatcha : Singleton<Gatcha>
         // VideoPlayer가 끝났을 때 이벤트 등록
         if (videoPlayer != null)
         {
+            
             videoPlayer.loopPointReached += OnVideoEnd; // 비디오가 끝났을 때 호출될 메서드 등록
         }
     }
@@ -68,33 +72,59 @@ public class Gatcha : Singleton<Gatcha>
         if (hasRare && hasUnique)
         {
             ExecuteSpecialTask();
+            GameManager.Instance.WaitEvolutioning(20f);
         }
     }
+
 
     private void ExecuteSpecialTask()
     {
-        GachaItem lastItem = gachaItems[gachaItems.Count - 1]; 
-        AddGachaResult(lastItem); 
-        UiManager.Instance.GachaEvent(true);
-        vcam.SetActive(true);
+        GachaItem lastItem = gachaItems[gachaItems.Count - 1];
+        AddGachaResult(lastItem);
 
-        if (videoPlayer != null)
+        FadeOutUI(() =>
         {
-            videoPlayer.Play();
-        }
-        specialTaskExecuted = true;
-        Debug.Log("특별 작업이 실행되었습니다.");
+            UiManager.Instance.GachaEvent(true);
+            vcam.SetActive(true);
+
+            if (videoPlayer != null)
+            {
+                videoPlayer.Play();
+            }
+            specialTaskExecuted = true;
+            Debug.Log("특별 작업이 실행되었습니다.");
+        });
     }
 
-    
+    private void FadeOutUI(Action onComplete)
+    {
+        fadeImage.enabled = true;
+        fadeImage.color = new Color(1, 1, 1, 0); 
+        fadeImage.DOFade(1f, 2f).OnComplete(() =>
+        {
+            fadeImage.enabled = false;
+            onComplete?.Invoke(); 
+        });
+    }
+
+
     private void OnVideoEnd(VideoPlayer vp)
     {
         SpecialGacha.SetActive(true);
         //vcam.SetActive(false);
         UiManager.Instance.GachaEvent(false);
+        StartCoroutine(AfterGachaEvent());
         Debug.Log("비디오가 끝났습니다.");
     }
 
+    private IEnumerator AfterGachaEvent()
+    {
+        yield return new WaitForSeconds(2);
+        FadeOutUI(() =>
+        {
+            vcam.SetActive(false);
+        });
+    }
     private GachaItem GetRandomByWeight(List<GachaItem> items)
     {
         float totalWeight = 0;

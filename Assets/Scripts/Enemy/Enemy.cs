@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour, IHIt
 
     private void OnDisable()
     {
-
         if (!isPool)
         {
             GameManager.Instance.CountEnemy();
