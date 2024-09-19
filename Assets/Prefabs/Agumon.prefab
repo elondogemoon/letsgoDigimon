@@ -57,6 +57,7 @@ MonoBehaviour:
   LowSkillPrefab: {fileID: 402979905654740338}
   MiddleSkillPrefab: {fileID: 531758574117090719}
   HighSkillPrefab: {fileID: 7287849126507465099}
+  Damage: 100
   EvolutionGauge: 100
   _evolutionNum: 0
   _upgradeState: 0

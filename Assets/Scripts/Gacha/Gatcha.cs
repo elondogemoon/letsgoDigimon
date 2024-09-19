@@ -98,7 +98,7 @@ public class Gatcha : Singleton<Gatcha>
     private void FadeOutUI(Action onComplete)
     {
         fadeImage.enabled = true;
-        fadeImage.color = new Color(1, 1, 1, 0); 
+        fadeImage.color = new Color(0, 0, 0, 0); 
         fadeImage.DOFade(1f, 2f).OnComplete(() =>
         {
             fadeImage.enabled = false;
@@ -109,20 +109,24 @@ public class Gatcha : Singleton<Gatcha>
     private void OnVideoEnd(VideoPlayer vp)
     {
         SpecialGacha.SetActive(true);
-        //vcam.SetActive(false);
         UiManager.Instance.GachaEvent(false);
         StartCoroutine(AfterGachaEvent());
-        Debug.Log("비디오가 끝났습니다.");
     }
 
     private IEnumerator AfterGachaEvent()
     {
-        yield return new WaitForSeconds(2);
-        FadeOutUI(() =>
-        {
-            vcam.SetActive(false);
-        });
+        yield return new WaitForSeconds(4);
+        fadeImage.enabled = true;
+        vcam.SetActive(false);
+        StartCoroutine(EndEvent());
+
     }
+    private IEnumerator EndEvent()
+    {
+        yield return new WaitForSeconds(3);
+        fadeImage.enabled = false;
+    }
+
     private GachaItem GetRandomByWeight(List<GachaItem> items)
     {
         float totalWeight = 0;

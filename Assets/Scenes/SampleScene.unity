@@ -608,7 +608,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388668594}
-  m_LocalRotation: {x: 0.45850196, y: 0.3345095, z: -0.19153823, w: 0.80074495}
+  m_LocalRotation: {x: 0.45850196, y: 0.33450955, z: -0.19153829, w: 0.8007449}
   m_LocalPosition: {x: -2.9559667, y: 7.08, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2154,7 +2154,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.45850196, y: 0.3345095, z: -0.19153823, w: 0.80074495}
+  m_LocalRotation: {x: 0.45850196, y: 0.33450955, z: -0.19153829, w: 0.8007449}
   m_LocalPosition: {x: -2.9559667, y: 7.08, z: -1.9105545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3729,10 +3729,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5340299871789780712, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
-      propertyPath: Damage
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5340299871789780712, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
       propertyPath: EvolutionEffect
       value: 
       objectReference: {fileID: 225494328}
@@ -4065,10 +4061,6 @@ PrefabInstance:
       propertyPath: SpecialGacha
       value: 
       objectReference: {fileID: 1060219836}
-    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
-      propertyPath: gachaItems.Array.data[2].weight
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].itemObject
       value: 
