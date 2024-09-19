@@ -21,7 +21,7 @@ public class Digimon : MonoBehaviour, IHIt
     public int MaxMP { get; set; }
     public int CurrentMP { get; set; }
     public int CoolTime { get; set; }
-    public float Damage { get; set; }
+    public float Damage;
     public float SkillDamage { get; set; }
     public float LastAttackTime { get; set; }
     public bool isEvolutioning { get; set; }
@@ -109,7 +109,7 @@ public class Digimon : MonoBehaviour, IHIt
         if (other.CompareTag("Enemy"))
         {
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-            transform.LookAt(target);
+            transform.DOLookAt(target, 1);
         }
     }
 

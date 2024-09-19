@@ -76,7 +76,6 @@ public class Gatcha : Singleton<Gatcha>
         }
     }
 
-
     private void ExecuteSpecialTask()
     {
         GachaItem lastItem = gachaItems[gachaItems.Count - 1];
@@ -106,7 +105,6 @@ public class Gatcha : Singleton<Gatcha>
             onComplete?.Invoke(); 
         });
     }
-
 
     private void OnVideoEnd(VideoPlayer vp)
     {

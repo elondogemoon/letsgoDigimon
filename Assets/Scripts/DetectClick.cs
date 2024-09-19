@@ -15,6 +15,7 @@ public class DetectClick : MonoBehaviour
             {
                 if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Item"))
                 {
+                    GameManager.Instance.AddEgg();
                     hit.transform.gameObject.SetActive(false);
                 }
             }

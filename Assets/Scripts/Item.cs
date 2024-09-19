@@ -4,39 +4,11 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    private int count;
+    private bool isPool;
 
-    private void Start()
-    {
-        count = 0;
-        GachaActive(); 
-    }
-
-    private void OnDisable()
-    {
-        count++;
-        GachaActive();
-
-    }
     public void OnGachaButtonClick()
     {
-        if (count > 0)
-        {
-            count--; 
-            GachaActive(); 
-        }
+        GameManager.Instance.UseEgg();
     }
 
-    public void GachaActive()
-    {
-        if (count == 0) 
-        {
-            UiManager.Instance.ActiveGachaBtn(false);
-        }
-        else if (count <= 1) 
-        {
-            UiManager.Instance.ActiveGachaBtn(true);
-        }
-        
-    }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9081113362169489311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: egg01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 4438557164405857941}
   - component: {fileID: 8665280436225468442}
   - component: {fileID: 919132149392103032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Item
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4695065745624059403}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4932519159944859191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: egg01_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9132795003544834934}
   - component: {fileID: 51588517518480402}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: egg01_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

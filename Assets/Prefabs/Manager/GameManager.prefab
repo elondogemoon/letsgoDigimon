@@ -47,3 +47,5 @@ MonoBehaviour:
   Player: {fileID: 0}
   Enemies: []
   vcam: {fileID: 0}
+  gatcha: {fileID: 0}
+  egg: {fileID: 0}

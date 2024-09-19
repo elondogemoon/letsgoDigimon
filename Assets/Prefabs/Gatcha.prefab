@@ -80,3 +80,4 @@ MonoBehaviour:
   vcam: {fileID: 0}
   videoPlayer: {fileID: 0}
   SpecialGacha: {fileID: 0}
+  fadeImage: {fileID: 0}

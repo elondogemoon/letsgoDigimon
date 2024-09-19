@@ -44,6 +44,7 @@ public class UiManager : Singleton<UiManager>
     {
         waveText.text = $"Wave : {count} ";
     }
+
     public void ActiveGachaBtn(bool isCanGacha)
     {
         if (isCanGacha)

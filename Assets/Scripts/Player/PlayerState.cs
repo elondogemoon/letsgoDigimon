@@ -33,7 +33,7 @@ public class PlayerEnter : PlayerState
 public class PlayerAttack : PlayerState
 {
     private readonly Digimon _digimon;
-
+    
     public PlayerAttack(Digimon playerState)
     {
         _digimon = playerState;
@@ -55,10 +55,7 @@ public class PlayerAttack : PlayerState
             _digimon.ChangeState(new PlayerStun(_digimon));
         }
         float currentTime = Time.time;
-        if (currentTime - _digimon.LastAttackTime >= _digimon.CoolTime)
-        {
-            _digimon.LastAttackTime = Time.time + 1000f;
-        }
+        
         var animInfo = _digimon.animator.GetCurrentAnimatorStateInfo(0);
 
         if (animInfo.IsName("Atk"))
@@ -124,7 +121,7 @@ public class PlayerEvolution : PlayerState
 
     public override void EnterState()
     {
-        
+
     }
 
     public override void ExecuteOnUpdate()

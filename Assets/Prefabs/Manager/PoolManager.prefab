@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 600639354501796347, guid: 98a4f5b81da478b48ba2df9094ac9356, type: 3}
   egg: {fileID: 0}
+  hitEffect: {fileID: 3463157229188906966, guid: 47096eff328e11a418ace7db2d72aa97, type: 3}
   _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

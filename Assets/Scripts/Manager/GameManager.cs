@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
 
     private int _waveCount = 0; // 현재 웨이브 카운트
     private int _enemyKillCount = 0;  // 현재 웨이브에서 처치한 적의 수
+    private int _eggCount = 0;
     private void Start()
     {
         StartWave();  // 첫 웨이브 시작
@@ -29,6 +30,7 @@ public class GameManager : Singleton<GameManager>
         UiManager.Instance.UpdateWaveUI(_waveCount);
         SpawnManager.Instance.SpawnEx(); 
     }
+
 
     public void WaveCount()
     {
@@ -44,7 +46,7 @@ public class GameManager : Singleton<GameManager>
 
     public void InitTarget(Enemy enemy)
     {
-        enemy.target = Player.transform;  // 플레이어를 타겟으로 설정
+        enemy.target = Player.transform;  
         AddEnemyToList(enemy);
     }
 
@@ -55,7 +57,7 @@ public class GameManager : Singleton<GameManager>
             Enemies.Add(enemy);  // 적을 리스트에 추가
         }
     }
-
+    
     public void StartGatcha()
     {
         if (gatcha != null)
@@ -91,6 +93,35 @@ public class GameManager : Singleton<GameManager>
         foreach (Enemy enemy in Enemies)
         {
             enemy.ResumeEnemy();  // 적 재개
+        }
+    }
+
+    public void AddEgg()
+    {
+        _eggCount++;
+        Debug.Log($"알 개수: {_eggCount}");
+        CheckEggCount();
+    }
+
+    public void UseEgg()
+    {
+        if (_eggCount > 0)
+        {
+            _eggCount--;
+            Debug.Log($"알 개수: {_eggCount}");
+            CheckEggCount();
+        }
+    }
+
+    private void CheckEggCount()
+    {
+        if (_eggCount <= 0)
+        {
+            UiManager.Instance.ActiveGachaBtn(false);
+        }
+        else
+        {
+            UiManager.Instance.ActiveGachaBtn(true);
         }
     }
 
