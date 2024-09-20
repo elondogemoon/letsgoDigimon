@@ -175,10 +175,15 @@ public class PlayerSkill : PlayerState
             {
 
             }
+            
             else if (animInfo.normalizedTime < 0.55f)
             {
                 _digimon._currentSkill.Execute(_digimon.transform.position);
                 _digimon.atkCollider.enabled = true;
+            }
+            else if (animInfo.normalizedTime < 0.7f)
+            {
+                _digimon.atkCollider.enabled = false;
             }
             else if (animInfo.normalizedTime < 0.80f)
             {

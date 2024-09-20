@@ -99,5 +99,4 @@ public class Enemy : MonoBehaviour, IHIt
         ChangeState(new MonsterEnter(this));
     }
     
-    
 }

@@ -22,6 +22,7 @@ public class WargrayMonSkill : MonoBehaviour
     {
         gameObject.transform.position = tr.position;
         rigidbody.velocity = Vector3.zero;
+       // prefab.transform.SetParent(null);
     }
     private void OnTriggerEnter(Collider other)
     {

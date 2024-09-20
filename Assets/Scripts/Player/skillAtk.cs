@@ -6,7 +6,7 @@ using UnityEngine;
 public class skillAtk : MonoBehaviour
 {
     private Digimon digimon;
-
+    public GameObject parent;
     private void Awake()
     {
         digimon = GetComponentInParent<Digimon>();   
@@ -25,6 +25,7 @@ public class skillAtk : MonoBehaviour
 
     public void Off()
     {
+       // transform.SetParent(parent.transform);
         gameObject.SetActive(false);
     }
 

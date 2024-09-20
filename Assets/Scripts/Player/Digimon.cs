@@ -109,16 +109,9 @@ public class Digimon : MonoBehaviour, IHIt
         if (other.CompareTag("Enemy"))
         {
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
-
-            if (Vector3.Distance(transform.position, target) < 0.1f)
-            {
-                target += transform.forward * 0.5f; // 캐릭터의 전방으로 약간 이동
-            }
-
             transform.DOLookAt(target, 1);
         }
     }
-
 
     public void ActiveSkill()
     {
