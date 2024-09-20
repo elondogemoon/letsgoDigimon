@@ -464,6 +464,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3046815328705600804, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046815328705600804, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
       propertyPath: duration
       value: 2
       objectReference: {fileID: 0}
@@ -499,7 +503,8 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1835511837028959751, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 904050198f30cbf4eaf1dc3d27b7e2c6, type: 3}
 --- !u!4 &7261778109837044639 stripped
 Transform:

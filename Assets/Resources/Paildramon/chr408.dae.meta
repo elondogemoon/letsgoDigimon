@@ -81,7 +81,217 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: chr408(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chr408 1
+      parentName: chr408(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: chr408
+      parentName: chr408(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GRP_joint
+      parentName: chr408
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_root
+      parentName: GRP_joint
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_center
+      parentName: J_root
+      position: {x: 0, y: 1.3462318, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_tail
+      parentName: J_center
+      position: {x: -0, y: -0.113328, z: -0.180535}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_tail1
+      parentName: J_tail
+      position: {x: -0, y: 0, z: -0.350012}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_tail2
+      parentName: J_tail1
+      position: {x: -0, y: 0, z: -0.477886}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_L_leg
+      parentName: J_center
+      position: {x: -0.160162, y: -0.104322, z: 0}
+      rotation: {x: 0, y: 0, z: -0.08715563, w: 0.9961947}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: J_L_knee
+      parentName: J_L_leg
+      position: {x: -0, y: -0.476871, z: 0.046553}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_L_unkle
+      parentName: J_L_knee
+      position: {x: -0, y: -0.597422, z: -0.151744}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.999999, z: 1}
+    - name: J_L_toe
+      parentName: J_L_unkle
+      position: {x: -0, y: -0.150044, z: 0.191918}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.999999, y: 0.999999, z: 1}
+    - name: J_R_leg
+      parentName: J_center
+      position: {x: 0.160162, y: -0.104323, z: 0}
+      rotation: {x: 0, y: 0, z: 0.08715563, w: 0.9961947}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: J_R_knee
+      parentName: J_R_leg
+      position: {x: -0, y: -0.476868, z: 0.046553}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_unkle
+      parentName: J_R_knee
+      position: {x: -0, y: -0.597425, z: -0.151744}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_toe
+      parentName: J_R_unkle
+      position: {x: -0, y: -0.150045, z: 0.191917}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.999999, y: 0.999999, z: 1}
+    - name: J_spine
+      parentName: J_center
+      position: {x: -0, y: 0.096697, z: 0.012107}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_weapon
+      parentName: J_spine
+      position: {x: 0.153406, y: -0.02513, z: -0.182745}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_L_weapon
+      parentName: J_spine
+      position: {x: -0.153406, y: -0.02513, z: -0.182745}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_body
+      parentName: J_spine
+      position: {x: -0, y: 0.166995, z: -0.026331}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_shoulder_parts
+      parentName: J_body
+      position: {x: 0.254588, y: 0.199937, z: 0.010155}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_head
+      parentName: J_body
+      position: {x: -0, y: 0.393434, z: 0.062552}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HUDTarget
+      parentName: J_head
+      position: {x: -0, y: 0.201025, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharacterFaceCenterTarget
+      parentName: J_head
+      position: {x: -0, y: 0.011653, z: 0.055355}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_L2_1
+      parentName: J_body
+      position: {x: -0.040194, y: 0.137476, z: -0.163837}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_L2_2
+      parentName: J_wing_L2_1
+      position: {x: -0.368765, y: -0.100346, z: 0.000001}
+      rotation: {x: 0, y: 0, z: 0.017451655, w: 0.9998477}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: J_wing_R1_1
+      parentName: J_body
+      position: {x: 0.036574, y: 0.253087, z: -0.169359}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_R1_2
+      parentName: J_wing_R1_1
+      position: {x: 0.192186, y: 0.203133, z: 0.000001}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_R2_1
+      parentName: J_body
+      position: {x: 0.040194, y: 0.137474, z: -0.163837}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_R2_2
+      parentName: J_wing_R2_1
+      position: {x: 0.368765, y: -0.100345, z: 0.000002}
+      rotation: {x: 0, y: 0, z: 0.017451655, w: 0.9998477}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: J_L_shoulder_parts
+      parentName: J_body
+      position: {x: -0.254588, y: 0.199939, z: 0.010155}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_shoulder
+      parentName: J_body
+      position: {x: 0.279091, y: 0.174649, z: 0.010155}
+      rotation: {x: 0.008791937, y: -0.015228138, z: -0.017577738, w: 0.9996909}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: J_R_elbow
+      parentName: J_R_shoulder
+      position: {x: 0.375206, y: -0.000001, z: -0.01179}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_R_hand
+      parentName: J_R_elbow
+      position: {x: 0.55037, y: -0.000002, z: 0.008045}
+      rotation: {x: 0, y: 0, z: -0.0000035, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_L1_1
+      parentName: J_body
+      position: {x: -0.036574, y: 0.253085, z: -0.169359}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_wing_L1_2
+      parentName: J_wing_L1_1
+      position: {x: -0.192186, y: 0.203132, z: 0.000001}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_L_shoulder
+      parentName: J_body
+      position: {x: -0.279091, y: 0.174649, z: 0.010155}
+      rotation: {x: 0.008791912, y: 0.015228096, z: 0.017577874, w: 0.9996909}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1}
+    - name: J_L_elbow
+      parentName: J_L_shoulder
+      position: {x: -0.375207, y: -0.000001, z: -0.01179}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: J_L_hand
+      parentName: J_L_elbow
+      position: {x: -0.55037, y: -0.000001, z: 0.008045}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharacterCenterTarget
+      parentName: J_spine
+      position: {x: -0, y: 0.069922, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: GRP_mesh
+      parentName: chr408
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -96,7 +306,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

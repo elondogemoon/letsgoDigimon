@@ -74,7 +74,6 @@ public class DigimonPopUpUI : MonoBehaviour
 
         if (digimonPrefab != null)
         {
-            // 모델링을 변경하는 로직 작성
             Instantiate(digimonPrefab, gameObject.transform);
             
             Debug.Log($"Changing model to: {modelPath}");
