@@ -72,7 +72,7 @@ public class Gatcha : Singleton<Gatcha>
         if (hasRare && hasUnique)
         {
             ExecuteSpecialTask();
-            GameManager.Instance.WaitEvolutioning(20f);
+            GameManager.Instance.WaitSpecialGacha();
         }
     }
 
@@ -155,7 +155,8 @@ public class Gatcha : Singleton<Gatcha>
         {
             name = item.name,
             rarity = item.rarity,
-            path = item.imagePath
+            imagepath = item.imagePath,
+            modelPath=item.modelPath,
         };
 
         gachaResultUpdated?.Invoke(gachaResult);

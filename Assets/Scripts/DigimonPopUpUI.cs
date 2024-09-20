@@ -1,3 +1,4 @@
+using BehaviorDesigner.Runtime.Tasks.Unity.UnityTransform;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 
 public class DigimonPopUpUI : MonoBehaviour
 {
+    public List<Button> changeButtons;  // 각 디지몬 이미지에 대응하는 버튼
     public List<Image> DigimonImg = new List<Image>();
     private Dictionary<string, GachaResult> digimonData = new Dictionary<string, GachaResult>();
 
@@ -24,29 +26,35 @@ public class DigimonPopUpUI : MonoBehaviour
         SetDigimonUi(digimonData);
     }
 
-    private void SetDigimonUi(Dictionary<string,GachaResult> dataDic)
+    private void SetDigimonUi(Dictionary<string, GachaResult> dataDic)
     {
         int index = 0;
 
         // 딕셔너리에서 데이터를 순회
         foreach (var data in dataDic.Values)
         {
-            if (index >= DigimonImg.Count)
+            if (index >= DigimonImg.Count || index >= changeButtons.Count)
             {
-                break; 
+                break;
             }
 
-            Sprite digimonSprite = Resources.Load<Sprite>($"{data.path}");
-            Debug.Log($"Loaded sprite for {data.path}: {(digimonSprite != null ? "Success" : "Failed")}");
+            Sprite digimonSprite = Resources.Load<Sprite>($"{data.imagepath}");
+            Debug.Log($"Loaded sprite for {data.imagepath}: {(digimonSprite != null ? "Success" : "Failed")}");
 
             if (digimonSprite != null)
             {
-                DigimonImg[index].sprite = digimonSprite; 
-                DigimonImg[index].gameObject.SetActive(true); 
+                DigimonImg[index].sprite = digimonSprite;
+                DigimonImg[index].gameObject.SetActive(true);
+
+           
+                int buttonIndex = index;  
+                changeButtons[buttonIndex].onClick.AddListener(() => ChangeGachaedDigimon(data.modelPath));
+                changeButtons[buttonIndex].gameObject.SetActive(true);
             }
             else
             {
-                DigimonImg[index].gameObject.SetActive(false); 
+                DigimonImg[index].gameObject.SetActive(false);
+                changeButtons[index].gameObject.SetActive(false);
             }
 
             index++;
@@ -56,7 +64,20 @@ public class DigimonPopUpUI : MonoBehaviour
         for (int i = index; i < DigimonImg.Count; i++)
         {
             DigimonImg[i].gameObject.SetActive(false);
+            changeButtons[i].gameObject.SetActive(false);
         }
     }
 
+    private void ChangeGachaedDigimon(string modelPath)
+    {
+        GameObject digimonPrefab = Resources.Load<GameObject>(modelPath);
+
+        if (digimonPrefab != null)
+        {
+            // 모델링을 변경하는 로직 작성
+            Instantiate(digimonPrefab, gameObject.transform);
+            
+            Debug.Log($"Changing model to: {modelPath}");
+        }
+    }
 }

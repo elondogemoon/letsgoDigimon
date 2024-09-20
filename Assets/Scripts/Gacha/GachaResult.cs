@@ -7,5 +7,6 @@ public class GachaResult
     public int id;
     public string name;
     public string rarity;
-    public string path;
+    public string imagepath;
+    public string modelPath;
 }

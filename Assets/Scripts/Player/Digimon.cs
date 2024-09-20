@@ -109,9 +109,16 @@ public class Digimon : MonoBehaviour, IHIt
         if (other.CompareTag("Enemy"))
         {
             Vector3 target = new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z);
+
+            if (Vector3.Distance(transform.position, target) < 0.1f)
+            {
+                target += transform.forward * 0.5f; // 캐릭터의 전방으로 약간 이동
+            }
+
             transform.DOLookAt(target, 1);
         }
     }
+
 
     public void ActiveSkill()
     {
@@ -159,7 +166,6 @@ public class Digimon : MonoBehaviour, IHIt
             yield return null;
         }
 
-        // 최종 회전 완료
         yield return transform.DORotate(finalRotation, 0.5f).SetEase(Ease.OutQuad).WaitForCompletion();
         isEvolutioning = false;
         EvolutionEffect.SetActive(false);
@@ -180,7 +186,7 @@ public class Digimon : MonoBehaviour, IHIt
 
 public class Skill
 {
-    public GameObject skillEffect; // 스킬 이펙트 프리팹
+    public GameObject skillEffect; 
 
     public Skill(GameObject effect)
     {

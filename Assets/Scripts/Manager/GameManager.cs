@@ -75,6 +75,11 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void WaitSpecialGacha()
+    {
+        StopAllEnemies();
+    }
+
     public void OnEndEvolutioning()
     {
         ResumeAllEnemies();  // 진화 완료 시 적 재개

@@ -4,41 +4,9 @@ using UnityEngine;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.IO;
-public class GachaedDigimonData
-{
-    public float id;
-    public float PosX;
-    public float PosZ;
-    public int rank;
-    public string className;
 
-    public GachaedDigimonData(float id, float posX, float posZ)
-    {
-        this.id = id;
-        PosX = posX;
-        PosZ = posZ;
-    }
-}
 
-public class GameData
-{
-    public string id;
-    public string name;
-    public float hp;
-    public float evolutionGauge;
-    public float skillDamage;
-    public List<GachaedDigimonData> Digimondata;
 
-    public GameData(string id, string name, float hp, float evolutionGauge, float skillDamage, List<GachaedDigimonData> digimondata)
-    {
-        this.id = id;
-        this.name = name;
-        this.hp = hp;
-        this.evolutionGauge = evolutionGauge;
-        this.skillDamage = skillDamage;
-        Digimondata = digimondata;
-    }
-}
 
 public class DataManager : Singleton<DataManager> 
 {
