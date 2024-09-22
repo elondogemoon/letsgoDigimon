@@ -13,7 +13,7 @@ public class EvolutionAtk : MonoBehaviour
 
     public IEnumerator Evolution()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         collider.enabled = true;
     }
 
