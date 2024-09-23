@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,10 +357,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EvolutionEffect
       objectReference: {fileID: 0}
-    - target: {fileID: 9039528559970624918, guid: f14de583596f39a4c83c5375cdd323c3, type: 3}
-      propertyPath: m_TagString
-      value: EvolutionEffect
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f14de583596f39a4c83c5375cdd323c3, type: 3}
 --- !u!1 &225494328 stripped
@@ -421,6 +417,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae184117ca9a4541927acab462918d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &305977349 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8750483509094788983, guid: 834a7e3565fb84c4db9fae7245d867af, type: 3}
+  m_PrefabInstance: {fileID: 8750483508909374188}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &388668594
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,12 +792,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8750483509094788977, guid: 834a7e3565fb84c4db9fae7245d867af, type: 3}
   m_PrefabInstance: {fileID: 8750483508909374188}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 305977349}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &502715808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305977349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec59c39ff8f25a48b09e93291822932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EvolutionOutLine: {fileID: 0}
 --- !u!1 &560816345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2506,10 @@ PrefabInstance:
     - target: {fileID: 2643739545448969299, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340299871789780712, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
+      propertyPath: EvolutionGauge
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5340299871789780712, guid: 5145ae896f6b8c24d9aa3987543b59a5, type: 3}
       propertyPath: EvolutionEffect

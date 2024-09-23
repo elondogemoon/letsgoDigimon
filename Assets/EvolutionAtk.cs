@@ -21,8 +21,7 @@ public class EvolutionAtk : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            IHIt hit = other.GetComponent<IHIt>();
-            hit.Hit(100);
+
         }
         
     }

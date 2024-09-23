@@ -1,5 +1,6 @@
-using UnityEngine.AI;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IHIt
 {
@@ -17,6 +18,8 @@ public class Enemy : MonoBehaviour, IHIt
     private IState _enemyState;
     private bool isStop;
     private bool isPool = true;
+    private Rigidbody rb; 
+
     private void Awake()
     {
         Hp = 100;
@@ -25,6 +28,8 @@ public class Enemy : MonoBehaviour, IHIt
         AtkRange = 1;
         CoolTime = 3;
         GameManager.Instance.InitTarget(this);
+        rb = GetComponent<Rigidbody>(); 
+     
     }
 
     private void OnEnable()
@@ -43,9 +48,8 @@ public class Enemy : MonoBehaviour, IHIt
             GameManager.Instance.RandomSpawnEgg(transform);
             CurrentHp = 100;
         }
-        isPool = false; 
+        isPool = false;
     }
-
 
     private void Update()
     {
@@ -54,15 +58,29 @@ public class Enemy : MonoBehaviour, IHIt
             _enemyState.ExecuteOnUpdate();
         }
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EvolutionEffect"))
         {
             Debug.Log("EvoEffcet");
-
             animator.SetTrigger("Down");
+            _nav.enabled = false;
+
+            Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
+            knockbackDirection.y = 3f;
+            rb.isKinematic = false; 
+            rb.AddForce(knockbackDirection * 50f); 
+            StartCoroutine(ReturnKinematic());
         }
+    }
+
+    public IEnumerator ReturnKinematic()
+    {
+        yield return new WaitForSeconds(1);
+        _nav.enabled = true;
+        rb.isKinematic = true;
+        Hit(10);
     }
     public void ChangeState(IState newState)
     {
@@ -77,6 +95,7 @@ public class Enemy : MonoBehaviour, IHIt
         CurrentHp -= damage;
         if (CurrentHp <= 0)
         {
+            rb.isKinematic = true; // 다시 kinematic으로 설정
             ObjectPoolManager.Instance.EnqueueObject(gameObject);
         }
     }
@@ -98,12 +117,11 @@ public class Enemy : MonoBehaviour, IHIt
     {
         isStop = false;
         animator.speed = 1;
-       
+
         if (_nav.isOnNavMesh)
         {
             _nav.isStopped = false;
         }
         ChangeState(new MonsterEnter(this));
     }
-    
 }

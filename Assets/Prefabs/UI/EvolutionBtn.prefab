@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8750483509094788979}
   - component: {fileID: 8750483509094788978}
   - component: {fileID: 8750483509094788977}
+  - component: {fileID: 502715808}
   m_Layer: 5
   m_Name: EvolutionBtn
   m_TagString: Untagged
@@ -135,6 +136,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &502715808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750483509094788983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec59c39ff8f25a48b09e93291822932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EvolutionOutLine: {fileID: 8750483509270862757}
+  HighlightOutLine: {fileID: 8750483510013167466}
+  button: {fileID: 8750483509094788977}
 --- !u!1 &8750483509270862757
 GameObject:
   m_ObjectHideFlags: 0
