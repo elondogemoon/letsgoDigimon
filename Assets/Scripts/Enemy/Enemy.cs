@@ -60,10 +60,11 @@ public class Enemy : MonoBehaviour, IHIt
         if (other.CompareTag("EvolutionEffect"))
         {
             Debug.Log("EvoEffcet");
-
+            Hit(100);
             animator.SetTrigger("Down");
         }
     }
+
     public void ChangeState(IState newState)
     {
         _enemyState?.ExitState();

@@ -39391,7 +39391,7 @@ GameObject:
   - component: {fileID: 7022182553240323213}
   m_Layer: 0
   m_Name: OrbitalBeamRed
-  m_TagString: Untagged
+  m_TagString: EvolutionEffect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
