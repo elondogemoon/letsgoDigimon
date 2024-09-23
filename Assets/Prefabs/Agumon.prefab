@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2643739545448969299}
   - component: {fileID: 5340299871789780712}
   - component: {fileID: 4550533887292497318}
-  - component: {fileID: 1976085285}
   - component: {fileID: 1976085291}
   m_Layer: 0
   m_Name: Agumon
@@ -77,18 +76,6 @@ CapsuleCollider:
   m_Height: 1.7
   m_Direction: 1
   m_Center: {x: 0, y: 0.72, z: 0}
---- !u!114 &1976085285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6321088122416638477}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e4d4ce24e1468848b96a19448131b25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1976085291
 Rigidbody:
   m_ObjectHideFlags: 0

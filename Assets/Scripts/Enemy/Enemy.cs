@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, IHIt
     public float LastAttackTime { get; set; }
 
     public NavMeshAgent _nav;
-    public BoxCollider collider;
+    public BoxCollider atkcollider;
     private IState _enemyState;
     private bool isStop;
     private bool isPool = true;
@@ -29,15 +29,13 @@ public class Enemy : MonoBehaviour, IHIt
         CoolTime = 3;
         GameManager.Instance.InitTarget(this);
         rb = GetComponent<Rigidbody>();
-
     }
 
     private void OnEnable()
     {
         _nav = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        collider = GetComponentInChildren<BoxCollider>();
-        
+        atkcollider = GetComponentInChildren<BoxCollider>();
         ChangeState(new MonsterEnter(this));
     }
 

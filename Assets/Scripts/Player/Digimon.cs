@@ -97,7 +97,6 @@ public class Digimon : MonoBehaviour, IHIt
         CurrentMP = 100;
     }
 
-
     public void Hit(float damage)
     {
         CurrentHp -= damage;

@@ -93,11 +93,11 @@ public class MonsterAtk : MonsterState
 
         if (animInfo.IsName("Atk") && animInfo.normalizedTime < 0.90f)
         {
-            enemy.collider.enabled = true; 
+            enemy.atkcollider.enabled = true; 
         }
         else
         {
-            enemy.collider.enabled = false;
+            enemy.atkcollider.enabled = false;
         }
     }
 
