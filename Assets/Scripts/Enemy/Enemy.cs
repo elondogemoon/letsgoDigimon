@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour, IHIt
     private IState _enemyState;
     private bool isStop;
     private bool isPool = true;
-    private Rigidbody rb; 
-
+    private Rigidbody rb;
+    [SerializeField]private EnemyDamageUI _damageUI;
     private void Awake()
     {
         Hp = 100;
@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour, IHIt
         AtkRange = 1;
         CoolTime = 3;
         GameManager.Instance.InitTarget(this);
-        rb = GetComponent<Rigidbody>(); 
-     
+        rb = GetComponent<Rigidbody>();
+
     }
 
     private void OnEnable()
@@ -37,14 +37,16 @@ public class Enemy : MonoBehaviour, IHIt
         _nav = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         collider = GetComponentInChildren<BoxCollider>();
+        
         ChangeState(new MonsterEnter(this));
     }
 
     private void OnDisable()
     {
+        GameManager.Instance.CountEnemy();
+
         if (!isPool)
         {
-            GameManager.Instance.CountEnemy();
             GameManager.Instance.RandomSpawnEgg(transform);
             CurrentHp = 100;
         }
@@ -64,9 +66,7 @@ public class Enemy : MonoBehaviour, IHIt
         if (other.CompareTag("EvolutionEffect"))
         {
             Debug.Log("EvoEffcet");
-            animator.SetTrigger("Down");
             _nav.enabled = false;
-
             Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
             knockbackDirection.y = 3f;
             rb.isKinematic = false; 
@@ -82,6 +82,7 @@ public class Enemy : MonoBehaviour, IHIt
         rb.isKinematic = true;
         Hit(10);
     }
+
     public void ChangeState(IState newState)
     {
         _enemyState?.ExitState();
@@ -93,6 +94,8 @@ public class Enemy : MonoBehaviour, IHIt
     {
         ChangeState(new MonsterDamaged(this));
         CurrentHp -= damage;
+        
+        _damageUI.DamageUI(damage);
         if (CurrentHp <= 0)
         {
             rb.isKinematic = true; // 다시 kinematic으로 설정

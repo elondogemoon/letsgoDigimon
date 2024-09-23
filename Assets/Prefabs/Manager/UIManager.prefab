@@ -49,3 +49,5 @@ MonoBehaviour:
   gachaBtn: {fileID: 0}
   waveText: {fileID: 0}
   specialGacha: {fileID: 0}
+  PopUp: {fileID: 0}
+  item: {fileID: 0}

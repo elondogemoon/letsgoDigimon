@@ -12,14 +12,15 @@ public class UiManager : Singleton<UiManager>
     [SerializeField] private Button gachaBtn;
     [SerializeField] private TextMeshProUGUI waveText;
     [SerializeField] private GameObject specialGacha;
+    [SerializeField] GameObject PopUp;
     [SerializeField] Item item;
     private Coroutine disableUICoroutine;
     public void UpdateUI(GachaItem item)
     {
         Sprite itemSprite = LoadSpriteFromPath(item.imagePath);
+        PopUp.SetActive(true);
         gachaImage.sprite = itemSprite;
-        gachaImage.enabled = true;
-        text.enabled = true;
+        
         text.text = $"{item.name} {item.rarity}µÓ±ﬁ¿ª »πµÊ«ﬂ¥Ÿ!";
         if (disableUICoroutine != null)
         {
@@ -36,8 +37,7 @@ public class UiManager : Singleton<UiManager>
     IEnumerator DisableUI()
     {
         yield return new WaitForSeconds(1);
-        gachaImage.enabled = false;
-        text.enabled = false;
+        PopUp.SetActive(false);
     }
 
     public void UpdateWaveUI(int count)
