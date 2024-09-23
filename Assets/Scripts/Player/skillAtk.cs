@@ -6,11 +6,12 @@ using UnityEngine;
 public class skillAtk : MonoBehaviour
 {
     private Digimon digimon;
-
+    public GameObject parent;
     private void Awake()
     {
         digimon = GetComponentInParent<Digimon>();   
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -24,6 +25,7 @@ public class skillAtk : MonoBehaviour
 
     public void Off()
     {
+       // transform.SetParent(parent.transform);
         gameObject.SetActive(false);
     }
 

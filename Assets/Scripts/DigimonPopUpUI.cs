@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class DigimonPopUpUI : MonoBehaviour
 {
-    public List<Button> changeButtons;  // 각 디지몬 이미지에 대응하는 버튼
+    public List<Button> changeButtons;  
     public List<Image> DigimonImg = new List<Image>();
     private Dictionary<string, GachaResult> digimonData = new Dictionary<string, GachaResult>();
-
+    public GameObject player;
     private void OnEnable()
     {
         Gatcha.Instance.gachaResultUpdated += SetDigimonUi;
@@ -74,8 +74,7 @@ public class DigimonPopUpUI : MonoBehaviour
 
         if (digimonPrefab != null)
         {
-            // 모델링을 변경하는 로직 작성
-            Instantiate(digimonPrefab, gameObject.transform);
+            Instantiate(digimonPrefab, player.transform);
             
             Debug.Log($"Changing model to: {modelPath}");
         }

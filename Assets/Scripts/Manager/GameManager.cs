@@ -136,7 +136,7 @@ public class GameManager : Singleton<GameManager>
         Debug.Log($"처치된 적 수: {_enemyKillCount}");
 
         // 적이 5마리 죽으면 다음 웨이브로 넘어감
-        if (_enemyKillCount == 5)
+        if (_enemyKillCount <= 5)
         {
             _enemyKillCount = 0; // 킬 카운트 초기화
             WaveCount();

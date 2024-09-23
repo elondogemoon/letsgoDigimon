@@ -9,6 +9,7 @@ TagManager:
   - PlayerAtk
   - Item
   - Ground
+  - EvolutionEffect
   layers:
   - Default
   - TransparentFX

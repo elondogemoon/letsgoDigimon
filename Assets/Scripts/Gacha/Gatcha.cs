@@ -30,7 +30,6 @@ public class Gatcha : Singleton<Gatcha>
         // VideoPlayer가 끝났을 때 이벤트 등록
         if (videoPlayer != null)
         {
-            
             videoPlayer.loopPointReached += OnVideoEnd; // 비디오가 끝났을 때 호출될 메서드 등록
         }
     }
@@ -119,8 +118,8 @@ public class Gatcha : Singleton<Gatcha>
         fadeImage.enabled = true;
         vcam.SetActive(false);
         StartCoroutine(EndEvent());
-
     }
+
     private IEnumerator EndEvent()
     {
         yield return new WaitForSeconds(3);

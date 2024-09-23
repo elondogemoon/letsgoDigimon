@@ -33,7 +33,7 @@ public class PlayerEnter : PlayerState
 public class PlayerAttack : PlayerState
 {
     private readonly Digimon _digimon;
-    
+
     public PlayerAttack(Digimon playerState)
     {
         _digimon = playerState;
@@ -46,47 +46,53 @@ public class PlayerAttack : PlayerState
 
     public override void ExecuteOnUpdate()
     {
-        if (_digimon.isEvolutioning == true)
+        if (_digimon.isEvolutioning)
         {
             _digimon.ChangeState(new PlayerEvolution(_digimon));
+            return;
         }
+
         if (_digimon.CurrentHp <= 0)
         {
             _digimon.ChangeState(new PlayerStun(_digimon));
+            return;
         }
-        float currentTime = Time.time;
-        
-        var animInfo = _digimon.animator.GetCurrentAnimatorStateInfo(0);
 
+        RotateTowardsClick();  // 마우스 클릭한 방향으로 회전
+
+        var animInfo = _digimon.animator.GetCurrentAnimatorStateInfo(0);
         if (animInfo.IsName("Atk"))
         {
-            if (animInfo.normalizedTime < 0.32f)
+            if (animInfo.normalizedTime >= 0.55f)
             {
-
-            }
-            else if (animInfo.normalizedTime < 0.55f)
-            {
-                
                 _digimon.atkCollider.enabled = true;
-            }
-            else if (animInfo.normalizedTime < 0.80f)
-            {
-                _digimon.atkCollider.enabled = false;
             }
             else
             {
                 _digimon.atkCollider.enabled = false;
                 _digimon.ChangeState(new PlayerEnter(_digimon));
-                return;
             }
         }
     }
 
     public override void ExitState()
     {
+    }
 
+    private void RotateTowardsClick()
+    {
+        if (Input.GetMouseButtonDown(0))  
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo))
+            {
+                Vector3 targetPosition = new Vector3(hitInfo.point.x, _digimon.transform.position.y, hitInfo.point.z);
+                _digimon.transform.LookAt(targetPosition);
+            }
+        }
     }
 }
+
 
 public class PlayerStun : PlayerState
 {
@@ -169,10 +175,15 @@ public class PlayerSkill : PlayerState
             {
 
             }
+            
             else if (animInfo.normalizedTime < 0.55f)
             {
                 _digimon._currentSkill.Execute(_digimon.transform.position);
                 _digimon.atkCollider.enabled = true;
+            }
+            else if (animInfo.normalizedTime < 0.7f)
+            {
+                _digimon.atkCollider.enabled = false;
             }
             else if (animInfo.normalizedTime < 0.80f)
             {

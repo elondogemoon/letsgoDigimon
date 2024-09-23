@@ -43,11 +43,9 @@ public class Enemy : MonoBehaviour, IHIt
             GameManager.Instance.RandomSpawnEgg(transform);
             CurrentHp = 100;
         }
-        else
-        {
-            isPool = false;
-        }
+        isPool = false; 
     }
+
 
     private void Update()
     {
@@ -56,7 +54,16 @@ public class Enemy : MonoBehaviour, IHIt
             _enemyState.ExecuteOnUpdate();
         }
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("EvolutionEffect"))
+        {
+            Debug.Log("EvoEffcet");
 
+            animator.SetTrigger("Down");
+        }
+    }
     public void ChangeState(IState newState)
     {
         _enemyState?.ExitState();
@@ -98,6 +105,5 @@ public class Enemy : MonoBehaviour, IHIt
         }
         ChangeState(new MonsterEnter(this));
     }
-    
     
 }
