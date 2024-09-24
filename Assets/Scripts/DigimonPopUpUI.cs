@@ -23,6 +23,7 @@ public class DigimonPopUpUI : MonoBehaviour
         Gatcha.Instance.gachaResultUpdated -= SetDigimonUi;
     }
 
+
     //private void ClearDigimonObject()
     //{
     //    _digimonObjList.ForEach(e => { DestroyImmediate(e); });
