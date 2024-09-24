@@ -134,7 +134,6 @@ public class Digimon : MonoBehaviour, IHIt
         bool halfwayReached = false;
         while (elapsedTime < duration)
         {
-            
             float currentSpeed = initialSpeed + (speedIncrease * (elapsedTime / duration));
             float rotationAngle = currentSpeed * Time.deltaTime;
             transform.Rotate(0, rotationAngle, 0);

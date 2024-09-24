@@ -17,8 +17,6 @@ public class RemoveCollidersFromPrefab : EditorWindow
                 DestroyImmediate(meshCollider, true);
             }
 
-            
-
         }
         else
         {

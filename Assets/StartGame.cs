@@ -7,6 +7,7 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField] Button startBtn;
     Dictionary<string,GachaResult> dic = new Dictionary<string,GachaResult>();
+    [SerializeField]List<Digimon> digimons = new List<Digimon>();
     public void Play()
     {
         this.gameObject.SetActive(true);
@@ -14,6 +15,8 @@ public class StartGame : MonoBehaviour
 
     private void Start()
     {
-        
+        DataManager.Instance.LoadResult(dic);
+        GameManager.Instance.StartWave();
     }
+
 }
