@@ -39,7 +39,7 @@ public class Digimon : MonoBehaviour, IHIt
     public Skill _currentSkill;
     private IState _playerState;
 
-    
+
     protected virtual void Awake()
     {
         ApplyUpgradeState();
@@ -66,7 +66,7 @@ public class Digimon : MonoBehaviour, IHIt
         _playerState = newState;
         _playerState.EnterState();
     }
-
+    
     private void ApplyUpgradeState()
     {
         switch (_upgradeState)

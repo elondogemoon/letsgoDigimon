@@ -17,7 +17,6 @@ public class SpawnManager : Singleton<SpawnManager>
         ObjectPoolManager.Instance.CreatePool(enemy, 10);
         ObjectPoolManager.Instance.CreatePool(egg, 10);
         ObjectPoolManager.Instance.CreatePool(hitEffect, 10);
-        StartWave();
     }
 
     public void StartWave()

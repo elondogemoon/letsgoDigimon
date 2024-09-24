@@ -20,6 +20,8 @@ public class GameManager : Singleton<GameManager>
     private int _eggCount = 0;
     private void Start()
     {
+        Digimon digimon = FindObjectOfType<Digimon>();
+        Player = digimon;
         StartWave();  // 첫 웨이브 시작
     }
 
@@ -153,6 +155,7 @@ public class GameManager : Singleton<GameManager>
         //}
     }
 
+    #region cameraZoom
     private IEnumerator ZoomIn()//진화 카메라 줌인
     {
         float startFOV = vcam.m_Lens.FieldOfView;
@@ -187,6 +190,6 @@ public class GameManager : Singleton<GameManager>
 
         yield return StartCoroutine(ZoomOut());
     }
-
+    #endregion
 
 }

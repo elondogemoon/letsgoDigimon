@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EvolutionAtk : MonoBehaviour
 {
-    [SerializeField] BoxCollider collider;
+    [SerializeField] BoxCollider boxcollider;
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -13,16 +13,14 @@ public class EvolutionAtk : MonoBehaviour
 
     public IEnumerator Evolution()
     {
-        yield return new WaitForSeconds(2);
-        collider.enabled = true;
+        yield return new WaitForSeconds(2f);
+        boxcollider.enabled = true;
+        Invoke("Off", 0.5f);
     }
 
-    private void OnTriggerStay(Collider other)
+    public void Off()
     {
-        if (other.CompareTag("Enemy"))
-        {
-
-        }
-        
+        boxcollider.enabled = false;
     }
+    
 }

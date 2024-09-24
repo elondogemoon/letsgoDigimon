@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ActiveSkill : MonoBehaviour
 {
-    public Digimon digimon;  // Digimon 객체를 참조
+    public Digimon digimon ; // Digimon 객체를 참조
     public Button EvolutionButton;  // UI 버튼 참조
     private Action action;
     [SerializeField] GameObject vir2;
@@ -18,6 +18,12 @@ public class ActiveSkill : MonoBehaviour
     {
         action = RegistEvent;
         GatchaButton.interactable = false;
+    }
+
+    private void OnEnable()
+    {
+        Digimon selectDigimon = FindObjectOfType<Digimon>();
+        digimon = selectDigimon;
     }
 
     private void Update()

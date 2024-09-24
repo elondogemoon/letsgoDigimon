@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IHIt
     private IState _enemyState;
     private bool isStop;
     private bool isPool = true;
+    private bool isDamaged;
     private Rigidbody rb;
     [SerializeField]private EnemyDamageUI _damageUI;
     private void Awake()
@@ -63,12 +64,17 @@ public class Enemy : MonoBehaviour, IHIt
     {
         if (other.CompareTag("EvolutionEffect"))
         {
+            if(isDamaged == true)
+            {
+                return;
+            }
             Debug.Log("EvoEffcet");
             _nav.enabled = false;
             Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
             knockbackDirection.y = 3f;
             rb.isKinematic = false; 
-            rb.AddForce(knockbackDirection * 50f); 
+            rb.AddForce(knockbackDirection * 50f);
+            isDamaged = true;
             StartCoroutine(ReturnKinematic());
         }
     }
@@ -78,6 +84,7 @@ public class Enemy : MonoBehaviour, IHIt
         yield return new WaitForSeconds(1);
         _nav.enabled = true;
         rb.isKinematic = true;
+        isDamaged = false;
         Hit(10);
     }
 
