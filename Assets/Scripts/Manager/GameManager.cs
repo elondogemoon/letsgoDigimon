@@ -22,7 +22,6 @@ public class GameManager : Singleton<GameManager>
     {
         Digimon digimon = FindObjectOfType<Digimon>();
         Player = digimon;
-        StartWave();  // 첫 웨이브 시작
     }
 
     public void StartWave()

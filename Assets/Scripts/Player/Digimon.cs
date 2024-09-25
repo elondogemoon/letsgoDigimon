@@ -172,7 +172,6 @@ public class Digimon : MonoBehaviour, IHIt
         }
         ApplyUpgradeState();
     }
-
 }
 
 public class Skill

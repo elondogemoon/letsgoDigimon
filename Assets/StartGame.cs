@@ -8,7 +8,6 @@ public class StartGame : MonoBehaviour
 {
     [SerializeField] Button startBtn;
     Dictionary<string, GachaResult> dic = new Dictionary<string, GachaResult>();
-    [SerializeField] List<Digimon> digimons = new List<Digimon>();
     [SerializeField] GameObject AdventureCam;
     [SerializeField] GameObject PlayerCam;
     [SerializeField] GameObject IngameUI;
@@ -37,6 +36,7 @@ public class StartGame : MonoBehaviour
         yield return new WaitForSeconds(5);
         gobj.SetActive(false);
         IngameUI.SetActive(true);
+        GameManager.Instance.StartWave();
     }
 
     private IEnumerator MoveAdventureCam()

@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, IHIt
 {
-    public Transform target { get; set; }
+    public Transform target;
     public Animator animator;
     public int Hp { get; set; }
     public float CurrentHp;
@@ -28,12 +28,12 @@ public class Enemy : MonoBehaviour, IHIt
         Damage = 5;
         AtkRange = 1;
         CoolTime = 3;
-        GameManager.Instance.InitTarget(this);
         rb = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
     {
+        GameManager.Instance.InitTarget(this);
         _nav = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         atkcollider = GetComponentInChildren<BoxCollider>();
