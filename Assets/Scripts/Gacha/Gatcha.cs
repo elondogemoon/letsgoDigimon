@@ -22,7 +22,9 @@ public class Gatcha : Singleton<Gatcha>
     private void OnEnable()
     {
         filePath = Application.persistentDataPath + "/gachaResults.json";
+        //InitFirstDigimon(First);
         LoadResult();
+        AddGachaResult(gachaItems[4]);
     }
 
     private void Start()
@@ -77,7 +79,7 @@ public class Gatcha : Singleton<Gatcha>
 
     private void ExecuteSpecialTask()
     {
-        GachaItem lastItem = gachaItems[gachaItems.Count - 1];
+        GachaItem lastItem = gachaItems[gachaItems.Count - 2];
         AddGachaResult(lastItem);
 
         FadeOutUI(() =>
@@ -158,6 +160,18 @@ public class Gatcha : Singleton<Gatcha>
             modelPath=item.modelPath,
         };
 
+        gachaResultUpdated?.Invoke(gachaResult);
+        StoreResult();
+    }
+    private void InitFirstDigimon(GachaItem item)
+    {
+        gachaResult[item.name] = new GachaResult
+        {
+            name = item.name,
+            rarity = item.rarity,
+            imagepath = item.imagePath,
+            modelPath = item.modelPath,
+        };
         gachaResultUpdated?.Invoke(gachaResult);
         StoreResult();
     }

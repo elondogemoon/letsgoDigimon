@@ -150,7 +150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &89652958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10763,13 +10763,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836909805}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.name
+      value: Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: videoPlayer
       value: 
       objectReference: {fileID: 1194885191}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.rarity
+      value: Common
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: SpecialGacha
       value: 
       objectReference: {fileID: 2082493605}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.className
+      value: digi_Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.imagePath
+      value: Sprites/digimon_sprite0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.modelPath
+      value: GachaDigimon/Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: First.prefabName
+      value: Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].name
+      value: "\uC544\uAD6C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].rarity
+      value: digi_Agumon
+      objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].modelPath
       value: GachaDigimon/Veemon
@@ -10787,9 +10823,29 @@ PrefabInstance:
       value: GachaDigimon/Paildramon
       objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].className
+      value: digi_Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].imagePath
+      value: Sprites/digimon_sprite0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].modelPath
+      value: GachaDigimon/Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: gachaItems.Array.data[0].itemObject
       value: 
       objectReference: {fileID: 1573964136}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].prefabName
+      value: Agumon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460289532801183553, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
+      propertyPath: gachaItems.Array.data[4].requiredRank
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7460289532801183554, guid: 0e6f98586431e61449ca13e0df24eea6, type: 3}
       propertyPath: m_Name
       value: Gatcha
