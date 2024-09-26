@@ -43,7 +43,6 @@ public class DigimonPopUpUI : MonoBehaviour
         {
             ChangeGachaedDigimon(modelPath);
         }
-        
     }
 
     private void SetDigimonUi(Dictionary<string, GachaResult> dataDic)
@@ -66,7 +65,6 @@ public class DigimonPopUpUI : MonoBehaviour
                 DigimonImg[idx].sprite = digimonSprite;
                 DigimonImg[idx].gameObject.SetActive(true);
 
-           
                 int buttonIndex = idx;  
                 changeButtons[buttonIndex].onClick.AddListener(() => ChangeGachaedDigimon(data.modelPath));
                 changeButtons[buttonIndex].gameObject.SetActive(true);
