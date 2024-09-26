@@ -43,10 +43,10 @@ public class Enemy : MonoBehaviour, IHIt
     private void OnDisable()
     {
         GameManager.Instance.CountEnemy();
-
+        GameManager.Instance.RandomSpawnEgg(transform);
+        
         if (!isPool)
         {
-            GameManager.Instance.RandomSpawnEgg(transform);
             CurrentHp = 100;
         }
         isPool = false;

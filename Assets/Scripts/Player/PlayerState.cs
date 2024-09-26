@@ -24,7 +24,6 @@ public class PlayerEnter : PlayerState
 
     public override void ExecuteOnUpdate()
     {
-        _digimon.ChangeState(new PlayerAttack(_digimon));
     }
 
     public override void ExitState() { }
@@ -46,6 +45,8 @@ public class PlayerAttack : PlayerState
 
     public override void ExecuteOnUpdate()
     {
+        _digimon.animator.SetTrigger("Atk");
+
         if (_digimon.isEvolutioning)
         {
             _digimon.ChangeState(new PlayerEvolution(_digimon));

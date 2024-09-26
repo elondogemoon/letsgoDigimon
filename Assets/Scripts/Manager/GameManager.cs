@@ -18,12 +18,7 @@ public class GameManager : Singleton<GameManager>
     private int _waveCount = 0; // 현재 웨이브 카운트
     private int _enemyKillCount = 0;  // 현재 웨이브에서 처치한 적의 수
     private int _eggCount = 0;
-    private void Start()
-    {
-        Digimon digimon = FindObjectOfType<Digimon>();
-        Player = digimon;
-    }
-
+  
     public void StartWave()
     {
         Debug.Log($"웨이브 {_waveCount + 1} 시작");
@@ -32,6 +27,12 @@ public class GameManager : Singleton<GameManager>
         SpawnManager.Instance.SpawnEx(); 
     }
 
+    public void InitPlayerState()
+    {
+        Digimon digimon = FindObjectOfType<Digimon>();
+        Player = digimon;
+        Player.InitPlayer();
+    }
 
     public void WaveCount()
     {

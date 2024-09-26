@@ -7,7 +7,6 @@ using System;
 public class StartGame : MonoBehaviour
 {
     [SerializeField] Button startBtn;
-    Dictionary<string, GachaResult> dic = new Dictionary<string, GachaResult>();
     [SerializeField] GameObject AdventureCam;
     [SerializeField] GameObject PlayerCam;
     [SerializeField] GameObject IngameUI;
@@ -21,18 +20,13 @@ public class StartGame : MonoBehaviour
         StartCoroutine(Cam());
         AdventureCam.SetActive(true);
         StartCoroutine(MoveAdventureCam());
-    }
-
-    private void Start()
-    {
-        DataManager.Instance.LoadResult(dic);
-        GameManager.Instance.StartWave();
+        GameManager.Instance.InitPlayerState();
     }
 
     private IEnumerator Cam()
     {
         StartCoroutine(FadeOutUI());
-
+        
         yield return new WaitForSeconds(5);
         gobj.SetActive(false);
         IngameUI.SetActive(true);

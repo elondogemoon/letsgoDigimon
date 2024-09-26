@@ -36,19 +36,20 @@ public class DigimonPopUpUI : MonoBehaviour
         SetDigimonUi(digimonData);
     }
 
-    private void CheckSelectFirstDigimon(int index, string modelPath)
+    protected virtual void CheckSelectFirstDigimon(int index, string modelPath)
     {
         //첫번째 슬롯 자동 선택
         if (index == 0)
         {
             ChangeGachaedDigimon(modelPath);
         }
+        
     }
 
     private void SetDigimonUi(Dictionary<string, GachaResult> dataDic)
     {
         int idx = 0;
-
+        
         // 딕셔너리에서 데이터를 순회
         foreach (var data in dataDic.Values)
         {
@@ -69,6 +70,7 @@ public class DigimonPopUpUI : MonoBehaviour
                 int buttonIndex = idx;  
                 changeButtons[buttonIndex].onClick.AddListener(() => ChangeGachaedDigimon(data.modelPath));
                 changeButtons[buttonIndex].gameObject.SetActive(true);
+
             }
             else
             {
@@ -95,12 +97,13 @@ public class DigimonPopUpUI : MonoBehaviour
         {
             DestroyImmediate(temporalDigimonObj);
         }
-
+        
+        
         GameObject digimonPrefab = Resources.Load<GameObject>(modelPath);
-
+        GameLogicManager.Instance.OnModelChange(digimonPrefab.name);
         if (digimonPrefab != null)
         {
-            var gObj = Instantiate(digimonPrefab, player.transform);
+            var gObj = Instantiate(digimonPrefab,player.transform);
             temporalDigimonObj = gObj;
 
             Debug.Log($"Changing model to: {modelPath}");

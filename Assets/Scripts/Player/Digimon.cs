@@ -40,24 +40,24 @@ public class Digimon : MonoBehaviour, IHIt
     private IState _playerState;
 
 
-    protected virtual void Awake()
+    public void InitPlayer()
     {
         ApplyUpgradeState();
-        animator = GetComponentInChildren<Animator>();
         atkCollider = GetComponentInChildren<BoxCollider>();
+        animator = GetComponentInChildren<Animator>();  
         _evolutionNum = 1;
         _currentEvolutionNum = 0;
         _upgradeState = UpgradeState.low;
-    }
-
-    private void Start()
-    {
         ChangeState(new PlayerEnter(this));
     }
 
+
     public virtual void Update()
     {
-        _playerState.ExecuteOnUpdate();
+        if (animator != null && _playerState != null)
+        {
+            _playerState.ExecuteOnUpdate();
+        }
     }
 
     public virtual void ChangeState(IState newState)
