@@ -66,15 +66,21 @@ public class Enemy : MonoBehaviour, IHIt
             {
                 return;
             }
-            Debug.Log("EvoEffcet");
-            _nav.enabled = false;
-            Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
-            knockbackDirection.y = 3f;
-            rb.isKinematic = false; 
-            rb.AddForce(knockbackDirection * 50f);
-            isDamaged = true;
+
+            ApplyKnockback(other.transform);
+
             StartCoroutine(ReturnKinematic());
         }
+    }
+
+    private void ApplyKnockback(Transform other)
+    {
+        _nav.enabled = false;
+        Vector3 knockbackDirection = (transform.position - other.transform.position).normalized;
+        knockbackDirection.y = 3f;
+        rb.isKinematic = false;
+        rb.AddForce(knockbackDirection * 50f);
+        isDamaged = true;
     }
 
     public IEnumerator ReturnKinematic()

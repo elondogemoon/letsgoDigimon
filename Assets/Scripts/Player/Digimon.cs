@@ -11,8 +11,8 @@ public enum UpgradeState
 
 public class Digimon : MonoBehaviour, IHIt
 {
+    [SerializeField] AudioSource evoSound;
     [SerializeField] GameObject EvolutionEffect;
-
     [SerializeField] GameObject LowSkillPrefab;
     [SerializeField] GameObject MiddleSkillPrefab;
     [SerializeField] GameObject HighSkillPrefab;
@@ -50,7 +50,6 @@ public class Digimon : MonoBehaviour, IHIt
         _upgradeState = UpgradeState.low;
         ChangeState(new PlayerEnter(this));
     }
-
 
     public virtual void Update()
     {
@@ -125,6 +124,7 @@ public class Digimon : MonoBehaviour, IHIt
 
     protected virtual IEnumerator EvolutionStart()
     {
+        evoSound.Play();
         GameManager.Instance.WaitEvolutioning(10f);
         Vector3 finalRotation = new Vector3(0, 180, 0);
         float duration = 10f;
@@ -171,6 +171,7 @@ public class Digimon : MonoBehaviour, IHIt
             _upgradeState = UpgradeState.high;
         }
         ApplyUpgradeState();
+        evoSound.Stop();
     }
 }
 

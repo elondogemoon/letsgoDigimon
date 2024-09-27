@@ -20,6 +20,7 @@ public class skillAtk : MonoBehaviour
     {
         transform.SetParent(parent.transform);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -33,7 +34,6 @@ public class skillAtk : MonoBehaviour
 
     public void Off()
     {
-       // transform.SetParent(parent.transform);
         gameObject.SetActive(false);
     }
 
