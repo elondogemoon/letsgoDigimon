@@ -11,7 +11,15 @@ public class skillAtk : MonoBehaviour
     {
         digimon = GetComponentInParent<Digimon>();   
     }
-    
+    private void OnEnable()
+    {
+        transform.SetParent(null);
+    }
+
+    private void OnDisable()
+    {
+        transform.SetParent(parent.transform);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))

@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour, IHIt
         animator = GetComponentInChildren<Animator>();
         atkcollider = GetComponentInChildren<BoxCollider>();
         ChangeState(new MonsterEnter(this));
+        CurrentHp = 100;
     }
 
     private void OnDisable()
@@ -45,10 +46,7 @@ public class Enemy : MonoBehaviour, IHIt
         GameManager.Instance.CountEnemy();
         GameManager.Instance.RandomSpawnEgg(transform);
         
-        if (!isPool)
-        {
-            CurrentHp = 100;
-        }
+        
         isPool = false;
     }
 

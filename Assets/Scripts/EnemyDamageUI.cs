@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyDamageUI : MonoBehaviour
 {
-    
     [SerializeField] GameObject Canvas;
     [SerializeField] TextMeshProUGUI text;
     Transform _cameraTrans;
@@ -13,6 +12,12 @@ public class EnemyDamageUI : MonoBehaviour
     {
         _cameraTrans = Camera.main.transform;
     }
+
+    private void OnDisable()
+    {
+        Canvas.SetActive(false);
+    }
+
     public void DamageUI(float damage)
     {
         Canvas.SetActive(true);

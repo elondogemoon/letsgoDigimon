@@ -38,7 +38,7 @@ public class MonsterEnter : MonsterState
     {
         if (enemy.target == null)
             return;
-        enemy._nav.SetDestination(enemy.target.position);
+        //enemy._nav.SetDestination(enemy.target.position);
 
         float distanceToTarget = Vector3.Distance(enemy.transform.position, enemy.target.transform.position);
 
